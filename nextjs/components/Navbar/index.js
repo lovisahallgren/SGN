@@ -41,12 +41,12 @@ const Navbar = (props) => {
     return(
       <StyledNavbar style={props.style}>
         <ul>
-          <NavbarItem style={{background: "#FF9797"}} text="Info"></NavbarItem>
-          <NavbarItem style={{background: "#FFA6E6"}} text="Aktivitet"></NavbarItem>
-          <NavbarItem style={{background: "#AFCFFF"}} text="Projekt"></NavbarItem>
-          <NavbarItem style={{background: "#A8A0FF"}} text="Socialt"></NavbarItem>
-          <NavbarItem style={{background: "#A5FB9F"}} text="Bidra"></NavbarItem>
-          <NavbarItem style={{background: "#FFE663"}} text="Kontakt"></NavbarItem>
+          <NavbarItem style={{background: "var(--primary-red)"}} text="Info"></NavbarItem>
+          <NavbarItem style={{background: "var(--primary-pink)"}} text="Aktivitet"></NavbarItem>
+          <NavbarItem style={{background: "var(--primary-blue)"}} text="Projekt"></NavbarItem>
+          <NavbarItem style={{background: "var(--primary-purple)"}} text="Socialt"></NavbarItem>
+          <NavbarItem style={{background: "var(--primary-green)"}} text="Bidra"></NavbarItem>
+          <NavbarItem style={{background: "var(--primary-yellow)"}} text="Kontakt"></NavbarItem>
         </ul>
         <div>
           <a href="">GDPR</a>
