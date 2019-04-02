@@ -1,4 +1,4 @@
-import Navigation from '../components/Navigation'
+// import Navigation from '../components/Navigation'
 import React, { Component, Fragment } from 'react'
 import axios from 'axios'
 import Link from 'next/link'
@@ -9,7 +9,7 @@ export default class extends Component {
   static async getInitialProps () {
 
     // Make request for posts.
-    const response = await axios.get('http://sgn-grupp.test/wp-json/wp/v2/posts')
+    const response = await axios.get(`http://sgn-grupp.test/wp-json/wp/v2/posts`)
 
     // Return response to posts object in props.
     return {
@@ -19,8 +19,8 @@ export default class extends Component {
 
   render() {
     return (
-      <Fragment>
-        <Navigation/>
+      <Layout>
+        {/* <Navigation/> */}
         <h1>Our Posts Page!</h1>
         <ul>
           {
@@ -37,7 +37,7 @@ export default class extends Component {
             })
           }
         </ul>
-      </Fragment>
+      </Layout>
     )
   }
 }

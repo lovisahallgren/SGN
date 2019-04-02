@@ -1,4 +1,4 @@
-import Navigation from '../components/Navigation'
+// import Navigation from '../components/Navigation'
 import React, { Component } from 'react'
 import axios from 'axios';
 import { Fragment } from 'react'
@@ -22,7 +22,7 @@ export default class extends Component {
   render() {
   return (
     <Fragment>
-      <Navigation/>
+      {/* <Navigation/> */}
       <h1>{ this.props.post.title.rendered }</h1>
       <article
         className="entry-content"
