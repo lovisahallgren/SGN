@@ -1,11 +1,17 @@
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i');
+
+  * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
+  }
+  body {
     width: 100vw;
     height: auto;
+    font-family: 'Noto Sans', sans-serif;
   }
 
   :root {

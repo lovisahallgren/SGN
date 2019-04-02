@@ -8,7 +8,7 @@ class Layout extends Component {
     render() {
         const { children } = this.props;
         return (
-            <div>
+            <>
                 <GlobalStyle />
                 <Head>
                   <title>Support Group Network</title>
@@ -18,8 +18,8 @@ class Layout extends Component {
                 </Head>
                 <Header />
                     { children }
-                <Footer />
-            </div>
+                {/* <Footer /> */}
+            </>
         )
     }
 }

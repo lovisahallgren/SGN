@@ -9,16 +9,12 @@ const StyledNavbar = styled.div`
   position: fixed;
   left: 0;
   top: 10%;
-  width: 100vw;
-  /* height: 50%; */
-  padding: 0;
-  margin: 0;
+  width: 100%;
+  padding: 10px;
 
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 3;
-    padding: 16px;
     list-style: none;
   }
 
@@ -26,6 +22,7 @@ const StyledNavbar = styled.div`
     display: flex;
     justify-content: center;
     font-weight: bold;
+    padding-top: 16px;
   }
 
   a {

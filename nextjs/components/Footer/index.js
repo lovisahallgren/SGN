@@ -3,12 +3,22 @@ import styled from 'styled-components';
 import NavbarItem from '../NavbarItem';
 
 const StyledFooter = styled.footer`
+  width: 100%;
+
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 3;
     padding: 16px;
     list-style: none;
+  }
+
+  li {
+    padding: 0.6rem;
+    margin: 0.4rem;
+  }
+
+  a {
+    font-weight: bold;
   }
 `;
 

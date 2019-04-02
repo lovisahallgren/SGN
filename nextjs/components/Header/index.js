@@ -8,14 +8,15 @@ import HamburgerIcon from '../HamburgerIcon';
 
 const StyledHeader = styled.header`
   width: 100%;
-  height: auto;
-  padding: 16px;
+  height: 20%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 16px;
 
   a {
     text-decoration: none;
     color: black;
+    font-weight: bold;
   }
 `;
 
