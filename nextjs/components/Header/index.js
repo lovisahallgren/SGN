@@ -5,11 +5,10 @@ import styled from 'styled-components';
 import Navbar from '../Navbar';
 import Layout from '../Layout';
 import HamburgerIcon from '../HamburgerIcon';
-import Head from 'next/head';
 
 const StyledHeader = styled.header`
   width: 100%;
-  height: 20%;
+  height: auto;
   padding: 16px;
   display: flex;
   justify-content: space-around;
@@ -24,7 +23,7 @@ class Header extends Component {
   constructor() {
     super();
     this.state = {
-      navbarIsOpen: false,
+      navbarIsOpen: true,
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -44,26 +43,12 @@ class Header extends Component {
     }
     return (
       <StyledHeader>
-        <Head>
-          <title>Support Group Network</title>
-          {/* <meta name="description" content="Support Group Network - working for a better future" /> */}
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
-        <style jsx global>{`
-          body{
-            padding: 0;
-            margin: 0;
-            width: 100vw;
-          }
-        `}
-        </style>
         <Link href="/">
           <a href="/">Home</a>
         </Link>
-          <Link href="/">
-            SGN
-          </Link>
+        <Link href="/">
+          <a href="/">SGN</a>
+        </Link>
         <HamburgerIcon onClick={this.handleClick}/>
         <Navbar style={this.state.navbarIsOpen ? showNavbarStyle : null}/>
       </StyledHeader>

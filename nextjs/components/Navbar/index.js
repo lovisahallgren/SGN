@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import NavbarItem from '../NavbarItem';
 
 const StyledNavbar = styled.div`
   display: none;
@@ -9,7 +10,7 @@ const StyledNavbar = styled.div`
   left: 0;
   top: 10%;
   width: 100vw;
-  height: 30%;
+  /* height: 50%; */
   padding: 0;
   margin: 0;
 
@@ -18,9 +19,6 @@ const StyledNavbar = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 3;
     padding: 16px;
-  }
-
-  li {
     list-style: none;
   }
 
@@ -43,36 +41,12 @@ const Navbar = (props) => {
     return(
       <StyledNavbar style={props.style}>
         <ul>
-          <li>
-            <Link href="/">
-              <a href="/">Info</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a href="/">Aktivitet</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a href="/">Projekt</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a href="/">Socialt</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a href="/">Bidra</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a href="/">Kontakt</a>
-            </Link>
-          </li>
+          <NavbarItem style={{background: "#FF9797"}} text="Info"></NavbarItem>
+          <NavbarItem style={{background: "#FFA6E6"}} text="Aktivitet"></NavbarItem>
+          <NavbarItem style={{background: "#AFCFFF"}} text="Projekt"></NavbarItem>
+          <NavbarItem style={{background: "#A8A0FF"}} text="Socialt"></NavbarItem>
+          <NavbarItem style={{background: "#A5FB9F"}} text="Bidra"></NavbarItem>
+          <NavbarItem style={{background: "#FFE663"}} text="Kontakt"></NavbarItem>
         </ul>
         <div>
           <a href="">GDPR</a>
