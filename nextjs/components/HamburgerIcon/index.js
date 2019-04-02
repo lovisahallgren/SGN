@@ -14,9 +14,9 @@ const StyledHamburgerIcon = styled.div`
 const HamburgerIcon = (props) => {
     return(
       <StyledHamburgerIcon onClick={props.onClick}>
-        <span>___</span>
-        <span>___</span>
-        <span>___</span>
+        <span>-</span>
+        <span>-</span>
+        <span>-</span>
       </StyledHamburgerIcon>
     )
   }

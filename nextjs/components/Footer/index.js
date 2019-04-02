@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 16px;
+    padding: 10px;
     list-style: none;
   }
 

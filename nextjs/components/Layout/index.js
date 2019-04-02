@@ -18,7 +18,7 @@ class Layout extends Component {
                 </Head>
                 <Header />
                     { children }
-                {/* <Footer /> */}
+                <Footer />
             </>
         )
     }
