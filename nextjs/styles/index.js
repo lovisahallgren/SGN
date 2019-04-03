@@ -10,8 +10,11 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     width: 100vw;
+    padding: 0.8889rem;
     height: auto;
     font-family: 'Noto Sans', sans-serif;
+    /* display: grid;
+    grid-template-columns: repeat(12, 1fr); */
   }
 
   :root {

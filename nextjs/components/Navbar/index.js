@@ -5,12 +5,17 @@ import PropTypes from 'prop-types';
 import NavbarItem from '../NavbarItem';
 
 const StyledNavbar = styled.div`
-  display: none;
-  position: fixed;
+  /* display: none; */
+  position: absolute;
   left: 0;
-  top: 10%;
+  top: 80%;
   width: 100%;
   padding: 10px;
+  background: white;
+  height: 28vh;
+  opacity: 0;
+  /* transform: translate(0, -100px); */
+  transition: opacity 0.4s ease;
 
   ul {
     display: grid;

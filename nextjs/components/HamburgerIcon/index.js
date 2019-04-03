@@ -4,19 +4,22 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledHamburgerIcon = styled.div`
-  /* width: 10%;
-  height: 5%; */
   display: flex;
   flex-direction: column;
   text-align: center;
+  height: 10%;
+
+  span {
+    height: 15%;
+  }
 `
 
 const HamburgerIcon = (props) => {
     return(
       <StyledHamburgerIcon onClick={props.onClick}>
-        <span>-</span>
-        <span>-</span>
-        <span>-</span>
+        <span>__</span>
+        <span>__</span>
+        <span>__</span>
       </StyledHamburgerIcon>
     )
   }

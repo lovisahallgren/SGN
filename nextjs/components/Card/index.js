@@ -4,17 +4,26 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
   width: 100%;
-  height: auto;
+  height: 50vh;
+  /* background: green; */
+  /* top: 100vh; */
+  /* margin: 10px; */
+  /* padding: 16px; */
 `;
 
 class Card extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+
+    }
+  }
+
   render() {
     return (
-      <Layout>
-        <StyledCard>
-
-        </StyledCard>
-      </Layout>
+      // <Layout>
+        <StyledCard style={this.props.style}></StyledCard>
+      // </Layout>
     );
   }
 }

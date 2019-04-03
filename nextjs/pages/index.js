@@ -3,11 +3,16 @@ import styled from 'styled-components'
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import { Fragment } from 'react'
-
+import Card from '../components/Card';
 
 export default () => (
   	<Layout>
-
+      <Card style={{background: "yellow", marginTop: "90%"}}/>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
   		{/* <h1> HEJ </h1> */}
   	</Layout>
   )

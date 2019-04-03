@@ -8,13 +8,9 @@ const StyledFooter = styled.footer`
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 10px;
+    margin-inline-start: -6px;
+    margin-inline-end: -6px;
     list-style: none;
-  }
-
-  li {
-    padding: 0.6rem;
-    margin: 0.4rem;
   }
 
   a {
