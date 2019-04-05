@@ -5,7 +5,48 @@ import GlobalStyle from '../../styles';
 import Head from 'next/head';
 
 class Layout extends Component {
-    render() {
+  constructor() {
+    super();
+    this.state = {
+      isHighConstrastMode: true,
+      contrastWord: 'primary',
+    }
+
+    this.handleContrastMode = this.handleContrastMode.bind(this);
+  }
+  // componentDidMount() {
+    //   this.handleContrastMode();
+    // }
+
+    // componentDidUpdate() {
+
+      // }
+
+
+      handleContrastMode() {
+        this.setState(prevState => {
+          return {
+            isHighConstrastMode: !prevState.isHighConstrastMode,
+          }
+        })
+          if(this.state.isHighConstrastMode) {
+            this.setState(() => {
+              return {
+                contrastWord: 'secondary'
+              }
+            })
+          } else {
+              this.setState(() => {
+                return {
+                  contrastWord: 'primary'
+                }
+              })
+
+          }
+      }
+
+
+  render() {
         const { children } = this.props;
         return (
             <>
@@ -16,9 +57,9 @@ class Layout extends Component {
                   <meta charSet="utf-8" />
                   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
-                <Header />
+                <Header contrast={this.state.contrastWord}/>
                     { children }
-                <Footer />
+                <Footer contrast={this.state.contrastWord} onClick={this.handleContrastMode}/>
             </>
         )
     }

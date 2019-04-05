@@ -19,17 +19,18 @@ const StyledFooter = styled.footer`
 `;
 
 
-const Footer = () => {
+const Footer = (props) => {
     return (
         <StyledFooter>
           <ul>
-            <NavbarItem style={{background: "var(--primary-red)"}} text="Info"></NavbarItem>
-            <NavbarItem style={{background: "var(--primary-pink)"}} text="Aktivitet"></NavbarItem>
-            <NavbarItem style={{background: "var(--primary-blue)"}} text="Projekt"></NavbarItem>
-            <NavbarItem style={{background: "var(--primary-purple)"}} text="Socialt"></NavbarItem>
-            <NavbarItem style={{background: "var(--primary-green)"}} text="Bidra"></NavbarItem>
-            <NavbarItem style={{background: "var(--primary-yellow)"}} text="Kontakt"></NavbarItem>
+            <NavbarItem style={{background: `var(--${props.contrast}-red)`}} text="Info"></NavbarItem>
+            <NavbarItem style={{background: `var(--${props.contrast}-pink)`}} text="Aktivitet"></NavbarItem>
+            <NavbarItem style={{background: `var(--${props.contrast}-blue)`}} text="Projekt"></NavbarItem>
+            <NavbarItem style={{background: `var(--${props.contrast}-purple)`}} text="Socialt"></NavbarItem>
+            <NavbarItem style={{background: `var(--${props.contrast}-green)`}} text="Bidra"></NavbarItem>
+            <NavbarItem style={{background: `var(--${props.contrast}-yellow)`}} text="Kontakt"></NavbarItem>
           </ul>
+          <button onClick={props.onClick}>High Contrast</button>
           {/* <p>this is the footer </p> */}
         </StyledFooter>
     );

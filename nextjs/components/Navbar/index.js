@@ -10,7 +10,6 @@ const StyledNavbar = styled.div`
   left: 0;
   top: 80%;
   width: 100%;
-  padding: 10px;
   background: white;
   height: 28vh;
   opacity: 0;
@@ -43,12 +42,12 @@ const Navbar = (props) => {
     return(
       <StyledNavbar style={props.style}>
         <ul>
-          <NavbarItem style={{background: "var(--primary-red)"}} text="Info"></NavbarItem>
-          <NavbarItem style={{background: "var(--primary-pink)"}} text="Aktivitet"></NavbarItem>
-          <NavbarItem style={{background: "var(--primary-blue)"}} text="Projekt"></NavbarItem>
-          <NavbarItem style={{background: "var(--primary-purple)"}} text="Socialt"></NavbarItem>
-          <NavbarItem style={{background: "var(--primary-green)"}} text="Bidra"></NavbarItem>
-          <NavbarItem style={{background: "var(--primary-yellow)"}} text="Kontakt"></NavbarItem>
+          <NavbarItem style={{background: `var(--${props.contrast}-red)`}} text="Info"></NavbarItem>
+          <NavbarItem style={{background: `var(--${props.contrast}-pink)`}} text="Aktivitet"></NavbarItem>
+          <NavbarItem style={{background: `var(--${props.contrast}-blue)`}} text="Projekt"></NavbarItem>
+          <NavbarItem style={{background: `var(--${props.contrast}-purple)`}} text="Socialt"></NavbarItem>
+          <NavbarItem style={{background: `var(--${props.contrast}-green)`}} text="Bidra"></NavbarItem>
+          <NavbarItem style={{background: `var(--${props.contrast}-yellow)`}} text="Kontakt"></NavbarItem>
         </ul>
         <div>
           <a href="">GDPR</a>

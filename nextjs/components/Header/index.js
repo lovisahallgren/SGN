@@ -18,7 +18,7 @@ const StyledHeader = styled.div`
     top: 0;
     left: 3.5%;
     width: 93%;
-    padding: 16px;
+    padding: 16px 7px;
     background: white;
     height: 10%;
     display: flex;
@@ -37,7 +37,8 @@ class Header extends Component {
   constructor() {
     super();
     this.state = {
-      navbarIsOpen: true,
+      menuIsOpen: true,
+
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -51,21 +52,21 @@ class Header extends Component {
   handleClick() {
     this.setState(prevState => {
       return {
-        navbarIsOpen: !prevState.navbarIsOpen,
+        menuIsOpen: !prevState.menuIsOpen,
       }
     })
   }
 
   handleScroll() {
     if (window.scrollY > 300) {
-      this.setState({navbarIsOpen: false})
+      this.setState({menuIsOpen: false})
     } else {
-      this.setState({navbarIsOpen: true})
+      this.setState({menuIsOpen: true})
     }
   }
 
   render() {
-    const showNavbarStyle = {
+    const showmenuStyle = {
       display: "block",
       // height: "28vh",
       opacity: 1,
@@ -82,7 +83,7 @@ class Header extends Component {
             <a href="/">SGN</a>
           </Link>
           <HamburgerIcon onClick={this.handleClick}/>
-          <Navbar style={this.state.navbarIsOpen ? showNavbarStyle : null}/>
+          <Navbar contrast={this.props.contrast}style={this.state.menuIsOpen ? showmenuStyle : null}/>
         </div>
       </StyledHeader>
     )
