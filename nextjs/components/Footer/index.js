@@ -31,7 +31,6 @@ const Footer = (props) => {
             <NavbarItem style={{background: `var(--${props.contrast}-yellow)`}} text="Kontakt"></NavbarItem>
           </ul>
           <button onClick={props.onClick}>High Contrast</button>
-          {/* <p>this is the footer </p> */}
         </StyledFooter>
     );
 };

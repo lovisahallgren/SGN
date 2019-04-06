@@ -12,8 +12,6 @@ const StyledHeader = styled.div`
   justify-content: space-around; */
   /* transition: height .3s ease; */
 
-  .header {
-  /* width: 100%; */
     position: fixed;
     top: 0;
     left: 3.5%;
@@ -23,6 +21,9 @@ const StyledHeader = styled.div`
     height: 10%;
     display: flex;
     justify-content: space-between;
+  .header {
+  width: 100%;
+  height: 10%;
   }
 
   a {
@@ -37,12 +38,12 @@ class Header extends Component {
   constructor() {
     super();
     this.state = {
-      menuIsOpen: true,
+      menuIsOpen: false,
 
     }
 
     this.handleClick = this.handleClick.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
+    // this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
@@ -57,25 +58,24 @@ class Header extends Component {
     })
   }
 
-  handleScroll() {
-    if (window.scrollY > 300) {
-      this.setState({menuIsOpen: false})
-    } else {
-      this.setState({menuIsOpen: true})
-    }
-  }
+  // handleScroll() {
+  //   if (window.scrollY > 300) {
+  //     this.setState({menuIsOpen: false})
+  //   } else {
+  //     this.setState({menuIsOpen: true})
+  //   }
+  // }
 
   render() {
     const showmenuStyle = {
       display: "block",
       // height: "28vh",
-      opacity: 1,
-      transition: "opacity 0.4s ease",
+      // opacity: 1,
+      // transition: "opacity 0.4s ease",
     }
 
     return (
       <StyledHeader>
-        <div className="header">
           <Link href="/">
             <a href="/">Home</a>
           </Link>
@@ -83,8 +83,7 @@ class Header extends Component {
             <a href="/">SGN</a>
           </Link>
           <HamburgerIcon onClick={this.handleClick}/>
-          <Navbar contrast={this.props.contrast}style={this.state.menuIsOpen ? showmenuStyle : null}/>
-        </div>
+          <Navbar contrast={this.props.contrast} style={this.state.menuIsOpen ? showmenuStyle : null}/>
       </StyledHeader>
     )
   }
