@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 const QuoteSmall = styled.p`
-  font-style: italic;
-  font-size: 1.333rem;
-  line-height: 1.778rem;
+  font-style: ${props => props.fontWeight || 'italic'};
+  font-size: ${props => props.fontSize || '1.333rem'};
+  line-height: ${props => props.lineHeight || '1.778rem'};
+  color: ${props => props.color || '#FFF'}; 
 `
 
 QuoteSmall.propTypes = {

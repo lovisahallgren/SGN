@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
   width: 100%;
-  height: 40vh;
+  /* height: 40vh; */
   background-color: ${props => props.background || 'white'};
   color: black;
   padding: 16px 16px 20px 16px;
@@ -13,32 +13,35 @@ const StyledCard = styled.div`
   /* padding: 16px; */
 `;
 
-const Card = (props) => {
-  return (
-    <StyledCard style={props.style}></StyledCard>
-  )
-}
-
-// class Card extends Component {
-//   constructor(props) {
-//     // console.log(props);
-//     super();
-//     this.state = {
-
-//     }
-//   }
-
-//   render() {
-//     const { children } = this.props;
-//     return (
-//       // <Layout>
-//         <StyledCard style={this.props.style}>
-//           {children}
-//         </StyledCard>
-//       // </Layout>
-//     );
-//   }
+// const Card = (props) => {
+//   const childre =
+//   return (
+//     <StyledCard style={props.style}>
+//       {children}
+//     </StyledCard>
+//   )
 // }
+
+class Card extends Component {
+  constructor(props) {
+    // console.log(props);
+    super();
+    this.state = {
+
+    }
+  }
+
+  render() {
+    const { children } = this.props;
+    return (
+      // <Layout>
+        <StyledCard style={this.props.style}>
+          {children}
+        </StyledCard>
+      // </Layout>
+    );
+  }
+}
 
 Card.propTypes = {
 

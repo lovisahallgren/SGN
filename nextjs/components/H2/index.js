@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 const H2 = styled.h2`
-  font-weight: bold;
-  font-size: 1.333rem;
-  line-height: 1.778rem;
+  font-weight: ${props => props.fontWeight || 'bold'};
+  line-height: ${props => props.lineHeight || '1.778rem'};
+  font-size: ${props => props.fontSize || '1.333rem'};
+  color: ${props => props.color || '#FFF'};
 `
 
 H2.propTypes = {
