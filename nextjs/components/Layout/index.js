@@ -35,6 +35,7 @@ class Layout extends Component {
                   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
                 <Header contrast={this.props.isHighContrastMode}/>
+                <div style={{width: "100%", height: "6vh"}}></div>
                     { children }
                 <Footer contrast={this.props.isHighContrastMode} onClick={this.props.handleContrastMode} />
             </>

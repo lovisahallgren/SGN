@@ -32,7 +32,7 @@ class Home extends Component {
 
     return(
       <Layout isHighContrastMode={this.state.isHighContrastMode} handleContrastMode={this.handleContrastMode}>
-        <Navbar contrast={this.state.isHighContrastMode} style={{position: "static", display: "block", marginTop: "17%", fontWeight: "bold"}} />
+        <Navbar contrast={this.state.isHighContrastMode} style={{position: "static", display: "block", fontWeight: "bold"}} />
         <Card style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
         <Card style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
         <Card style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />

@@ -8,7 +8,7 @@ const StyledNavbar = styled.div`
   display: none;
   position: absolute;
   left: 0;
-  top: 80%;
+  top: 98%;
   width: 100%;
   background: white;
   height: 28vh;
@@ -20,6 +20,8 @@ const StyledNavbar = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     list-style: none;
+    margin-inline-start: -6px;
+    margin-inline-end: -6px;
   }
 
   div {

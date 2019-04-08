@@ -14,17 +14,13 @@ const StyledHeader = styled.div`
 
     position: fixed;
     top: 0;
-    left: 3.5%;
-    width: 93%;
-    padding: 16px 7px;
+    /* left: 3.5%; */
+    width: 92%;
+    padding: 16px 0px;
     background: white;
-    height: 10%;
+    /* height: 10%; */
     display: flex;
     justify-content: space-between;
-  .header {
-  width: 100%;
-  height: 10%;
-  }
 
   a {
     text-decoration: none;
