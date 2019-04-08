@@ -4,6 +4,11 @@ import axios from 'axios'
 import Link from 'next/link'
 import H2 from '../components/H2'
 import P from '../components/P'
+import Card from '../components/Card'
+import QuoteSmall from '../components/QuoteSmall'
+import SmallP from '../components/SmallP'
+import Line from '../components/Line'
+import Project from '../components/Project'
 
 export default class extends Component {
 
@@ -13,39 +18,21 @@ export default class extends Component {
     // Make request for posts.
     const posts = await axios.get(`http://sgn.test/wp-json/wp/v2/posts`)
     const projects = await axios.get(`http://sgn.test/wp-json/wp/v2/project`)
+    const info = await axios.get(`http://sgn.test/wp-json/wp/v2/info`)
 
     // Return response to posts object in props.
     return {
       posts: posts.data,
-      projects: projects.data
+      projects: projects.data,
+      info: info.data
     }
   }
+  
   render() {
     return (
       <>
-        <Layout>
-        <h1>Our Posts Page!</h1>
-        {/* <ul> */}
-          {
-            this.props.projects.map( project => {
-              return (
-                <div>
-                <H2 key={ project.id }>
-                    {/* <Link href={ `/posts/${ post.slug }` }>
-                        <a href={ `/posts/${ post.slug }` }>
-                        { post.title.rendered }
-                      </a> */}
-                      { project.title.rendered }
-                    {/* </Link> */}
-                </H2>
-                <div dangerouslySetInnerHTML={{__html: project.content.rendered}}></div>
-                {/* <P>{project.content.rendered}</P> */}
-                </div>
-              )
-            })
-          }
-        {/* </ul> */}
-        </Layout>
+        <Project {...this.props}/>
+        
       </>
     )
   }

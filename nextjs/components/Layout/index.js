@@ -9,7 +9,7 @@ class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isHighContrastMode: false,
+    //   isHighContrastMode: false,
     }
 
     // this.handleContrastMode = this.handleContrastMode.bind(this);

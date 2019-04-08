@@ -81,6 +81,20 @@ function my_rest_prepare_info($data, $post, $request) {
 }
 add_filter("rest_prepare_info", 'my_rest_prepare_info', 10, 3);
 
+// Get the advanced custom fields for Projects in JSON
+function my_rest_prepare_project($data, $post, $request) {
+  $_data = $data->data;
+
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+
+  return $data;
+}
+add_filter("rest_prepare_project", 'my_rest_prepare_project', 10, 3);
+
 // Register plugin helpers.
 require template_path('includes/plugins/plate.php');
 

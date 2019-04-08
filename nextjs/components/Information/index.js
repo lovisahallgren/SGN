@@ -27,7 +27,6 @@ class Information extends Component {
     }
 
     handleContrastMode() {
-        console.log('clicked')
         this.setState(prevState => {
         return {
             isHighContrastMode: !prevState.isHighContrastMode,
@@ -45,7 +44,7 @@ class Information extends Component {
                         <Link href={"/"}>
                             <a href="">Home</a>
                         </Link> > {this.props.info[0].type}</SmallP>
-                        <H1>Info</H1>
+                        <H1 style={{textTransform: "capitalize"}}>{this.props.info[0].type}</H1>
                     </div>
                 </NavIndicator>
                     {

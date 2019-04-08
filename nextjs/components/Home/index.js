@@ -20,7 +20,6 @@ class Home extends Component {
   }
 
   handleContrastMode() {
-    console.log('clicked')
     this.setState(prevState => {
       return {
         isHighContrastMode: !prevState.isHighContrastMode,

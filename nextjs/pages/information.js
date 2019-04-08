@@ -26,8 +26,8 @@ export default class extends Component {
       projects: projects.data,
       info: info.data
     }
-    console.log(info)
   }
+  
   render() {
     return (
       <>

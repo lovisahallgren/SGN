@@ -28,7 +28,6 @@ const StyledNavIndicator = styled.div`
 
 class NavIndicator extends Component {
   constructor(props) {
-    // console.log(props);
     super();
     this.state = {
 

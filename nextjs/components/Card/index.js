@@ -34,7 +34,6 @@ const StyledCard = styled.div`
 
 class Card extends Component {
   constructor(props) {
-    // console.log(props);
     super();
     this.state = {
 
