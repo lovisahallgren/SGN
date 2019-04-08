@@ -6,6 +6,9 @@ import H2 from '../components/H2'
 import P from '../components/P'
 import Card from '../components/Card'
 import QuoteSmall from '../components/QuoteSmall'
+import SmallP from '../components/SmallP'
+import Line from '../components/Line'
+import Information from '../components/Information'
 
 export default class extends Component {
 
@@ -28,23 +31,8 @@ export default class extends Component {
   render() {
     return (
       <>
-        <Layout>
-        <h1>Our Posts Page!</h1>
-          {
-            this.props.info.map( item => {
-              console.log(item)
-              return (
-                <Card style={this.props.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}}>
-                  <P>{item.paragraph_1}</P>
-                  <QuoteSmall>{item.quote}</QuoteSmall>
-                  <p>{item.author_quote}</p>
-                  <P>{item.paragraph_2}</P>
-                </Card>
-                
-              )
-            })
-          }
-        </Layout>
+        <Information {...this.props}/>
+        
       </>
     )
   }
