@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+
   body {
     width: 100vw;
     padding: 0.8889rem;

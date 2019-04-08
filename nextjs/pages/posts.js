@@ -1,4 +1,4 @@
-// import Navigation from '../components/Navigation'
+import Layout from '../components/Layout'
 import React, { Component, Fragment } from 'react'
 import axios from 'axios'
 import Link from 'next/link'
@@ -9,35 +9,39 @@ export default class extends Component {
   static async getInitialProps () {
 
     // Make request for posts.
-    const response = await axios.get(`http://sgn-grupp.test/wp-json/wp/v2/posts`)
+    const posts = await axios.get(`http://sgn-grupp.test/wp-json/wp/v2/posts`)
+    const projects = await axios.get(`http://sgn-grupp.test/wp-json/wp/v2/project`)
 
     // Return response to posts object in props.
     return {
-      posts: response.data
+      posts: posts.data,
+      projects: projects.data
     }
   }
 
   render() {
     return (
-      <Layout>
-        {/* <Navigation/> */}
+      <>
+        <Layout>
         <h1>Our Posts Page!</h1>
         <ul>
           {
-            this.props.posts.map( post => {
+            this.props.projects.map( project => {
               return (
-                <li key={ post.id }>
-                    <Link href={ `/posts/${ post.slug }` }>
+                <li key={ project.id }>
+                    {/* <Link href={ `/posts/${ post.slug }` }>
                         <a href={ `/posts/${ post.slug }` }>
-                            { post.title.rendered }
-                        </a>
-                    </Link>
+                        { post.title.rendered }
+                      </a> */}
+                      { project.title.rendered }
+                    {/* </Link> */}
                 </li>
               )
             })
           }
         </ul>
-      </Layout>
+        </Layout>
+      </>
     )
   }
 }

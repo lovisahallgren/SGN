@@ -42,6 +42,16 @@ function my_project_cpt() {
     );
     register_post_type( 'project', $args );
 }
+// Add Info to Rest API
+add_action( 'init', 'my_info_cpt' );
+function my_info_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Info'
+    );
+    register_post_type( 'info', $args );
+}
 
 // Get the advanced custom fields for Branches in JSON
 function my_rest_prepare_branch($data, $post, $request) {
@@ -56,6 +66,20 @@ function my_rest_prepare_branch($data, $post, $request) {
   return $data;
 }
 add_filter("rest_prepare_branch", 'my_rest_prepare_branch', 10, 3);
+
+// Get the advanced custom fields for Info in JSON
+function my_rest_prepare_info($data, $post, $request) {
+  $_data = $data->data;
+
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+
+  return $data;
+}
+add_filter("rest_prepare_info", 'my_rest_prepare_info', 10, 3);
 
 // Register plugin helpers.
 require template_path('includes/plugins/plate.php');
@@ -102,3 +126,41 @@ add_filter('jpeg_quality', function () {
     return 100;
 }, 10, 2);
 
+
+//
+add_theme_support( 'custom-logo' );
+
+function themename_custom_logo_setup() {
+    $defaults = array(
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+function get_latest_logo() {
+
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $logo = wp_get_attachment_image_src( $custom_logo_id , "thumbnail" );
+    $logolol = [
+        'current_site_logo' => $logo[0]
+    ];
+    if (empty($logo)) {
+    return new WP_Error( 'empty_category', 'there is no post in this category', array('status' => 404) );
+
+    }
+
+    $response = new WP_REST_Response($logolol);
+    $response->set_status(200);
+
+    return $response;
+}
+
+
+add_action('rest_api_init', 'custom_logo_api' );
+
+function custom_logo_api() {
+    register_rest_route( 'sgn/v1', 'site_logo',array(
+                  'methods'  => 'GET',
+                  'callback' => 'get_latest_logo'
+        ));
+  };
