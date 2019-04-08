@@ -35,8 +35,8 @@ const StyledHeader = styled.div`
 `;
 
 class Header extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       menuIsOpen: false,
 
@@ -75,6 +75,7 @@ class Header extends Component {
     }
 
     return (
+      
       <StyledHeader>
           <Link href="/">
             <a href="/">Home</a>

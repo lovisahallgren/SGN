@@ -6,37 +6,22 @@ import GlobalStyle from '../../styles';
 import Head from 'next/head';
 
 class Layout extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      isHighConstrastMode: true,
-      contrastWord: 'primary',
+      isHighContrastMode: false,
     }
 
-    this.handleContrastMode = this.handleContrastMode.bind(this);
+    // this.handleContrastMode = this.handleContrastMode.bind(this);
   }
 
-  handleContrastMode() {
-    this.setState(prevState => {
-      return {
-        isHighConstrastMode: !prevState.isHighConstrastMode,
-      }
-    })
-      if(this.state.isHighConstrastMode) {
-        this.setState(() => {
-          return {
-            contrastWord: 'secondary'
-          }
-        })
-      } else {
-          this.setState(() => {
-            return {
-              contrastWord: 'primary'
-            }
-          })
-
-      }
-  }
+  // handleContrastMode() {
+  //   this.setState(prevState => {
+  //     return {
+  //       isHighContrastMode: !prevState.isHighContrastMode,
+  //     }
+  //   })
+  // }
 
   render() {
         const { children } = this.props;
@@ -49,13 +34,13 @@ class Layout extends Component {
                   <meta charSet="utf-8" />
                   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
-                <Header contrast={this.state.contrastWord}/>
-                <Navbar contrast={this.state.contrastWord} style={{position: "static", display: "block", marginTop: "17%", fontWeight: "bold"}} />
+                <Header contrast={this.props.isHighContrastMode}/>
                     { children }
-                <Footer contrast={this.state.contrastWord} onClick={this.handleContrastMode} />
+                <Footer contrast={this.props.isHighContrastMode} onClick={this.props.handleContrastMode} />
             </>
         )
     }
 }
 
 export default Layout;
+

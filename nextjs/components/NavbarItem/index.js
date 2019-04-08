@@ -17,8 +17,8 @@ const StyledNavbarItem = styled.li`
 const NavbarItem = (props) => {
     return(
       <StyledNavbarItem style={props.style}>
-          <Link href="/">
-            <a href="/">{props.text}</a>
+          <Link href={props.link}>
+            <a href="">{props.text}</a>
           </Link>
       </StyledNavbarItem>
     )
