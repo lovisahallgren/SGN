@@ -11,8 +11,8 @@ export default class extends Component {
   static async getInitialProps () {
 
     // Make request for posts.
-    const posts = await axios.get(`http://sgn-grupp.test/wp-json/wp/v2/posts`)
-    const projects = await axios.get(`http://sgn-grupp.test/wp-json/wp/v2/project`)
+    const posts = await axios.get(`http://sgn.test/wp-json/wp/v2/posts`)
+    const projects = await axios.get(`http://sgn.test/wp-json/wp/v2/project`)
 
     // Return response to posts object in props.
     return {
