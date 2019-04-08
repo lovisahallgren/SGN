@@ -44,12 +44,12 @@ const Navbar = (props) => {
     return(
       <StyledNavbar style={props.style}>
         <ul>
-          <NavbarItem style={{background: `var(--${props.contrast}-red)`}} text="Info"></NavbarItem>
-          <NavbarItem style={{background: `var(--${props.contrast}-pink)`}} text="Aktivitet"></NavbarItem>
-          <NavbarItem style={{background: `var(--${props.contrast}-blue)`}} text="Projekt"></NavbarItem>
-          <NavbarItem style={{background: `var(--${props.contrast}-purple)`}} text="Socialt"></NavbarItem>
-          <NavbarItem style={{background: `var(--${props.contrast}-green)`}} text="Bidra"></NavbarItem>
-          <NavbarItem style={{background: `var(--${props.contrast}-yellow)`}} text="Kontakt"></NavbarItem>
+            <NavbarItem style={props.contrast ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} link="/information" text="Info"></NavbarItem>
+            <NavbarItem style={props.contrast ? {background: "var(--secondary-pink)"} : {background: "var(--primary-pink)"}} link="/activities" text="Aktivitet"></NavbarItem>
+            <NavbarItem style={props.contrast ? {background: "var(--secondary-blue)"} : {background: "var(--primary-blue)"}} link="/projects" text="Projekt"></NavbarItem>
+            <NavbarItem style={props.contrast ? {background: "var(--secondary-purple)"} : {background: "var(--primary-purple)"}} link="/social" text="Socialt"></NavbarItem>
+            <NavbarItem style={props.contrast ? {background: "var(--secondary-green)"} : {background: "var(--primary-green)"}} link="/contribute" text="Bidra"></NavbarItem>
+            <NavbarItem style={props.contrast ? {background: "var(--secondary-yellow)"} : {background: "var(--primary-yellow)"}} link="/contact" text="Kontakt"></NavbarItem>
         </ul>
         <div>
           <a href="">GDPR</a>
