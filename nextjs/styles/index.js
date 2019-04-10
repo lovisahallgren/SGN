@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  html {
+    font-size: 16px;
+  }
+
   body {
     width: 100vw;
     padding: 0.8889rem;
