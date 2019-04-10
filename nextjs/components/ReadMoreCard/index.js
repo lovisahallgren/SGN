@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyledCard = styled.div`
+const StyledReadMoreCard = styled.div`
   width: 100%;
   max-height: 50rem;
   min-height: 21rem;
@@ -12,7 +12,7 @@ const StyledCard = styled.div`
   justify-content: space-around;
   /* align-item: center; */
   /* height: 40vh; */
-  background: ${props => props.background || 'white'};
+  background-color: ${props => props.background || 'white'};
   color: black;
   padding: 16px 16px 20px 16px;
   margin: 16px 0;
@@ -32,7 +32,7 @@ const StyledCard = styled.div`
 //   )
 // }
 
-class Card extends Component {
+class ReadMoreCard extends Component {
   constructor(props) {
     super();
     this.state = {
@@ -44,16 +44,16 @@ class Card extends Component {
     const { children } = this.props;
     return (
       // <Layout>
-        <StyledCard style={this.props.style}>
+        <StyledReadMoreCard style={this.props.style}>
           {children}
-        </StyledCard>
+        </StyledReadMoreCard>
       // </Layout>
     );
   }
 }
 
-Card.propTypes = {
+ReadMoreCard.propTypes = {
 
 };
 
-export default Card;
+export default ReadMoreCard;
