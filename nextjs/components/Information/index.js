@@ -11,33 +11,31 @@ import QuoteSmall from '../QuoteSmall'
 import SmallP from '../SmallP'
 import Line from '../Line'
 import LetterBig from '../LetterBig'
+import nookies from 'nookies'
 
 
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 class Information extends Component {
-    constructor() {
-        super();
-        this.state = {
-        isHighContrastMode: false,
-        }
-
-        this.handleContrastMode = this.handleContrastMode.bind(this);
+    constructor(props) {
+      super(props);
+      this.state = {
+        isHighContrastMode: null
+      }
     }
 
-    handleContrastMode() {
-        this.setState(prevState => {
-        return {
-            isHighContrastMode: !prevState.isHighContrastMode,
-        }
-        })
+    componentDidMount() {
+      this.setState({
+        isHighContrastMode: nookies.get(this.state.ctx).contrast === "true" ? "true" : "false"
+      })
     }
 
     render() {
+          const isHighContrastMode = this.state.isHighContrastMode === "true"
         return(
-            <Layout isHighContrastMode={this.state.isHighContrastMode} handleContrastMode={this.handleContrastMode}>
-                <NavIndicator style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}}>
+            <Layout isHighContrastMode={isHighContrastMode} handleContrastMode={this.handleContrastMode}>
+                <NavIndicator style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}}>
                     <LetterBig>I</LetterBig>
                     <div>
                         <SmallP style={{textTransform: "capitalize"}}>
@@ -50,7 +48,7 @@ class Information extends Component {
                     {
                         this.props.info.map(item => {
                             return (
-                                <Card key={item.id} style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}}>
+                                <Card key={item.id} style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}}>
                                 <SmallP>{item.category}</SmallP>
                                 <Line />
                                 <H2>{item.title}</H2>
@@ -59,7 +57,7 @@ class Information extends Component {
                                 <QuoteSmall>"{item.quote}"</QuoteSmall>
                                 <SmallP fontStyle="italic" textAlign="right" margin="15px 0 0 0">{item.author_quote}</SmallP>
                                 <Line />
-                                <P>{item.paragraph_2}</P>
+                                <P textIndent="16px">{item.paragraph_2}</P>
                                 {/* <Line /> */}
                                 </Card>
                             )

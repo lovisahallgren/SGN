@@ -71,7 +71,7 @@ class Header extends Component {
     }
 
     return (
-      
+
       <StyledHeader>
           <Link href="/">
             <a href="/">Home</a>

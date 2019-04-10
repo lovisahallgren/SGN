@@ -9,7 +9,7 @@ const StyledNavbar = styled.div`
   position: absolute;
   left: 0;
   top: 98%;
-  width: 100%;
+  width: 101%;
   background: white;
   height: 28vh;
   /* opacity: 0; */
@@ -43,15 +43,17 @@ const StyledNavbar = styled.div`
 `
 
 const Navbar = (props) => {
+    const isHighContrastMode = props.contrast === "true"
+
     return(
       <StyledNavbar style={props.style}>
         <ul>
-            <NavbarItem style={props.contrast ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} link="/information" text="Info"></NavbarItem>
-            <NavbarItem style={props.contrast ? {background: "var(--secondary-pink)"} : {background: "var(--primary-pink)"}} link="/activities" text="Aktivitet"></NavbarItem>
-            <NavbarItem style={props.contrast ? {background: "var(--secondary-blue)"} : {background: "var(--primary-blue)"}} link="/projects" text="Projekt"></NavbarItem>
-            <NavbarItem style={props.contrast ? {background: "var(--secondary-purple)"} : {background: "var(--primary-purple)"}} link="/social" text="Socialt"></NavbarItem>
-            <NavbarItem style={props.contrast ? {background: "var(--secondary-green)"} : {background: "var(--primary-green)"}} link="/contribute" text="Bidra"></NavbarItem>
-            <NavbarItem style={props.contrast ? {background: "var(--secondary-yellow)"} : {background: "var(--primary-yellow)"}} link="/contact" text="Kontakt"></NavbarItem>
+            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} link="/information" text="Info"></NavbarItem>
+            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-pink)"} : {background: "var(--primary-pink)"}} link="/activities" text="Aktivitet"></NavbarItem>
+            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-blue)"} : {background: "var(--primary-blue)"}} link="/projects" text="Projekt"></NavbarItem>
+            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-purple)"} : {background: "var(--primary-purple)"}} link="/social" text="Socialt"></NavbarItem>
+            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-green)"} : {background: "var(--primary-green)"}} link="/contribute" text="Bidra"></NavbarItem>
+            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-yellow)"} : {background: "var(--primary-yellow)"}} link="/contact" text="Kontakt"></NavbarItem>
         </ul>
         <div>
           <a href="">GDPR</a>

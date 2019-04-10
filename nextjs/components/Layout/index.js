@@ -4,24 +4,21 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 import GlobalStyle from '../../styles';
 import Head from 'next/head';
+import nookies from 'nookies';
 
 class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    //   isHighContrastMode: false,
+      isHighContrastMode: null
     }
-
-    // this.handleContrastMode = this.handleContrastMode.bind(this);
   }
 
-  // handleContrastMode() {
-  //   this.setState(prevState => {
-  //     return {
-  //       isHighContrastMode: !prevState.isHighContrastMode,
-  //     }
-  //   })
-  // }
+  componentDidMount() {
+    this.setState({
+      isHighContrastMode: nookies.get(this.state.ctx).contrast === "true" ? "true" : "false"
+    })
+  }
 
   render() {
         const { children } = this.props;
@@ -34,10 +31,21 @@ class Layout extends Component {
                   <meta charSet="utf-8" />
                   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
-                <Header contrast={this.props.isHighContrastMode}/>
+                <Header contrast={this.state.isHighContrastMode}/>
                 <div style={{width: "100%", height: "6vh"}}></div>
                     { children }
-                <Footer contrast={this.props.isHighContrastMode} onClick={this.props.handleContrastMode} />
+                <Footer
+                  contrast={this.state.isHighContrastMode}
+                  onClick={this.state.handleContrastMode}
+                  contrastText="Enable high contrast mode"
+                  languageText="Svenska"
+                  name="Support Group Network"
+                  street= "Kungsladugårdsvägen 5 Restad Gård,"
+                  city="462 54 Vänersborg"
+                  country= "Sverige"
+                  phone="+ 4676-884 08 84"
+                  email="info@supportgroup.se"
+                />
             </>
         )
     }

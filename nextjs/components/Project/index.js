@@ -13,29 +13,56 @@ import Line from '../Line'
 import LetterBig from '../LetterBig'
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import ReadMoreCard from '../ReadMoreCard';
+import nookies from 'nookies';
 
 class Project extends Component {
     constructor(props) {
         super(props);
         this.state = {
-        isHighContrastMode: false,
+        isHighContrastMode: null,
         }
 
-        this.handleContrastMode = this.handleContrastMode.bind(this);
     }
 
-    handleContrastMode() {
-        this.setState(prevState => {
-        return {
-            isHighContrastMode: !prevState.isHighContrastMode,
-        }
-        })
+    componentDidMount() {
+      this.setState({
+        isHighContrastMode: nookies.get(this.state.ctx).contrast === "true" ? "true" : "false"
+      })
     }
+    // readMore() {
+    //   const project = this.props.projects.map(item => {
+    //     return item
+    //   }, callback)
+    //   const callback = () => {
+
+    //     if (item.read_more_image !== null ||
+    //       item.read_more_image_description !== null ||
+    //       item.read_more_paragraph !== null ||
+    //       item.read_more_quote !== null)
+    //       {
+    //         return <ReadMoreCard style={this.state.isHighContrastMode ? {background: "var(--primary-purple)"} : {background: "var(--secondary-purple)"}}>
+    //               <img src={item.read_more_image} alt={item.name}/>
+    //             <P>{item.read_more_image_description}</P>
+    //             <P>{item.read_more_paragraph}</P>
+    //             <QuoteSmall>"{item.read_more_quote}"</QuoteSmall>
+    //             <SmallP fontStyle="italic" textAlign="right" margin="15px 0 0 0">{item.read_more_author_quote}</SmallP>
+    //             {/* <Line /> */}
+    //           </ReadMoreCard>
+    //     } else {
+    //       return null;
+    //     }
+    //   }
+
+
+    // }
 
     render() {
+          const isHighContrastMode = this.state.isHighContrastMode === "true"
+
         return(
-            <Layout isHighContrastMode={this.state.isHighContrastMode} handleContrastMode={this.handleContrastMode}>
-                <NavIndicator style={this.state.isHighContrastMode ? {background: "var(--secondary-purple)"} : {background: "var(--primary-purple)"}}>
+            <Layout isHighContrastMode={isHighContrastMode} handleContrastMode={this.handleContrastMode}>
+                <NavIndicator style={isHighContrastMode ? {background: "var(--secondary-purple)"} : {background: "var(--primary-purple)"}}>
                     <LetterBig>P</LetterBig>
                     <div>
                         <SmallP style={{textTransform: "capitalize"}}>
@@ -48,22 +75,23 @@ class Project extends Component {
                 {
                     this.props.projects.map(item => {
                         return (
-                            <Card key={item.id} style={this.state.isHighContrastMode ? {background: "var(--secondary-purple)"} : {background: "var(--primary-purple)"}}>
+                            <Card key={item.id} style={isHighContrastMode ? {background: "var(--secondary-purple)"} : {background: "var(--primary-purple)"}}>
                             <SmallP>{item.name}</SmallP>
                             <Line />
                             <img src={item.logo} alt={item.name}/>
                             <H2>{item.title}</H2>
                             <P>{item.description}</P>
                             <Line />
-                            <QuoteSmall>"{item.quote}"</QuoteSmall>
+                            {item.quote !== "" ? <QuoteSmall>"{item.quote}"</QuoteSmall> : null}
                             <SmallP fontStyle="italic" textAlign="right" margin="15px 0 0 0">{item.author_quote}</SmallP>
                             <Line />
+                            {/* {this.readMore()} */}
                             <img src={item.read_more_image} alt={item.name}/>
                             <P>{item.read_more_image_description}</P>
                             <P>{item.read_more_paragraph}</P>
-                            <QuoteSmall>"{item.read_more_quote}"</QuoteSmall>
+                            {item.quote !== "" ? <QuoteSmall>"{item.quote}"</QuoteSmall> : null}
                             <SmallP fontStyle="italic" textAlign="right" margin="15px 0 0 0">{item.read_more_author_quote}</SmallP>
-                            {/* <Line /> */}
+                            <Line />
                             </Card>
                         )
                     })

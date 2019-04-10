@@ -5,40 +5,37 @@ import Layout from '../Layout';
 import H1 from '../H1';
 import Card from '../Card';
 import Navbar from '../Navbar';
+import nookies from 'nookies';
 
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isHighContrastMode: false,
-    }
-
-    this.handleContrastMode = this.handleContrastMode.bind(this);
+  constructor(props) {
+  super(props);
+  this.state = {
+    isHighContrastMode: null
+  }
   }
 
-  handleContrastMode() {
-    this.setState(prevState => {
-      return {
-        isHighContrastMode: !prevState.isHighContrastMode,
-      }
+  componentDidMount() {
+    this.setState({
+      isHighContrastMode: nookies.get(this.state.ctx).contrast === "true" ? "true" : "false"
     })
   }
 
   render() {
+    const isHighContrastMode = this.state.isHighContrastMode === "true"
 
     return(
-      <Layout isHighContrastMode={this.state.isHighContrastMode} handleContrastMode={this.handleContrastMode}>
-        <Navbar contrast={this.state.isHighContrastMode} style={{position: "static", display: "block", fontWeight: "bold"}} />
-        <Card style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
-        <Card style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
-        <Card style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
-        <Card style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
-        <Card style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
-        <Card style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
-        <Card style={this.state.isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
+      <Layout>
+        <Card style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
+        <Card style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
+        <Card style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
+        <Card style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
+        <Card style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
+        <Card style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
+        <Card style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
       </Layout>
 
     )
