@@ -2,3 +2,4 @@
 /nextjs/next.config.js
 /nextjs/.next
 **/.next
+/nextjs/.env
