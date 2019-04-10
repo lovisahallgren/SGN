@@ -16,6 +16,7 @@ const StyledReadMoreCard = styled.div`
   color: black;
   padding: 16px 16px 20px 16px;
   margin: 16px 0;
+  /* opacity: 0; */
   /* top: 100vh; */
   /* margin: 10px; */
   /* padding: 16px; */

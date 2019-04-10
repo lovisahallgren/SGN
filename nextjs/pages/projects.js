@@ -30,7 +30,6 @@ export default class extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <>
         <Project {...this.props}/>
