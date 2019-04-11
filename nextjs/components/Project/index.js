@@ -67,7 +67,6 @@ class Project extends Component {
                         item.read_more_paragraph !== null ||
                         item.read_more_quote !== null ?
                         <ReadMoreButton>
-                          {/* <ReadMoreCard style={isHighContrastMode ? {background: "var(--primary-purple)"} : {background: "var(--secondary-purple)"}}> */}
                           <ReadMoreCard style={isHighContrastMode ? {background: "var(--primary-purple)"} : {background: "var(--secondary-purple)"}}>
                             <img src={item.read_more_image || undefined} alt={item.name}/>
                             <P>{item.read_more_image_description}</P>

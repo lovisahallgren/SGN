@@ -14,7 +14,7 @@ const StyledReadMoreButton = styled.button`
   font-size: ${props => props.fontSize || '1rem'};
   font-weight: ${props => props.fontWeight || 'bold'};
   text-align: ${props => props.textAlign || 'left'};
-  border: 2px solid purple;
+  border: none;
 `;
 
 class ReadMoreButton extends Component {
@@ -43,9 +43,13 @@ class ReadMoreButton extends Component {
   }
 
   render() {
-    console.log(this.state.isExpanded);
     const { children } = this.props;
     const isHighContrastMode = this.state.isHighContrastMode === "true"
+    const style= {
+      width: "100%",
+      height: "10%",
+      background: "black"
+    }
     return (
      <div>
           {this.state.isExpanded && children}

@@ -6,7 +6,6 @@ import nookies from 'nookies';
 const StyledReadMoreCard = styled.div`
   width: 100%;
   height: auto;
-  overflow: hidden;
   flex-direction: column;
   justify-content: space-around;
   position: relative;
@@ -14,7 +13,7 @@ const StyledReadMoreCard = styled.div`
   color: black;
   padding: 16px 16px 36px 16px;
   margin-top: -1rem;
-  transition: transformY 15s ease;
+  transition: height 15s ease;
 `;
 
 class ReadMoreCard extends Component {
