@@ -14,6 +14,7 @@ import LetterBig from '../LetterBig'
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import ReadMoreCard from '../ReadMoreCard';
+import ReadMoreButton from '../ReadMoreButton';
 import nookies from 'nookies';
 class Project extends Component {
   constructor(props) {
@@ -64,16 +65,17 @@ class Project extends Component {
                       {item.read_more_image !== null ||
                         item.read_more_image_description !== null ||
                         item.read_more_paragraph !== null ||
-                        item.read_more_quote !== null ?
-                      <ReadMoreCard style={isHighContrastMode ? {background: "var(--primary-purple)"} : {background: "var(--secondary-purple)"}}>
-                      {/* {this.readMore()} */}
-                        <img src={item.read_more_image || undefined} alt={item.name}/>
-                        <P>{item.read_more_image_description}</P>
-                        <P>{item.read_more_paragraph}</P>
-                        {item.quote !== "" ? <QuoteSmall>"{item.quote}"</QuoteSmall> : null}
-                        <SmallP fontStyle="italic" textAlign="right" margin="15px 0 0 0">{item.read_more_author_quote}</SmallP>
-                        <Line />
-                      </ReadMoreCard> : null}
+                        item.read_more_quote !== null ? <ReadMoreButton />
+                      // <ReadMoreCard style={isHighContrastMode ? {background: "var(--primary-purple)"} : {background: "var(--secondary-purple)"}}>
+                      //   <img src={item.read_more_image || undefined} alt={item.name}/>
+                      //   <P>{item.read_more_image_description}</P>
+                      //   <P>{item.read_more_paragraph}</P>
+                      //   {item.quote !== "" ? <QuoteSmall>"{item.quote}"</QuoteSmall> : null}
+                      //   <SmallP fontStyle="italic" textAlign="right" margin="15px 0 0 0">{item.read_more_author_quote}</SmallP>
+                      //   <Line />
+                      // </ReadMoreCard>
+                      : null}
+
                       </div>
                   )
               })

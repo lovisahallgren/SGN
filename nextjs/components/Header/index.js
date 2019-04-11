@@ -14,8 +14,8 @@ const StyledHeader = styled.div`
 
     position: fixed;
     top: 0;
-    /* left: 3.5%; */
-    width: 92%;
+    left: 3.5%;
+    width: 93%;
     padding: 16px 0px;
     background: white;
     /* height: 10%; */
