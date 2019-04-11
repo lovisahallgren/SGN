@@ -35,11 +35,9 @@ class Header extends Component {
     super(props);
     this.state = {
       menuIsOpen: false,
-
     }
 
     this.handleClick = this.handleClick.bind(this);
-    // this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
@@ -54,20 +52,9 @@ class Header extends Component {
     })
   }
 
-  // handleScroll() {
-  //   if (window.scrollY > 300) {
-  //     this.setState({menuIsOpen: false})
-  //   } else {
-  //     this.setState({menuIsOpen: true})
-  //   }
-  // }
-
   render() {
     const showmenuStyle = {
       display: "block",
-      // height: "28vh",
-      // opacity: 1,
-      // transition: "opacity 0.4s ease",
     }
 
     return (

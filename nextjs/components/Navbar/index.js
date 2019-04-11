@@ -12,9 +12,6 @@ const StyledNavbar = styled.div`
   width: 101%;
   background: white;
   height: 28vh;
-  /* opacity: 0; */
-  /* transform: translate(0, -100px); */
-  /* transition: opacity 0.4s ease; */
 
   ul {
     display: grid;
