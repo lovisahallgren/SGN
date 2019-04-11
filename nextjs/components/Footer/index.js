@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import NavbarItem from '../NavbarItem';
 import nookies from 'nookies';
-
+import FooterIcons from '../FooterIcons';
+import SmallP from '../SmallP';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -30,9 +31,16 @@ const StyledFooter = styled.footer`
     align-items: center;
   }
 
-  div {
+  &div {
     font-weight: ${props => props.fontWeight || 'normal'};
     width: 50%;
+  }
+
+  main {
+    display: flex;
+    width: 75%;
+    margin: 1.5rem;
+    justify-content: space-around;
   }
 
   button {
@@ -79,7 +87,7 @@ const StyledFooter = styled.footer`
 
    render() {
      const isHighContrastMode = this.state.isHighContrastMode === "true"
-     const {languageText,name, street, city, country, phone, email} = this.props
+     const {contrastText,languageText,name, street, city, country, phone, email} = this.props
 
      return (
        <StyledFooter>
@@ -92,8 +100,13 @@ const StyledFooter = styled.footer`
             <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-yellow)"} : {background: "var(--primary-yellow)"}} link="/contact" text="Kontakt"></NavbarItem>
           </ul>
           <article>
-            <button onClick={this.handleContrastMode}></button>
-
+            <button onClick={this.handleContrastMode}>{contrastText}</button>
+            <FooterIcons style={{width: "100%"}} />
+            <main>
+              <SmallP textDecoration="underline">Facebook</SmallP>
+              <SmallP textDecoration="underline">Youtube</SmallP>
+              <SmallP textDecoration="underline">Instagram</SmallP>
+            </main>
             <button>{languageText}</button>
             <div style={{color: "#FFF"}}>
               <p>{name}</p>

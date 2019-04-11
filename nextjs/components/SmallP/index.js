@@ -9,6 +9,7 @@ const SmallP = styled.p`
     font-style: ${props => props.fontStyle || 'normal'};
     text-align: ${props => props.textAlign || 'left'};
     margin: ${props => props.margin || '0 0 0 0'};
+    text-decoration: ${props => props.textDecoration || 'none'};
 
 `
 
