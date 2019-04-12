@@ -33,6 +33,7 @@ const StyledForm = styled.form`
     margin-top:20%;
     font-size: 1rem;
     padding-bottom: 3%;
+    padding-top: 3%;
   }
 
   .form-button-div{
