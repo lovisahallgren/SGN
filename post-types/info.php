@@ -12,7 +12,7 @@ add_action('init', function () {
             'search_items' => __('Search Info'),
             'singular_name' => __('Info'),
         ],
-				'supports' => [
+        'supports' => [
             'title',
             'editor',
             'thumbnail',
