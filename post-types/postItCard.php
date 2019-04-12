@@ -12,7 +12,7 @@ add_action('init', function () {
             'search_items' => __('Search PostItCards'),
             'singular_name' => __('PostItCard'),
         ],
-				'supports' => [
+        'supports' => [
             'title',
             'editor',
             'thumbnail',
