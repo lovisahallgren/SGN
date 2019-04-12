@@ -14,20 +14,17 @@ const StyledReadMoreCard = styled.div`
   padding: 16px 16px 36px 16px;
   margin-top: -1rem;
   transition: height 15s ease;
-  border-top: 2px solid var(--primary-purple);
 
   img {
     width: 100%;
     margin: 1rem 0;
   }
-  /* border-bottom: 2px solid var(--primary-purple); */
 `;
 
 class ReadMoreCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
+    this.state = {};
   }
 
   render() {
@@ -40,8 +37,6 @@ class ReadMoreCard extends Component {
   }
 }
 
-ReadMoreCard.propTypes = {
-
-};
+ReadMoreCard.propTypes = {};
 
 export default ReadMoreCard;

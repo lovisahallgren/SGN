@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import NavbarItem from '../NavbarItem';
+import nookies from 'nookies';
 
 const StyledNavbar = styled.div`
   display: none;
@@ -37,13 +38,53 @@ const StyledNavbar = styled.div`
   .border {
     border-left: 2px solid black;
   }
+
+  button {
+    padding: 0px 16px;
+    background: ${props => props.background || '#FFF'};
+    color: ${props => props.color || '#000'};
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+  }
 `
 
-const Navbar = (props) => {
-    const isHighContrastMode = props.contrast === "true"
+class Navbar extends Component {
+   constructor(props) {
 
-    return(
-      <StyledNavbar style={props.style}>
+     super(props);
+     this.state = {
+       isHighContrastMode: null,
+     }
+
+     this.handleContrastMode = this.handleContrastMode.bind(this);
+   }
+
+   static async getInitialProps(ctx) {
+     this.setState({
+       ctx: ctx,
+     })
+   }
+
+   componentDidMount() {
+     this.setState({
+       isHighContrastMode: nookies.get(this.state.ctx).contrast === "true" ? "true" : "false"
+     })
+   }
+
+   handleContrastMode() {
+     nookies.set(this.state.ctx, 'contrast', nookies.get(this.state.ctx).contrast === "true" ? "false" : "true", {
+       maxAge: 30 * 24 * 60 * 60,
+       path: '/'
+     })
+     document.location.reload();
+   }
+   render() {
+     const isHighContrastMode = this.state.isHighContrastMode === "true"
+
+     return(
+       <StyledNavbar style={this.props.style}>
         <ul>
             <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} link="/information" text="Info"></NavbarItem>
             <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-pink)"} : {background: "var(--primary-pink)"}} link="/activities" text="Aktivitet"></NavbarItem>
@@ -53,12 +94,12 @@ const Navbar = (props) => {
             <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-yellow)"} : {background: "var(--primary-yellow)"}} link="/contact" text="Kontakt"></NavbarItem>
         </ul>
         <div>
-          <a href="">GDPR</a>
-          <a className="border" href="">Log in</a>
-          <a className="border" href="">Högkontrastläge</a>
+          <button>Stor text</button>
+          <button className="border" onClick={this.handleContrastMode}>Högkontrastläge</button>
         </div>
       </StyledNavbar>
     )
+  }
   }
 
 Navbar.propTypes = {

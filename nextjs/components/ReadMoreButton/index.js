@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import nookies from 'nookies';
 import ReadMoreCard from '../ReadMoreCard';
+import ArrowUp from '../SVGs/ArrowUp';
+import ArrowDown from '../SVGs/ArrowDown';
 
 const StyledReadMoreButton = styled.button`
   width: 100%;
@@ -14,10 +16,12 @@ const StyledReadMoreButton = styled.button`
   font-size: ${props => props.fontSize || '1rem'};
   font-weight: ${props => props.fontWeight || 'bold'};
   text-align: ${props => props.textAlign || 'left'};
-  border-top: 2px solid var(--primary-purple);
+  background-color: ${props => props.background || 'white'};
   border-bottom: none;
   border-right: none;
   border-left: none;
+  display: flex;
+  justify-content: space-between;
 `;
 
 class ReadMoreButton extends Component {
@@ -25,48 +29,46 @@ class ReadMoreButton extends Component {
     super(props);
     this.state = {
       isHighContrastMode: null,
-      isExpanded: false,
-    }
+      isExpanded: false
+    };
 
     this.expandReadMore = this.expandReadMore.bind(this);
   }
 
   componentDidMount() {
     this.setState({
-      isHighContrastMode: nookies.get(this.state.ctx).contrast === "true" ? "true" : "false"
-    })
+      isHighContrastMode:
+        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false'
+    });
   }
 
   expandReadMore() {
     this.setState(prevState => {
       return {
-        isExpanded: !prevState.isExpanded,
-      }
-    })
+        isExpanded: !prevState.isExpanded
+      };
+    });
   }
 
   render() {
     const { children } = this.props;
-    const isHighContrastMode = this.state.isHighContrastMode === "true"
-    const style= {
-      width: "100%",
-      height: "10%",
-      background: "black"
-    }
+    const isHighContrastMode = this.state.isHighContrastMode === 'true';
+
     return (
-     <div>
-          {this.state.isExpanded && children}
-        <StyledReadMoreButton onClick={this.expandReadMore} style={isHighContrastMode ? {background: "var(--secondary-purple)"} : {background: "var(--primary-purple)"}}>
-          {this.state.isExpanded ? "Läs mindre" : "Läs mer"}
+      <div>
+        {this.state.isExpanded && children}
+        <StyledReadMoreButton
+          onClick={this.expandReadMore}
+          style={this.props.style}
+        >
+          {this.state.isExpanded ? 'Läs mindre' : 'Läs mer'}
+          {this.state.isExpanded ? <ArrowUp /> : <ArrowDown />}
         </StyledReadMoreButton>
       </div>
     );
   }
 }
 
-ReadMoreButton.propTypes = {
-
-};
+ReadMoreButton.propTypes = {};
 
 export default ReadMoreButton;
-
