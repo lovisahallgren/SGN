@@ -14,7 +14,7 @@ const StyledReadMoreButton = styled.button`
   font-size: ${props => props.fontSize || '1rem'};
   font-weight: ${props => props.fontWeight || 'bold'};
   text-align: ${props => props.textAlign || 'left'};
-  border: none;
+  border-top: 2px solid var(--primary-purple);
 `;
 
 class ReadMoreButton extends Component {

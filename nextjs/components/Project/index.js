@@ -51,34 +51,32 @@ class Project extends Component {
                   return (
                     <div key={item.id}>
                       <Card style={isHighContrastMode ? {background: "var(--secondary-purple)"} : {background: "var(--primary-purple)"}}>
-                      <SmallP>{item.name}</SmallP>
+                      <SmallP>{item.project_name}</SmallP>
                       <Line />
                       <img src={item.logo} alt={item.name}/>
                       <H2>{item.title}</H2>
-                      <P>{item.description}</P>
+                      <P>{item.excerpt}</P>
                       <Line />
-                      {item.quote !== "" ? <QuoteSmall>"{item.quote}"</QuoteSmall> : null}
-                      <SmallP fontStyle="italic" textAlign="right" margin="15px 0 0 0">{item.author_quote}</SmallP>
-                      <Line />
-
                       </Card>
-                      {item.read_more_image !== null ||
-                        item.read_more_image_description !== null ||
-                        item.read_more_paragraph !== null ||
-                        item.read_more_quote !== null ?
+                      {item.image !== null ||
+                        item.image_description !== null ||
+                        item.content !== null ||
+                        item.quote !== null ||
+                        item.quote_name !== null ?
                         <ReadMoreButton>
-                          <ReadMoreCard style={isHighContrastMode ? {background: "var(--primary-purple)"} : {background: "var(--secondary-purple)"}}>
-                            <img src={item.read_more_image || undefined} alt={item.name}/>
-                            <P>{item.read_more_image_description}</P>
-                            <P>{item.read_more_paragraph}</P>
-                            {item.quote !== "" ? <QuoteSmall>"{item.quote}"</QuoteSmall> : null}
-                            <SmallP fontStyle="italic" textAlign="right" margin="15px 0 0 0">{item.read_more_author_quote}</SmallP>
+                          <ReadMoreCard style={isHighContrastMode ? {background: "var(--secondary-purple)"} : {background: "var(--secondary-purple)"}}>
                             <Line />
+                            <img src={item.image || undefined} alt={item.name}/>
+                            <P style={{marginTop: "-1rem", fontWeight:"bold", width: "80%"}}>{item.image_description}</P>
+                            <Line />
+                            {item.quote !== "" ? <QuoteSmall style={{marginTop: "1rem"}}>"{item.quote}"</QuoteSmall> : null}
+                            <SmallP fontStyle="italic" textAlign="right" margin="1rem 0">{item.quote_name}</SmallP>
+                            <Line />
+                            <P>{item.content}</P>
                           </ReadMoreCard>
                         </ReadMoreButton>
                       : null}
-
-                      </div>
+                    </div>
                   )
               })
           }
