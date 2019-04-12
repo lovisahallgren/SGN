@@ -4,23 +4,18 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Navbar from '../Navbar';
 import Layout from '../Layout';
-import HamburgerIcon from '../HamburgerIcon';
+import Hamburger from '../SVGs/Hamburger';
 
 const StyledHeader = styled.div`
-  /* height: 10vh; */
-  /* display: flex;
-  justify-content: space-around; */
-  /* transition: height .3s ease; */
-
     position: fixed;
     top: 0;
     left: 3.5%;
     width: 93%;
     padding: 16px 0px;
     background: white;
-    /* height: 10%; */
     display: flex;
     justify-content: space-between;
+    z-index: 1;
 
   a {
     text-decoration: none;
@@ -41,14 +36,11 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
   }
 
   handleClick() {
-    this.setState(prevState => {
-      return {
-        menuIsOpen: !prevState.menuIsOpen,
-      }
+    this.setState({
+      menuIsOpen: !this.state.menuIsOpen
     })
   }
 
@@ -66,7 +58,7 @@ class Header extends Component {
           <Link href="/">
             <a href="/">SGN</a>
           </Link>
-          <HamburgerIcon onClick={this.handleClick}/>
+          <Hamburger openMenu={this.handleClick} />
           <Navbar contrast={this.props.contrast} style={this.state.menuIsOpen ? showmenuStyle : null}/>
       </StyledHeader>
     )
