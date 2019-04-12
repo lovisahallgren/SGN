@@ -5,33 +5,36 @@ declare(strict_types=1);
 error_reporting(E_ALL & ~E_NOTICE);
 
 // Register custom post types.
-require get_template_directory().'/post-types/branch.php';
+// require get_template_directory().'/post-types/branch.php';
 require get_template_directory().'/post-types/project.php';
-require get_template_directory().'/post-types/news.php';
+require get_template_directory().'/post-types/activities.php';
+require get_template_directory().'/post-types/social.php';
+require get_template_directory().'/post-types/contribute.php';
+require get_template_directory().'/post-types/contact.php';
 
 // Register example taxonomy for the custom post types if needed.
 // require get_template_directory().'/taxonomies/example.php';
 
-// Add Branches to Rest API
-add_action( 'init', 'my_branch_cpt' );
-function my_branch_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'Branches'
-    );
-    register_post_type( 'branch', $args );
-}
-// Add News to Rest API
-add_action( 'init', 'my_news_cpt' );
-function my_news_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'News'
-    );
-    register_post_type( 'news', $args );
-}
+// // Add Branches to Rest API
+// add_action( 'init', 'my_branch_cpt' );
+// function my_branch_cpt() {
+//     $args = array(
+//       'public'       => true,
+//       'show_in_rest' => true,
+//       'label'        => 'Branches'
+//     );
+//     register_post_type( 'branch', $args );
+// }
+// // Add News to Rest API
+// add_action( 'init', 'my_news_cpt' );
+// function my_news_cpt() {
+//     $args = array(
+//       'public'       => true,
+//       'show_in_rest' => true,
+//       'label'        => 'News'
+//     );
+//     register_post_type( 'news', $args );
+// }
 // Add Projects to Rest API
 add_action( 'init', 'my_project_cpt' );
 function my_project_cpt() {
@@ -51,6 +54,46 @@ function my_info_cpt() {
       'label'        => 'Info'
     );
     register_post_type( 'info', $args );
+}
+// Add Social to Rest API
+add_action( 'init', 'my_social_cpt' );
+function my_social_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Social'
+    );
+    register_post_type( 'social', $args );
+}
+// Add Contribute to Rest API
+add_action( 'init', 'my_contribute_cpt' );
+function my_contribute_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Contribute'
+    );
+    register_post_type( 'contribute', $args );
+}
+// Add Contact to Rest API
+add_action( 'init', 'my_contact_cpt' );
+function my_contact_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Contact'
+    );
+    register_post_type( 'contact', $args );
+}
+// Add Activities to Rest API
+add_action( 'init', 'my_activities_cpt' );
+function my_activities_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Activities'
+    );
+    register_post_type( 'activities', $args );
 }
 
 // Get the advanced custom fields for Branches in JSON
