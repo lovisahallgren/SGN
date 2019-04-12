@@ -5,6 +5,7 @@ import Navbar from '../Navbar';
 import GlobalStyle from '../../styles';
 import Head from 'next/head';
 import nookies from 'nookies';
+import Form from '../Form';
 
 class Layout extends Component {
   constructor(props) {
@@ -34,6 +35,9 @@ class Layout extends Component {
                 <Header contrast={this.state.isHighContrastMode}/>
                 <div style={{width: "100%", height: "6vh"}}></div>
                     { children }
+
+                <Form title="Vill du kontakta oss?" name="Namn" phone="Telefonnummer" email="E-mail" submit="Skicka" ></Form>
+
                 <Footer
                   contrast={this.state.isHighContrastMode}
                   onClick={this.state.handleContrastMode}
@@ -52,4 +56,3 @@ class Layout extends Component {
 }
 
 export default Layout;
-
