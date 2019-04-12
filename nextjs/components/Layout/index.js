@@ -36,7 +36,14 @@ class Layout extends Component {
                 <div style={{width: "100%", height: "6vh"}}></div>
                     { children }
 
-                <Form title="Vill du kontakta oss?" name="Namn" phone="Telefonnummer" email="E-mail" submit="Skicka" ></Form>
+                <Form
+                  title="Vill du kontakta oss?"
+                  name="Namn"
+                  phone="Telefonnummer"
+                  email="E-mail"
+                  submit="Skicka"
+                  subject="Ärende">
+                </Form>
 
                 <Footer
                   contrast={this.state.isHighContrastMode}

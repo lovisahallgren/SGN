@@ -32,6 +32,7 @@ const StyledForm = styled.form`
     width:100%;
     margin-top:20%;
     font-size: 1rem;
+    padding-bottom: 3%;
   }
 
   .form-button-div{
@@ -62,6 +63,9 @@ const Form = props => {
         </div>
         <div className="form-input">
           <input placeholder={props.email} type="text"/>
+        </div>
+        <div className="form-input">
+          <input placeholder={props.subject} type="text"/>
         </div>
         <div className="form-button-div">
           <input className="form-button" type="submit" value={props.submit} />
