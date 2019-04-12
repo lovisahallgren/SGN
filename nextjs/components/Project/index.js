@@ -15,6 +15,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import ReadMoreCard from '../ReadMoreCard';
 import ReadMoreButton from '../ReadMoreButton';
+import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
 class Project extends Component {
   constructor(props) {
@@ -65,11 +66,16 @@ class Project extends Component {
                         item.quote_name !== null ?
                         <ReadMoreButton>
                           <ReadMoreCard style={isHighContrastMode ? {background: "var(--secondary-purple)"} : {background: "var(--secondary-purple)"}}>
-                            <Line />
                             <img src={item.image || undefined} alt={item.name}/>
-                            <P style={{marginTop: "-1rem", fontWeight:"bold", width: "80%"}}>{item.image_description}</P>
-                            <Line />
-                            {item.quote !== "" ? <QuoteSmall style={{marginTop: "1rem"}}>"{item.quote}"</QuoteSmall> : null}
+                            <div style={{display: "flex"}}>
+                              <ArrowUp />
+                              <P style={{marginTop: "-1rem", fontWeight:"bold", width: "90%"}}>{item.image_description}</P>
+                            </div>
+                            {item.quote !== "" ?
+                              <div>
+                                <Line />
+                                <QuoteSmall style={{marginTop: "1rem"}}>"{item.quote}"</QuoteSmall>
+                              </div> : null}
                             <SmallP fontStyle="italic" textAlign="right" margin="1rem 0">{item.quote_name}</SmallP>
                             <Line />
                             <P>{item.content}</P>
