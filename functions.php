@@ -11,6 +11,7 @@ require get_template_directory().'/post-types/activities.php';
 require get_template_directory().'/post-types/social.php';
 require get_template_directory().'/post-types/contribute.php';
 require get_template_directory().'/post-types/contact.php';
+require get_template_directory().'/post-types/postItCard.php';
 
 // Register example taxonomy for the custom post types if needed.
 // require get_template_directory().'/taxonomies/example.php';

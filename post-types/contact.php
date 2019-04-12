@@ -12,7 +12,7 @@ add_action('init', function () {
             'search_items' => __('Search Contact'),
             'singular_name' => __('Contact'),
         ],
-				'supports' => [
+        'supports' => [
             'title',
             'editor',
             'thumbnail',

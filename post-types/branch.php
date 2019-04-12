@@ -12,7 +12,7 @@ add_action('init', function () {
             'search_items' => __('Search Branch'),
             'singular_name' => __('Branch'),
         ],
-				'supports' => [
+        'supports' => [
             'title',
             'editor',
             'thumbnail',
