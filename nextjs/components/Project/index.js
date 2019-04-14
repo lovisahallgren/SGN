@@ -112,7 +112,7 @@ class Project extends Component {
                       <ArrowUp />
                       <P
                         style={{
-                          marginTop: '-1rem',
+                          marginTop: '-0.7rem',
                           fontWeight: 'bold',
                           width: '100%'
                         }}

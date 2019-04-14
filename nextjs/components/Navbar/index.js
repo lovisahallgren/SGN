@@ -10,7 +10,8 @@ const StyledNavbar = styled.div`
   position: absolute;
   left: 0;
   top: 98%;
-  width: 101%;
+  width: 100%;
+  padding: 0 1rem;
   background: white;
   height: 28vh;
 

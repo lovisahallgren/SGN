@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import NavbarItem from '../NavbarItem';
 import nookies from 'nookies';
-import FooterIcons from '../FooterIcons';
 import SmallP from '../SmallP';
 import ArrowRight from '../SVGs/ArrowRight';
+import Facebook from '../SVGs/Facebook';
+import Youtube from '../SVGs/Youtube';
+import Instagram from '../SVGs/Instagram';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -28,8 +30,10 @@ const StyledFooter = styled.footer`
     background: ${props => props.background || 'rgba(0,0,0,0.75)'};
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    padding: 1rem 0;
+    margin: 1rem 0 0 0;
   }
 
   &div {
@@ -39,8 +43,9 @@ const StyledFooter = styled.footer`
 
   main {
     display: flex;
-    width: 75%;
-    margin: 1.5rem;
+    flex-direction: column;
+    height: 15%;
+    margin: 1rem;
     justify-content: space-around;
   }
 
@@ -170,21 +175,28 @@ class Footer extends Component {
             {contrastText}
             <ArrowRight />
           </button>
-          <FooterIcons style={{ width: '100%' }} />
           <main>
-            <SmallP textDecoration="underline">Facebook</SmallP>
-            <SmallP textDecoration="underline">Youtube</SmallP>
-            <SmallP textDecoration="underline">Instagram</SmallP>
+            <div>
+              <Facebook />
+              <Youtube />
+              <Instagram />
+            </div>
+            <div style={{display: "flex", justifyContent: "space-between"}}>
+              <SmallP textDecoration="underline">Facebook</SmallP>
+              <SmallP textDecoration="underline">Youtube</SmallP>
+              <SmallP textDecoration="underline">Instagram</SmallP>
+            </div>
           </main>
           <button>{languageText}</button>
-          <div style={{ color: '#FFF' }}>
-            <p>{name}</p>
-            <p>{street}</p>
+          <div style={{ color: '#FFF', display: "flex", flexDirection: "column", marginLeft: "1rem" }}>
+            <p style={{fontWeight: "bold", marginBottom: "1rem"}}>{name}</p>
+            <p style={{width: "70%"}}>{street}</p>
             <p>{city}</p>
-            <p>{country}</p>
+            <p style={{margin: "1rem 0"}}>{country}</p>
             <p>{phone}</p>
             <p>{email}</p>
           </div>
+          <SmallP textDecoration="underline" margin="0 0 0 -24%">Privacy Policy / GDPR</SmallP>
         </article>
       </StyledFooter>
     );

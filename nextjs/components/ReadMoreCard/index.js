@@ -15,7 +15,6 @@ const StyledReadMoreCard = styled.div`
   color: black;
   padding: 1rem 1rem 2.25rem 1rem;
   margin-top: -1rem;
-  transition: height 15s ease;
 
   img {
     width: 100%;
