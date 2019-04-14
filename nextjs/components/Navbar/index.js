@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import NavbarItem from '../NavbarItem';
@@ -26,11 +26,11 @@ const StyledNavbar = styled.div`
     display: flex;
     justify-content: center;
     font-weight: bold;
-    padding-top: 16px;
+    padding-top: 1rem;
   }
 
   a {
-    padding: 0px 16px;
+    padding: 0 1rem;
     text-decoration: none;
     color: black;
   }
@@ -48,62 +48,115 @@ const StyledNavbar = styled.div`
     font-size: 1rem;
     cursor: pointer;
   }
-`
+`;
 
 class Navbar extends Component {
-   constructor(props) {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isHighContrastMode: null
+    };
 
-     super(props);
-     this.state = {
-       isHighContrastMode: null,
-     }
+    this.handleContrastMode = this.handleContrastMode.bind(this);
+  }
 
-     this.handleContrastMode = this.handleContrastMode.bind(this);
-   }
+  static async getInitialProps(ctx) {
+    this.setState({
+      ctx: ctx
+    });
+  }
 
-   static async getInitialProps(ctx) {
-     this.setState({
-       ctx: ctx,
-     })
-   }
+  componentDidMount() {
+    this.setState({
+      isHighContrastMode:
+        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false'
+    });
+  }
 
-   componentDidMount() {
-     this.setState({
-       isHighContrastMode: nookies.get(this.state.ctx).contrast === "true" ? "true" : "false"
-     })
-   }
+  handleContrastMode() {
+    nookies.set(
+      this.state.ctx,
+      'contrast',
+      nookies.get(this.state.ctx).contrast === 'true' ? 'false' : 'true',
+      {
+        maxAge: 30 * 24 * 60 * 60,
+        path: '/'
+      }
+    );
+    document.location.reload();
+  }
+  render() {
+    const isHighContrastMode = this.state.isHighContrastMode === 'true';
 
-   handleContrastMode() {
-     nookies.set(this.state.ctx, 'contrast', nookies.get(this.state.ctx).contrast === "true" ? "false" : "true", {
-       maxAge: 30 * 24 * 60 * 60,
-       path: '/'
-     })
-     document.location.reload();
-   }
-   render() {
-     const isHighContrastMode = this.state.isHighContrastMode === "true"
-
-     return(
-       <StyledNavbar style={this.props.style}>
+    return (
+      <StyledNavbar style={this.props.style}>
         <ul>
-            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} link="/information" text="Info"></NavbarItem>
-            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-pink)"} : {background: "var(--primary-pink)"}} link="/activities" text="Aktivitet"></NavbarItem>
-            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-blue)"} : {background: "var(--primary-blue)"}} link="/projects" text="Projekt"></NavbarItem>
-            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-purple)"} : {background: "var(--primary-purple)"}} link="/social" text="Socialt"></NavbarItem>
-            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-green)"} : {background: "var(--primary-green)"}} link="/contribute" text="Bidra"></NavbarItem>
-            <NavbarItem style={isHighContrastMode ? {background: "var(--secondary-yellow)"} : {background: "var(--primary-yellow)"}} link="/contact" text="Kontakt"></NavbarItem>
+          <NavbarItem
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-red)' }
+                : { background: 'var(--primary-red)' }
+            }
+            link="/information"
+            text="Info"
+          />
+          <NavbarItem
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-pink)' }
+                : { background: 'var(--primary-pink)' }
+            }
+            link="/activities"
+            text="Aktivitet"
+          />
+          <NavbarItem
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-blue)' }
+                : { background: 'var(--primary-blue)' }
+            }
+            link="/projects"
+            text="Projekt"
+          />
+          <NavbarItem
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-purple)' }
+                : { background: 'var(--primary-purple)' }
+            }
+            link="/social"
+            text="Socialt"
+          />
+          <NavbarItem
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-green)' }
+                : { background: 'var(--primary-green)' }
+            }
+            link="/contribute"
+            text="Bidra"
+          />
+          <NavbarItem
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-yellow)' }
+                : { background: 'var(--primary-yellow)' }
+            }
+            link="/contact"
+            text="Kontakt"
+          />
         </ul>
         <div>
           <button>Stor text</button>
-          <button className="border" onClick={this.handleContrastMode}>Högkontrastläge</button>
+          <button className="border" onClick={this.handleContrastMode}>
+            Högkontrastläge
+          </button>
         </div>
       </StyledNavbar>
-    )
+    );
   }
-  }
+}
 
-Navbar.propTypes = {
-
-};
+Navbar.propTypes = {};
 
 export default Navbar;

@@ -1,6 +1,8 @@
-import {createGlobalStyle} from 'styled-components';
+import {
+  createGlobalStyle
+} from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle `
   @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i');
 
   * {
@@ -18,8 +20,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0.8889rem;
     height: auto;
     font-family: 'Noto Sans', sans-serif;
-    /* display: grid;
-    grid-template-columns: repeat(12, 1fr); */
   }
 
   :root {
@@ -37,4 +37,4 @@ const GlobalStyle = createGlobalStyle`
    --secondary-red: #9B3030;
  }
 `
- export default GlobalStyle;
+export default GlobalStyle;

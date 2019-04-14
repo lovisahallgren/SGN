@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+
 const StyledSvg = styled.svg`
-  width: 7%;
-  height: 7%;
-  fill: #fff;
-  margin: 0 1rem;
+  height: ${props => props.height || '80%'};
+  width: ${props => props.width};
+  fill: ${props => props.fill || '#000'};
+  margin: 0 0 0 1rem;
 `;
 
 const ArrowRight = () => {

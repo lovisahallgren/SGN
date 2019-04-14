@@ -105,6 +105,7 @@ class Project extends Component {
                           }
                         : { background: 'var(--secondary-purple)' }
                     }
+                    background="var(--primary-purple)"
                   >
                     <img src={item.image || undefined} alt={item.name} />
                     <div style={{ display: 'flex' }}>
