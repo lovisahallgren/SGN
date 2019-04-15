@@ -16,14 +16,14 @@ export default class extends Component {
   static async getInitialProps () {
 
     // Make request for posts.
-    const posts = await axios.get(`http://${process.env.HOST}/wp-json/wp/v2/posts`)
-    const projects = await axios.get(`http://${process.env.HOST}/wp-json/wp/v2/project`)
+    // const posts = await axios.get(`http://${process.env.HOST}/wp-json/wp/v2/posts`)
+    // const projects = await axios.get(`http://${process.env.HOST}/wp-json/wp/v2/project`)
     const info = await axios.get(`http://${process.env.HOST}/wp-json/wp/v2/info`)
 
     // Return response to posts object in props.
     return {
-      posts: posts.data,
-      projects: projects.data,
+      // posts: posts.data,
+      // projects: projects.data,
       info: info.data
     }
   }
