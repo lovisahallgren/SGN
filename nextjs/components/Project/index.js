@@ -8,6 +8,7 @@ import H2 from '../H2';
 import P from '../P';
 import Card from '../Card';
 import QuoteSmall from '../QuoteSmall';
+import QuoteBig from '../QuoteBig';
 import SmallP from '../SmallP';
 import Line from '../Line';
 import LetterBig from '../LetterBig';
@@ -15,7 +16,6 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import ReadMoreCard from '../ReadMoreCard';
 import ReadMoreButton from '../ReadMoreButton';
-import ReadMoreDivider from '../ReadMoreDivider';
 import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
 
@@ -54,8 +54,7 @@ class Project extends Component {
             <SmallP style={{ textTransform: 'capitalize' }}>
               <Link href='/'>
                 <a href="">Home</a>
-              </Link>
-              > {this.props.projects[0].type}
+              </Link> > {this.props.projects[0].type} 
             </SmallP>
             <H1 style={{ textTransform: 'capitalize' }}>
               {this.props.projects[0].type}
@@ -74,11 +73,15 @@ class Project extends Component {
               >
                 <SmallP>{item.project_name}</SmallP>
                 <Line />
-                <img
-                  src={item.logo}
-                  alt={item.name}
-                  style={{ width: '50%', margin: '0 0 1rem 0' }}
-                />
+                {item.image === false ? null : 
+                  <div>
+                    <img
+                      src={item.logo}
+                      alt={item.name}
+                      style={{ width: '50%', margin: '0 0 1rem 0' }}
+                    />
+                  </div>
+                }
                 <H2>{item.title}</H2>
                 <P>{item.excerpt}</P>
                 <Line />
@@ -89,11 +92,6 @@ class Project extends Component {
               item.quote !== null ||
               item.quote_name !== null ? (
                 <div>
-                  {/* <ReadMoreDivider
-                    topColor={isHighContrastMode ? 'var(--primary-purple)' : "var(--secondary-purple)" }
-                    bottomColor={isHighContrastMode ? 'var(--primary-tint-purple)' : "var(--secondary-tint-purple)"}
-                    style={ReadMoreButton.isExpanded ? {display: "none"} : null}
-                  /> */}
                   <ReadMoreButton
                     style={
                       isHighContrastMode
@@ -122,19 +120,22 @@ class Project extends Component {
                       }
                       background="var(--primary-purple)"
                     >
-                      <img src={item.image || undefined} alt={item.name} />
-                      <div style={{ display: 'flex' }}>
-                        <ArrowUp />
-                        <P
-                          style={{
-                            marginTop: '-0.7rem',
-                            fontWeight: 'bold',
-                            width: '100%'
-                          }}
-                        >
-                          {item.image_description}
-                        </P>
-                      </div>
+                      {item.image === false ? null : 
+                        <div>
+                          <img src={item.image || undefined} alt={item.name} />
+                          <div style={{ display: 'flex' }}>
+                              <ArrowUp />
+                              <P
+                              style={{
+                                  marginTop: '-0.7rem',
+                                  fontWeight: 'bold',
+                                  width: '100%'
+                              }}
+                              >
+                              {item.image_description}
+                              </P>
+                          </div>
+                        </div>} 
                       {item.quote !== '' ? (
                         <div>
                           <Line />
@@ -159,6 +160,8 @@ class Project extends Component {
             </div>
           );
         })}
+        <QuoteBig color="#000" margin="2rem 0 1rem 0">"{this.props.projects[1].quote}"</QuoteBig>
+        <SmallP color="#000" textAlign="right" margin="1rem">{this.props.projects[1].quote_name}</SmallP>
       </Layout>
     );
   }
