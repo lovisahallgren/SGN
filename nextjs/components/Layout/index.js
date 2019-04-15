@@ -53,7 +53,7 @@ class Layout extends Component {
           contrast={this.state.isHighContrastMode}
           onClick={this.state.handleContrastMode}
           contrastText="Enable high contrast mode"
-          languageText="Svenska"
+          languageText="Språk"
           name="Support Group Network"
           street="Kungsladugårdsvägen 5 Restad Gård,"
           city="462 54 Vänersborg"

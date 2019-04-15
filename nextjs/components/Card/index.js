@@ -10,27 +10,12 @@ const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  /* align-item: center; */
-  /* height: 40vh; */
+  align-items: ${props => props.alignItems || null};
   background: ${props => props.background || 'white'};
   color: black;
   padding: 16px 16px 20px 16px;
   margin: 16px 0;
-  /* top: 100vh; */
-  /* margin: 10px; */
-  /* padding: 16px; */
-
-
 `;
-
-// const Card = (props) => {
-//   const childre =
-//   return (
-//     <StyledCard style={props.style}>
-//       {children}
-//     </StyledCard>
-//   )
-// }
 
 class Card extends Component {
   constructor(props) {
@@ -43,11 +28,9 @@ class Card extends Component {
   render() {
     const { children } = this.props;
     return (
-      // <Layout>
-        <StyledCard style={this.props.style}>
-          {children}
-        </StyledCard>
-      // </Layout>
+      <StyledCard style={this.props.style}>
+        {children}
+      </StyledCard>
     );
   }
 }

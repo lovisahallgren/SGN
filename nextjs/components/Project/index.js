@@ -50,13 +50,13 @@ class Project extends Component {
           }
         >
           <LetterBig>P</LetterBig>
-          <div>
-            <SmallP style={{ textTransform: 'capitalize' }}>
+          <div style={{alignItems: "flex-end"}}>
+            <SmallP>
               <Link href='/'>
                 <a href="">Home</a>
               </Link> > {this.props.projects[0].type} 
             </SmallP>
-            <H1 style={{ textTransform: 'capitalize' }}>
+            <H1>
               {this.props.projects[0].type}
             </H1>
           </div>

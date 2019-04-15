@@ -48,12 +48,12 @@ class Information extends Component {
                 >
                 <LetterBig>I</LetterBig>
                 <div>
-                    <SmallP style={{ textTransform: 'capitalize' }}>
+                    <SmallP>
                     <Link href='/'>
                         <a href="">Home</a>
                     </Link> > {this.props.info[0].type}
                     </SmallP>
-                    <H1 style={{ textTransform: 'capitalize' }}>
+                    <H1>
                     {this.props.info[0].type}
                     </H1>
                 </div>
@@ -70,11 +70,6 @@ class Information extends Component {
                     >
                         <SmallP>{item.category}</SmallP>
                         <Line />
-                        {/* <img
-                        src={item.logo}
-                        alt={item.name}
-                        style={{ width: '50%', margin: '0 0 1rem 0' }}
-                        /> */}
                         <H2>{item.title}</H2>
                         <P>{item.excerpt}</P>
                         <Line />
