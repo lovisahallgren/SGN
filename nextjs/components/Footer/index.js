@@ -4,6 +4,7 @@ import NavbarItem from '../NavbarItem';
 import nookies from 'nookies';
 import SmallP from '../SmallP';
 import ArrowRight from '../SVGs/ArrowRight';
+import ArrowDown from '../SVGs/ArrowDown';
 import Facebook from '../SVGs/Facebook';
 import Youtube from '../SVGs/Youtube';
 import Instagram from '../SVGs/Instagram';
@@ -61,6 +62,7 @@ const StyledFooter = styled.footer`
     padding: 0.875rem;
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
   }
 `;
 class Footer extends Component {
@@ -173,7 +175,7 @@ class Footer extends Component {
         <article>
           <button onClick={this.handleContrastMode}>
             {contrastText}
-            <ArrowRight />
+            <ArrowRight margin="0 0 0.1rem 1rem"/>
           </button>
           <main>
             <div>
@@ -187,7 +189,10 @@ class Footer extends Component {
               <SmallP textDecoration="underline">Instagram</SmallP>
             </div>
           </main>
-          <button>{languageText}</button>
+          <button>
+            {languageText}
+            <ArrowDown fill="#000" margin="0 0 0.1rem 1rem"/>
+          </button>
           <div style={{ color: '#FFF', display: "flex", flexDirection: "column", marginLeft: "1rem" }}>
             <p style={{fontWeight: "bold", marginBottom: "1rem"}}>{name}</p>
             <p style={{width: "70%"}}>{street}</p>

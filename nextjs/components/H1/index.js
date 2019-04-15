@@ -6,6 +6,7 @@ const H1 = styled.h1`
   line-height: ${props => props.lineHeight || '2.25rem'};
   font-size: ${props => props.fontSize || '2rem'};
   color: ${props => props.color || '#FFF'};
+  text-transform: ${props => props.textTransform || 'capitalize'};
 `
 
 H1.propTypes = {

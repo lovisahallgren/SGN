@@ -21,7 +21,7 @@ const StyledNavbarItem = styled.li`
   svg {
     fill: #fff;
     width: 10%;
-    margin: 0 1rem;
+    margin: 0.1rem 1rem;
   }
 `;
 
