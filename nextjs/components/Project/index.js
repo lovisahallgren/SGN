@@ -15,8 +15,10 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import ReadMoreCard from '../ReadMoreCard';
 import ReadMoreButton from '../ReadMoreButton';
+import ReadMoreDivider from '../ReadMoreDivider';
 import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
+
 class Project extends Component {
   constructor(props) {
     super(props);
@@ -50,9 +52,9 @@ class Project extends Component {
           <LetterBig>P</LetterBig>
           <div>
             <SmallP style={{ textTransform: 'capitalize' }}>
-              <Link href={'/'}>
+              <Link href='/'>
                 <a href="">Home</a>
-              </Link>{' '}
+              </Link>
               > {this.props.projects[0].type}
             </SmallP>
             <H1 style={{ textTransform: 'capitalize' }}>
@@ -86,59 +88,73 @@ class Project extends Component {
               item.content !== null ||
               item.quote !== null ||
               item.quote_name !== null ? (
-                <ReadMoreButton
-                  style={
-                    isHighContrastMode
-                      ? {
-                          background: 'var(--secondary-purple)',
-                          borderTop: '2px solid var(--primary-purple)'
-                        }
-                      : { background: 'var(--primary-purple)', border: 'none' }
-                  }
-                >
-                  <ReadMoreCard
+                <div>
+                  {/* <ReadMoreDivider
+                    topColor={isHighContrastMode ? 'var(--primary-purple)' : "var(--secondary-purple)" }
+                    bottomColor={isHighContrastMode ? 'var(--primary-tint-purple)' : "var(--secondary-tint-purple)"}
+                    style={ReadMoreButton.isExpanded ? {display: "none"} : null}
+                  /> */}
+                  <ReadMoreButton
                     style={
                       isHighContrastMode
                         ? {
                             background: 'var(--secondary-purple)',
                             borderTop: '2px solid var(--primary-purple)'
                           }
-                        : { background: 'var(--secondary-purple)' }
+                        : {
+                            background: 'var(--primary-purple)',
+                            border: 'none'
+                          }
                     }
-                    background="var(--primary-purple)"
+                    topColor={isHighContrastMode ? 'var(--primary-purple)' : "var(--secondary-purple)" }
+                    bottomColor={isHighContrastMode ? 'var(--primary-tint-purple)' : "var(--secondary-tint-purple)"}
+                    display={'none'}
+                    marginTop={isHighContrastMode ? '-2.1rem' : '-2rem'}
                   >
-                    <img src={item.image || undefined} alt={item.name} />
-                    <div style={{ display: 'flex' }}>
-                      <ArrowUp />
-                      <P
-                        style={{
-                          marginTop: '-0.7rem',
-                          fontWeight: 'bold',
-                          width: '100%'
-                        }}
-                      >
-                        {item.image_description}
-                      </P>
-                    </div>
-                    {item.quote !== '' ? (
-                      <div>
-                        <Line />
-                        <QuoteSmall style={{ marginTop: '1rem' }}>
-                          "{item.quote}"
-                        </QuoteSmall>
-                      </div>
-                    ) : null}
-                    <SmallP
-                      fontStyle="italic"
-                      textAlign="right"
-                      margin="1rem 0"
+                    <ReadMoreCard
+                      style={
+                        isHighContrastMode
+                          ? {
+                              background: 'var(--secondary-purple)',
+                              borderTop: '2px solid var(--primary-purple)'
+                            }
+                          : { background: 'var(--secondary-purple)' }
+                      }
+                      background="var(--primary-purple)"
                     >
-                      {item.quote_name}
-                    </SmallP>
-                    <Line />
-                    <P>{item.content}</P>
-                  </ReadMoreCard>
-                </ReadMoreButton>
+                      <img src={item.image || undefined} alt={item.name} />
+                      <div style={{ display: 'flex' }}>
+                        <ArrowUp />
+                        <P
+                          style={{
+                            marginTop: '-0.7rem',
+                            fontWeight: 'bold',
+                            width: '100%'
+                          }}
+                        >
+                          {item.image_description}
+                        </P>
+                      </div>
+                      {item.quote !== '' ? (
+                        <div>
+                          <Line />
+                          <QuoteSmall style={{ marginTop: '1rem' }}>
+                            "{item.quote}"
+                          </QuoteSmall>
+                        </div>
+                      ) : null}
+                      <SmallP
+                        fontStyle="italic"
+                        textAlign="right"
+                        margin="1rem 0"
+                      >
+                        {item.quote_name}
+                      </SmallP>
+                      <Line />
+                      <P>{item.content}</P>
+                    </ReadMoreCard>
+                  </ReadMoreButton>
+                </div>
               ) : null}
             </div>
           );

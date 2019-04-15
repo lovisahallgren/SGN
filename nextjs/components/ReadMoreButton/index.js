@@ -10,7 +10,7 @@ const StyledReadMoreButton = styled.button`
   width: 100%;
   height: 5%;
   position: relative;
-  top: -1rem;
+  top: 0rem;
   padding: 1rem;
   color: ${props => props.color || 'white'};
   font-size: ${props => props.fontSize || '1rem'};
@@ -22,6 +22,20 @@ const StyledReadMoreButton = styled.button`
   border-left: none;
   display: flex;
   justify-content: space-between;
+
+  div {
+    width: 100%;
+    height: 0%;
+    left: 0;
+    background-color: #FFF;
+    position: absolute;
+    margin-top: ${props => props.marginTop || '-2rem'};;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid ${props => props.topColor || 'white'};
+    border-top: 0.5rem solid ${props => props.bottomColor || 'white'};
+    display: ${props => props.display || 'block'};
+  }
 `;
 
 class ReadMoreButton extends Component {
@@ -38,7 +52,7 @@ class ReadMoreButton extends Component {
   componentDidMount() {
     this.setState({
       isHighContrastMode:
-        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false'
+        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false',
     });
   }
 
@@ -60,7 +74,11 @@ class ReadMoreButton extends Component {
         <StyledReadMoreButton
           onClick={this.expandReadMore}
           style={this.props.style}
+          topColor={this.props.topColor} bottomColor={this.props.bottomColor}
+          display={this.state.isExpanded ? this.props.display : null}
+          marginTop={this.props.marginTop}
         >
+          <div></div>
           {this.state.isExpanded ? 'Läs mindre' : 'Läs mer'}
           {this.state.isExpanded ? <ArrowUp /> : <ArrowDown />}
         </StyledReadMoreButton>

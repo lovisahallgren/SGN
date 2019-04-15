@@ -35,6 +35,18 @@ const GlobalStyle = createGlobalStyle `
    --secondary-green: #206A66;
    --secondary-pink: #8F3275;
    --secondary-red: #9B3030;
+   --primary-tint-purple: #B1AAFF;
+   --primary-tint-red: #FFA2A2;
+   --primary-tint-yellow: #FFAA5C;
+   --primary-tint-green: #47D0C8;
+   --primary-tint-blue: #7DACFD;
+   --primary-tint-pink: #FD9DE2;
+   --secondary-tint-purple: #5951A8;
+   --secondary-tint-red: #A03A3A;
+   --secondary-tint-yellow: #89501C;
+   --secondary-tint-green: #2B716E;
+   --secondary-tint-blue: #275CA9;
+   --secondary-tint-pink: #953C7C;
  }
 `
 export default GlobalStyle;

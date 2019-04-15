@@ -33,7 +33,7 @@ class ReadMoreCard extends Component {
     return (
       <StyledReadMoreCard style={this.props.style}>
         {children}
-        <CTAButton buttonText="Hello" background={this.props.background}>
+        <CTAButton buttonText="Engagera dig" background={this.props.background}>
           {this.props.buttonText}
           <ArrowRight />
         </CTAButton>
