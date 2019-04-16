@@ -3,15 +3,16 @@ import styled from 'styled-components';
 import { Fragment } from 'react';
 import Layout from '../Layout';
 import NavIndicator from '../NavIndicator';
-import H1 from '../H1'
-import H2 from '../H2'
-import P from '../P'
-import Card from '../Card'
-import QuoteSmall from '../QuoteSmall'
-import SmallP from '../SmallP'
-import Line from '../Line'
-import LetterBig from '../LetterBig'
-import nookies from 'nookies'
+import H1 from '../H1';
+import H2 from '../H2';
+import P from '../P';
+import Card from '../Card';
+import QuoteSmall from '../QuoteSmall';
+import SmallP from '../SmallP';
+import Line from '../Line';
+import LetterBig from '../LetterBig';
+import PostItCard from '../PostItCard';
+import nookies from 'nookies';
 
 
 import Link from 'next/link';
@@ -48,21 +49,31 @@ class Information extends Component {
                     {
                         this.props.info.map(item => {
                             return (
+
+
                                 <Card key={item.id} style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}}>
                                 <SmallP>{item.category}</SmallP>
+
                                 <Line />
+
                                 <H2>{item.title}</H2>
                                 <P>{item.paragraph_1}</P>
+
                                 <Line />
+
                                 <QuoteSmall>"{item.quote}"</QuoteSmall>
                                 <SmallP fontStyle="italic" textAlign="right" margin="15px 0 0 0">{item.author_quote}</SmallP>
+
                                 <Line />
+
                                 <P textIndent="16px">{item.paragraph_2}</P>
                                 {/* <Line /> */}
                                 </Card>
                             )
                         })
                     }
+                    <PostItCard style={isHighContrastMode ? {background: "var(--secondary-red)"} : {background: "var(--primary-red)"}} />
+
             </Layout>
         )
     }

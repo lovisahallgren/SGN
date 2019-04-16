@@ -22,6 +22,7 @@ class Layout extends Component {
 
   render() {
         const { children } = this.props;
+        const isHighContrastMode = this.state.isHighContrastMode === "true"
         return (
             <>
                 <GlobalStyle />
@@ -37,7 +38,7 @@ class Layout extends Component {
                 <Footer
                   contrast={this.state.isHighContrastMode}
                   onClick={this.state.handleContrastMode}
-                  contrastText="Enable high contrast mode"
+                  contrastText={isHighContrastMode ? "Disable high contrast mode" : "Enable high contrast mode"}
                   languageText="Svenska"
                   name="Support Group Network"
                   street= "Kungsladugårdsvägen 5 Restad Gård,"
@@ -52,4 +53,3 @@ class Layout extends Component {
 }
 
 export default Layout;
-
