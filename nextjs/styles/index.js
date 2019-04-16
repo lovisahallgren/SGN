@@ -1,19 +1,16 @@
-import {
-  createGlobalStyle
-} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle `
+const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i');
 
   * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    transition: 0.5s;
   }
 
   html {
-    font-size: 16px;
+    font-size: ${props => props.isBigText || '16px'};
   }
 
   body {
@@ -49,5 +46,6 @@ const GlobalStyle = createGlobalStyle `
    --secondary-tint-blue: #275CA9;
    --secondary-tint-pink: #953C7C;
  }
-`
+`;
+
 export default GlobalStyle;

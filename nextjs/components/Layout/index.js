@@ -12,22 +12,33 @@ class Layout extends Component {
     super(props);
     this.state = {
       isHighContrastMode: null,
+      isBigText: false
     };
+
+    this.handleFontSize = this.handleFontSize.bind(this);
   }
 
   componentDidMount() {
     this.setState({
       isHighContrastMode:
-        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false',
+        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false'
+    });
+  }
+
+  handleFontSize() {
+    this.setState({
+      isBigText: !this.state.isBigText
     });
   }
 
   render() {
     const { children } = this.props;
     const isHighContrastMode = this.state.isHighContrastMode === 'true';
+    const isBigText = this.state.isBigText ? '18px' : '16px';
+
     return (
       <>
-        <GlobalStyle />
+        <GlobalStyle isBigText={isBigText} />
         <Head>
           <title>Support Group Network</title>
           {/* <meta name="description" content="Support Group Network - working for a better future" /> */}
@@ -37,10 +48,13 @@ class Layout extends Component {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <Header contrast={isHighContrastMode} />
+        <Header
+          contrast={isHighContrastMode}
+          bigTextFunction={this.handleFontSize}
+          bigText={this.state.isBigText}
+        />
         <div style={{ width: '100%', height: '6vh' }} />
         {children}
-
         <Form
           title="Vill du kontakta oss?"
           name="Namn"

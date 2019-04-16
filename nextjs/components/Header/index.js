@@ -74,19 +74,24 @@ class Header extends Component {
           <a href="/"> Home </a>
         </Link>
         <Link href="/">
-          <a href="/"> SGN </a>
+          <a href="/" style={{ marginRight: '-1rem' }}>
+            SGN
+          </a>
         </Link>
         <Flag
+          style={{ marginRight: '-5rem' }}
           openLanguage={this.handleLanguage}
           src={'/static/images/sweden.svg'}
         />
+        <Hamburger openMenu={this.handleClick} />
         <LanguageNavbar
           contrast={this.props.contrast}
           style={this.state.languageIsOpen ? showmenuStyle : null}
         />
-        <Hamburger openMenu={this.handleClick} />
         <Navbar
           contrast={this.props.contrast}
+          isBigTextFunction={this.props.bigTextFunction}
+          isBigText={this.props.bigText}
           style={this.state.menuIsOpen ? showmenuStyle : null}
         />
       </StyledHeader>
