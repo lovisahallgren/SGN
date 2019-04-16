@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Line from '../Line';
-import H2 from '../H2'
+import H2 from '../H2';
+import FrontFace from './FrontFace';
+import BackFace from './BackFace';
 
 const StyledPostItCard = styled.div`
 display: flex;
@@ -26,18 +28,46 @@ background: ${props => props.background || 'white'};
   border-color: #fff #fff ${props => props.background || '#9B3030'} ${props => props.background || '#9B3030'};
   display: block;
   width: 0;
+}
 
+.flipper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .transform-style(preserve-3d);
+}
+
+.front-face,
+.back-face {
+  position: absolute;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.back-face {
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+
+}
+
+.front-face {
+  z-index: 2;
+  background: none;
 }
 
 a{
   text-decoration: underline;
-  color: ${props => props.color || 'white'};
+  color: ${props => props.color || '#FFF'};
   margin-left: 10rem;
 }
 
 h3 {
   display: inline-flex;
-  color: ${props => props.color || 'white'};
+  color: ${props => props.color || '#FFF'};
 }
 
 div {
@@ -50,8 +80,13 @@ class PostItCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: false,
-    }
+      flipped: false,
+    };
+  };
+
+  handleClick(e) {
+    this.setState({ flipped: !this.state.flipped});
+    console.log("lol");
   }
 
   render() {
@@ -59,18 +94,25 @@ class PostItCard extends Component {
 
     return (
 
-      <StyledPostItCard style={this.props.style} className={this.state.active ? 'flip': null} onclick={() => this.setState({active: !this.state.active})}>
+      <StyledPostItCard style={this.props.style} onClick={this.handleClick}>
+        <div className={"flipper" + (this.props.flipped ? "flipped" : "")}>
 
-        <div>
-          <h3>About us</h3>
-          <h3><a href="#" onClick={this.handleClick}>Vänd</a></h3>
+          <FrontFace>
+
+            <div className="h3-container">
+              <h3>About us</h3>
+              <h3><a href="#">Vänd</a></h3>
+            </div>
+
+            <Line style={{marginTop: "0rem"}}/>
+
+            <H2>Support Group Network är ett samarbete där svenskar och flyktingar tillsammans stöttar och hjälper flyktingar</H2>
+
+            <Line style={{marginTop: "0rem"}} />
+
+          </FrontFace>
+          <BackFace>lol</BackFace>
         </div>
-
-        <Line style={{marginTop: "0rem"}}/>
-
-        <H2>Support Group Network är ett samarbete där svenskar och flyktingar tillsammans stöttar och hjälper flyktingar</H2>
-
-        <Line style={{marginTop: "0rem"}} />
 
       </StyledPostItCard>
 
