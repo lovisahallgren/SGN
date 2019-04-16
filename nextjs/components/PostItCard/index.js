@@ -23,7 +23,7 @@ background: ${props => props.background || 'white'};
   right: 0;
   border-width: 0 3.5625rem 3.5625rem 0;
   border-style: solid;
-  border-color: #fff #fff #9B3030 #9B3030;
+  border-color: #fff #fff ${props => props.background || '#9B3030'} ${props => props.background || '#9B3030'};
   display: block;
   width: 0;
 

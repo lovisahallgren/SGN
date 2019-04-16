@@ -5,20 +5,19 @@ import Layout from '../Layout';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import NavIndicator from '../NavIndicator';
-import H1 from '../H1';
-import H2 from '../H2';
-import P from '../P';
-import Card from '../Card';
-import QuoteSmall from '../QuoteSmall';
-import SmallP from '../SmallP';
-import Line from '../Line';
-import LetterBig from '../LetterBig';
-import PostItCard from '../PostItCard';
+import H1 from '../H1'
+import H2 from '../H2'
+import P from '../P'
+import Card from '../Card'
+import QuoteSmall from '../QuoteSmall'
+import SmallP from '../SmallP'
+import Line from '../Line'
+import LetterBig from '../LetterBig'
+import ReadMoreCard from '../ReadMoreCard';
+import ReadMoreButton from '../ReadMoreButton';
+import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
-
-
-import Link from 'next/link';
-import PropTypes from 'prop-types';
+import PostItCard from '../PostItCard';
 
 class Information extends Component {
     constructor(props) {
