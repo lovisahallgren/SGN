@@ -8,7 +8,7 @@ import Card from '../components/Card'
 import QuoteSmall from '../components/QuoteSmall'
 import SmallP from '../components/SmallP'
 import Line from '../components/Line'
-import Information from '../components/Information'
+import Activities from '../components/Activities'
 
 export default class extends Component {
 
@@ -18,20 +18,20 @@ export default class extends Component {
     // Make request for posts.
     // const posts = await axios.get(`http://${process.env.HOST}/wp-json/wp/v2/posts`)
     // const projects = await axios.get(`http://${process.env.HOST}/wp-json/wp/v2/project`)
-    const info = await axios.get(`http://${process.env.HOST}/wp-json/wp/v2/info`)
+    const activities = await axios.get(`http://${process.env.HOST}/wp-json/wp/v2/activities`)
 
     // Return response to posts object in props.
     return {
       // posts: posts.data,
       // projects: projects.data,
-      info: info.data
+      activities: activities.data
     }
   }
 
   render() {
     return (
       <>
-        <Information {...this.props}/>
+        <Activities {...this.props}/>
 
       </>
     )

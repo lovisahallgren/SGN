@@ -5,19 +5,21 @@ import Navbar from '../Navbar';
 import GlobalStyle from '../../styles';
 import Head from 'next/head';
 import nookies from 'nookies';
+import Form from '../Form';
 
 class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isHighContrastMode: null
-    }
+    };
   }
 
   componentDidMount() {
     this.setState({
-      isHighContrastMode: nookies.get(this.state.ctx).contrast === "true" ? "true" : "false"
-    })
+      isHighContrastMode:
+        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false'
+    });
   }
 
   render() {
