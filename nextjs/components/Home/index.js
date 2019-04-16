@@ -217,6 +217,41 @@ class Home extends Component {
             </Link>
           </div>
         </HomeCard>
+        <HomeCard
+          style={
+            isHighContrastMode
+              ? { background: 'var(--secondary-red)' }
+              : { background: 'var(--test)' }
+          }
+        >
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              height: '50%'
+            }}
+          >
+            <Link href="/activities">
+              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                {this.props.activities[0].type}
+              </SmallP>
+            </Link>
+            <LetterBig>K</LetterBig>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-end',
+              height: '50%'
+            }}
+          >
+            <H2>{this.props.posts[0].title.rendered}</H2>
+            <Link href="/activities">
+              <ArrowRight />
+            </Link>
+          </div>
+        </HomeCard>
       </Layout>
     );
   }
