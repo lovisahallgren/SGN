@@ -11,19 +11,24 @@ class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isHighContrastMode: null
+      isHighContrastMode: null,
+      activeLanguage: null
     };
   }
 
   componentDidMount() {
     this.setState({
       isHighContrastMode:
-        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false'
+        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false',
+      activeLanguage:
+        nookies.get(this.state.ctx).language === 'true' ? 'true' : 'false'
     });
   }
 
   render() {
     const { children } = this.props;
+    const isHighContrastMode = this.state.isHighContrastMode === 'true';
+    const activeLanguage = this.state.activeLanguage === 'true';
     return (
       <>
         <GlobalStyle />
@@ -36,7 +41,7 @@ class Layout extends Component {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <Header contrast={this.state.isHighContrastMode} />
+        <Header contrast={isHighContrastMode} language={activeLanguage} />
         <div style={{ width: '100%', height: '6vh' }} />
         {children}
 
@@ -50,15 +55,17 @@ class Layout extends Component {
         />
 
         <Footer
-          contrast={this.state.isHighContrastMode}
+          contrast={isHighContrastMode}
           onClick={this.state.handleContrastMode}
-          contrastText="Enable high contrast mode"
+          contrastText={
+            isHighContrastMode ? 'Normalkontrastläge' : 'Högkontrastläge'
+          }
           languageText="Språk"
           name="Support Group Network"
           street="Kungsladugårdsvägen 5 Restad Gård,"
           city="462 54 Vänersborg"
           country="Sverige"
-          phone="+ 4676-884 08 84"
+          phone="+4676-884 08 84"
           email="info@supportgroup.se"
         />
       </>
