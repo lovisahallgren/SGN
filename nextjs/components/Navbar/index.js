@@ -150,7 +150,7 @@ class Navbar extends Component {
         <div>
           <button>Stor text</button>
           <button className="border" onClick={this.handleContrastMode}>
-            Högkontrastläge
+            {isHighContrastMode ? 'Normalkontrastläge' : 'Högkontrastläge'}
           </button>
         </div>
       </StyledNavbar>
