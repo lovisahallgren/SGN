@@ -17,6 +17,7 @@ import ReadMoreCard from '../ReadMoreCard';
 import ReadMoreButton from '../ReadMoreButton';
 import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
+import PostItCard from '../PostItCard';
 
 class Information extends Component {
     constructor(props) {
@@ -108,7 +109,7 @@ class Information extends Component {
                             }
                             background="var(--primary-red)"
                             >
-                            {item.image === false ? null : 
+                            {item.image === false ? null :
                             <div>
                                 <img src={item.image || undefined} alt={item.name} />
                                 <div style={{ display: 'flex' }}>
@@ -123,8 +124,8 @@ class Information extends Component {
                                     {item.image_description}
                                     </P>
                                 </div>
-                            </div>} 
-                            
+                            </div>}
+
                             {item.quote !== '' ? (
                                 <div>
                                 <Line />

@@ -12,7 +12,6 @@ class Layout extends Component {
     super(props);
     this.state = {
       isHighContrastMode: null,
-      activeLanguage: null
     };
   }
 
@@ -20,15 +19,12 @@ class Layout extends Component {
     this.setState({
       isHighContrastMode:
         nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false',
-      activeLanguage:
-        nookies.get(this.state.ctx).language === 'true' ? 'true' : 'false'
     });
   }
 
   render() {
     const { children } = this.props;
     const isHighContrastMode = this.state.isHighContrastMode === 'true';
-    const activeLanguage = this.state.activeLanguage === 'true';
     return (
       <>
         <GlobalStyle />
@@ -41,7 +37,7 @@ class Layout extends Component {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <Header contrast={isHighContrastMode} language={activeLanguage} />
+        <Header contrast={isHighContrastMode} />
         <div style={{ width: '100%', height: '6vh' }} />
         {children}
 
