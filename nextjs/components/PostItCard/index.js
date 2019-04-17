@@ -17,6 +17,8 @@ height: 16rem;
 font-weight: 100;
 margin-bottom: 10px;
 background: ${props => props.background || 'white'};
+transform-style: preserve-3d;
+
 
 :before {
   content: "";
@@ -30,33 +32,28 @@ background: ${props => props.background || 'white'};
   width: 0;
 }
 
-.flipper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  .transform-style(preserve-3d);
-}
 
 .front-face,
 .back-face {
   position: absolute;
-  background-size: 100% 100%;
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
-  border-radius: 5px;
-  backface-visibility: hidden;
+	background-size: 100% 100%;
+	height: 100%;
+	width: 100%;
+	pointer-events: none;
+	border-radius: 5px;
+	backface-visibility: hidden;
 }
 
 .back-face {
   transform: rotateY(-180deg);
-  backface-visibility: hidden;
-
 }
 
 .front-face {
   z-index: 2;
-  background: none;
+}
+
+.post-it-card .flip {
+  transform: rotateY(180deg);
 }
 
 a{
@@ -80,13 +77,15 @@ class PostItCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      flipped: false,
     };
   };
 
   handleClick(e) {
-    this.setState({ flipped: !this.state.flipped});
     console.log("lol");
+    const postItCard = document.querySelector(".post-it-card");
+    postItCard.classList.toggle("flip");
+    const back = document.querySelector(".back-face")
+    back.classList.toggle("flip")
   }
 
   render() {
@@ -94,8 +93,7 @@ class PostItCard extends Component {
 
     return (
 
-      <StyledPostItCard style={this.props.style} onClick={this.handleClick}>
-        <div className={"flipper" + (this.props.flipped ? "flipped" : "")}>
+      <StyledPostItCard style={this.props.style} onClick={this.handleClick} className="post-it-card">
 
           <FrontFace>
 
@@ -111,8 +109,8 @@ class PostItCard extends Component {
             <Line style={{marginTop: "0rem"}} />
 
           </FrontFace>
+
           <BackFace>lol</BackFace>
-        </div>
 
       </StyledPostItCard>
 
