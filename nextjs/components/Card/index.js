@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
   width: 100%;
-  max-height: 50rem;
-  min-height: 21rem;
+  /* max-height: 50rem;
+  min-height: 21rem; */
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -13,30 +13,22 @@ const StyledCard = styled.div`
   align-items: ${props => props.alignItems || null};
   background: ${props => props.background || 'white'};
   color: black;
-  padding: 16px 16px 20px 16px;
-  margin: 16px 0;
+  padding: 1rem 1rem 1.25rem 1rem;
+  margin: 1rem 0;
 `;
 
 class Card extends Component {
   constructor(props) {
     super();
-    this.state = {
-
-    }
+    this.state = {};
   }
 
   render() {
     const { children } = this.props;
-    return (
-      <StyledCard style={this.props.style}>
-        {children}
-      </StyledCard>
-    );
+    return <StyledCard style={this.props.style}>{children}</StyledCard>;
   }
 }
 
-Card.propTypes = {
-
-};
+Card.propTypes = {};
 
 export default Card;
