@@ -23,6 +23,10 @@ const StyledHomeCard = styled.div`
     height: 20%;
     /* margin: 0.1rem 1rem; */
   }
+
+  &:active {
+    transform: scale(0.95);
+  }
 `;
 
 class HomeCard extends Component {
@@ -33,7 +37,12 @@ class HomeCard extends Component {
 
   render() {
     const { children } = this.props;
-    return <StyledHomeCard style={this.props.style}>{children}</StyledHomeCard>;
+
+    return (
+      <StyledHomeCard onClick={this.props.onClick} style={this.props.style}>
+        {children}
+      </StyledHomeCard>
+    );
   }
 }
 
