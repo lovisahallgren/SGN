@@ -54,7 +54,7 @@ class Project extends Component {
             <SmallP>
               <Link href='/'>
                 <a href="">Home</a>
-              </Link> > {this.props.projects[0].type} 
+              </Link> > {this.props.projects[0].type}
             </SmallP>
             <H1>
               {this.props.projects[0].type}
@@ -73,7 +73,7 @@ class Project extends Component {
               >
                 <SmallP>{item.project_name}</SmallP>
                 <Line />
-                {item.image === false ? null : 
+                {item.image === false ? null :
                   <div>
                     <img
                       src={item.logo}
@@ -120,7 +120,7 @@ class Project extends Component {
                       }
                       background="var(--primary-purple)"
                     >
-                      {item.image === false ? null : 
+                      {item.image === false ? null :
                         <div>
                           <img src={item.image || undefined} alt={item.name} />
                           <div style={{ display: 'flex' }}>
@@ -135,7 +135,7 @@ class Project extends Component {
                               {item.image_description}
                               </P>
                           </div>
-                        </div>} 
+                        </div>}
                       {item.quote !== '' ? (
                         <div>
                           <Line />
