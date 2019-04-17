@@ -16,7 +16,7 @@ const StyledHomeCard = styled.div`
 
   svg {
     fill: #fff;
-    width: 25%;
+    /* width: 25%; */
     height: 20%;
     /* margin: 0.1rem 1rem; */
   }
@@ -25,23 +25,15 @@ const StyledHomeCard = styled.div`
 class HomeCard extends Component {
   constructor(props) {
     super();
-    this.state = {
-
-    }
+    this.state = {};
   }
 
   render() {
     const { children } = this.props;
-    return (
-      <StyledHomeCard style={this.props.style}>
-        {children}
-      </StyledHomeCard>
-    );
+    return <StyledHomeCard style={this.props.style}>{children}</StyledHomeCard>;
   }
 }
 
-HomeCard.propTypes = {
-
-};
+HomeCard.propTypes = {};
 
 export default HomeCard;

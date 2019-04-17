@@ -86,8 +86,10 @@ class Navbar extends Component {
     );
     document.location.reload();
   }
+
   render() {
     const isHighContrastMode = this.state.isHighContrastMode === 'true';
+    const isBigTextFunction = this.props.isBigTextFunction;
 
     return (
       <StyledNavbar style={this.props.style}>
@@ -148,9 +150,11 @@ class Navbar extends Component {
           />
         </ul>
         <div>
-          <button>Stor text</button>
+          <button onClick={isBigTextFunction}>
+            {this.props.isBigText ? 'Liten text' : 'Stor text'}
+          </button>
           <button className="border" onClick={this.handleContrastMode}>
-            Högkontrastläge
+            {isHighContrastMode ? 'Normalkontrastläge' : 'Högkontrastläge'}
           </button>
         </div>
       </StyledNavbar>

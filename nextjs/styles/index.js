@@ -1,8 +1,6 @@
-import {
-  createGlobalStyle
-} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle `
+const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i');
 
   * {
@@ -12,7 +10,7 @@ const GlobalStyle = createGlobalStyle `
   }
 
   html {
-    font-size: 16px;
+    font-size: ${props => props.isBigText || '16px'};
   }
 
   body {
@@ -47,6 +45,9 @@ const GlobalStyle = createGlobalStyle `
    --secondary-tint-green: #2B716E;
    --secondary-tint-blue: #275CA9;
    --secondary-tint-pink: #953C7C;
+
+   --test: url('../static/images/Pattern_Circle_1080x1080.svg');
  }
-`
+`;
+
 export default GlobalStyle;
