@@ -12,11 +12,6 @@ const StyledNavbarItem = styled.li`
   justify-content: space-between;
   font-size: 1rem;
 
-  /* display: none;s */
-  /* position: relative; */
-  /* display: none; */
-  /* height: 100%; */
-
   a {
     color: white !important;
     padding: 0 1rem;

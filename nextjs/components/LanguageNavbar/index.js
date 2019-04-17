@@ -53,6 +53,15 @@ const StyledLanguageNavbar = styled.div`
     text-decoration: none;
     color: black;
   }
+
+  ul.visible {
+    display: grid;
+    opacity: 1;
+    transition: opacity 1s ease;
+    li {
+      display: flex;
+    }
+  }
 `;
 
 class LanguageNavbar extends Component {

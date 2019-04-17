@@ -40,6 +40,7 @@ const StyledNavbar = styled.div`
 
   .border {
     border-left: 2px solid black;
+    height: 1.25rem;
   }
 
   button {
