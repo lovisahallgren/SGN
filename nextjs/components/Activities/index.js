@@ -109,7 +109,7 @@ class Activities extends Component {
                             }
                             background="var(--primary-pink)"
                             >
-                            {item.image === false ? null : 
+                            {item.image === false ? null :
                             <div>
                                 <img src={item.image || undefined} alt={item.name} />
                                 <div style={{ display: 'flex' }}>
@@ -124,8 +124,8 @@ class Activities extends Component {
                                     {item.image_description}
                                     </P>
                                 </div>
-                            </div>} 
-                            
+                            </div>}
+
                             {item.quote !== '' ? (
                                 <div>
                                 <Line />
@@ -151,7 +151,7 @@ class Activities extends Component {
                 );
                 })}
                 <Form
-                    color="var(--secondary-pink)"
+                    formColor="var(--secondary-pink)"
                     title="Skulle du vilja delta eller starta en aktivitet?"
                     name="Namn"
                     phone="Telefonnummer"
