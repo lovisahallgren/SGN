@@ -19,6 +19,7 @@ import ReadMoreButton from '../ReadMoreButton';
 import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
 import Form from '../Form';
+import ImageCard from '../ImageCard';
 import PostItCard from '../PostItCard';
 
 class Project extends Component {
@@ -62,6 +63,25 @@ class Project extends Component {
             <H1>{this.props.projects[0].type}</H1>
           </div>
         </NavIndicator>
+        <ImageCard border="var(--secondary-purple)">
+          <img
+            src={this.props.projects[0].image || undefined}
+            alt={this.props.projects[0].name}
+            // border="5px solid var(--secondary-purple)"
+          />
+          <SmallP
+            color="var(--secondary-purple)"
+            margin="-0.5rem 0 0.5rem 0"
+            fontWeight="bold"
+          >
+            {this.props.projects[0].image_description}
+          </SmallP>
+        </ImageCard>
+        <Card>
+          <H2 color="#000">{this.props.projects[0].title}</H2>
+          <P color="#000">{this.props.projects[0].excerpt}</P>
+          <Line backgroundColor="#000" />
+        </Card>
         <PostItCard
           style={
             isHighContrastMode
@@ -136,31 +156,14 @@ class Project extends Component {
                       }
                       background="var(--primary-purple)"
                     >
-                      {item.image === false ? null : (
-                        <div>
-                          <img src={item.image || undefined} alt={item.name} />
-                          <div style={{ display: 'flex' }}>
-                            <ArrowUp />
-                            <P
-                              style={{
-                                marginTop: '-0.7rem',
-                                fontWeight: 'bold',
-                                width: '100%'
-                              }}
-                            >
-                              {item.image_description}
-                            </P>
-                          </div>
-                        </div>
-                      )}
-                      {item.quote !== '' ? (
+                      {item.quote !== '' && (
                         <div>
                           <Line />
                           <QuoteSmall style={{ marginTop: '1rem' }}>
                             "{item.quote}"
                           </QuoteSmall>
                         </div>
-                      ) : null}
+                      )}
                       <SmallP
                         fontStyle="italic"
                         textAlign="right"
@@ -172,6 +175,22 @@ class Project extends Component {
                       <P>{item.content}</P>
                     </ReadMoreCard>
                   </ReadMoreButton>
+                  {item.image === false ? null : (
+                    <ImageCard border="var(--secondary-purple)">
+                      <img
+                        src={item.image || undefined}
+                        alt={item.name}
+                        // border="5px solid var(--secondary-purple)"
+                      />
+                      <SmallP
+                        color="var(--secondary-purple)"
+                        margin="-0.5rem 0 0.5rem 0"
+                        fontWeight="bold"
+                      >
+                        {item.image_description}
+                      </SmallP>
+                    </ImageCard>
+                  )}
                 </div>
               ) : null}
             </div>
@@ -184,8 +203,8 @@ class Project extends Component {
           {this.props.projects[1].quote_name}
         </SmallP>
         <Form
-          formColor="var(--secondary-tint-purple)"
-          title="Vill du engagera dig i vårt project?"
+          formColor="var(--secondary-purple)"
+          title="Vill du engagera dig i våra projekt?"
           name="Namn"
           phone="Telefonnummer"
           email="E-mail"

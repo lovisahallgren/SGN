@@ -18,7 +18,8 @@ import ReadMoreButton from '../ReadMoreButton';
 import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
 import PostItCard from '../PostItCard';
-
+import ImageCard from '../ImageCard';
+import Form from '../Form';
 class Information extends Component {
   constructor(props) {
     super(props);
@@ -59,6 +60,25 @@ class Information extends Component {
             <H1>{this.props.info[0].type}</H1>
           </div>
         </NavIndicator>
+        {/* <ImageCard border="var(--secondary-red)">
+          <img
+            src={this.props.info[0].image || undefined}
+            alt={this.props.info[0].name}
+            // border="5px solid var(--secondary-red)"
+          />
+          <SmallP
+            color="var(--secondary-red)"
+            margin="-0.5rem 0 0.5rem 0"
+            fontWeight="bold"
+          >
+            {this.props.info[0].image_description}
+          </SmallP>
+        </ImageCard> */}
+        <Card>
+          <H2 color="#000">{this.props.info[0].title}</H2>
+          <P color="#000">{this.props.info[0].excerpt}</P>
+          <Line backgroundColor="#000" />
+        </Card>
         {this.props.info.map(item => {
           return (
             <div key={item.id}>
@@ -117,32 +137,14 @@ class Information extends Component {
                       }
                       background="var(--primary-red)"
                     >
-                      {item.image === false ? null : (
-                        <div>
-                          <img src={item.image || undefined} alt={item.name} />
-                          <div style={{ display: 'flex' }}>
-                            <ArrowUp />
-                            <P
-                              style={{
-                                marginTop: '-0.7rem',
-                                fontWeight: 'bold',
-                                width: '100%'
-                              }}
-                            >
-                              {item.image_description}
-                            </P>
-                          </div>
-                        </div>
-                      )}
-
-                      {item.quote !== '' ? (
+                      {item.quote !== '' && (
                         <div>
                           <Line />
                           <QuoteSmall style={{ marginTop: '1rem' }}>
                             "{item.quote}"
                           </QuoteSmall>
                         </div>
-                      ) : null}
+                      )}
                       <SmallP
                         fontStyle="italic"
                         textAlign="right"
@@ -154,11 +156,32 @@ class Information extends Component {
                       <P>{item.content}</P>
                     </ReadMoreCard>
                   </ReadMoreButton>
+                  {item.image === false ? null : (
+                    <ImageCard border="var(--secondary-red)">
+                      <img src={item.image || undefined} alt={item.name} />
+                      <SmallP
+                        color="var(--secondary-red)"
+                        margin="-0.5rem 0 0.5rem 0"
+                        fontWeight="bold"
+                      >
+                        {item.image_description}
+                      </SmallP>
+                    </ImageCard>
+                  )}
                 </div>
               ) : null}
             </div>
           );
         })}
+        <Form
+          formColor="var(--secondary-red)"
+          title="Har du några frågor eller funderingar?"
+          name="Namn"
+          phone="Telefonnummer"
+          email="E-mail"
+          submit="Skicka"
+          subject="Ärende"
+        />
       </Layout>
     );
   }
