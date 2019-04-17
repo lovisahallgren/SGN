@@ -7,10 +7,14 @@ import ArrowRight from '../SVGs/ArrowRight';
 const StyledNavbarItem = styled.li`
   padding: 0.6rem 0;
   margin: 0.4rem;
-  display: flex;
+  display: none;
   align-items: flex-end;
   justify-content: space-between;
   font-size: 1rem;
+
+  /* display: none;s */
+  /* position: relative; */
+  /* display: none; */
   /* height: 100%; */
 
   a {

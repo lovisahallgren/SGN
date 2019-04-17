@@ -65,7 +65,15 @@ class Header extends Component {
 
   render() {
     const showmenuStyle = {
-      display: 'block'
+      // display: 'block',
+      height: '28vh',
+      transition: 'height 0.25s ease'
+    };
+
+    const showlanguageStyle = {
+      height: '10vh',
+      transition: 'height 0.25s ease',
+      zIndex: '999'
     };
 
     return (
@@ -86,13 +94,15 @@ class Header extends Component {
         <Hamburger openMenu={this.handleClick} />
         <LanguageNavbar
           contrast={this.props.contrast}
-          style={this.state.languageIsOpen ? showmenuStyle : null}
+          style={this.state.languageIsOpen ? showlanguageStyle : null}
+          openLanguage={this.state.languageIsOpen}
         />
         <Navbar
           contrast={this.props.contrast}
           isBigTextFunction={this.props.bigTextFunction}
           isBigText={this.props.bigText}
           style={this.state.menuIsOpen ? showmenuStyle : null}
+          openMenu={this.state.menuIsOpen}
         />
       </StyledHeader>
     );

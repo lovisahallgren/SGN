@@ -11,6 +11,13 @@ const StyledLanguageNavbarItem = styled.li`
   align-items: flex-end;
   justify-content: space-between;
   font-size: 1rem;
+  display: none;
+
+  .isActive {
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    text-decoration: underline;
+  }
 
   a {
     color: white !important;

@@ -19,6 +19,7 @@ import ReadMoreButton from '../ReadMoreButton';
 import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
 import Form from '../Form';
+import PostItCard from '../PostItCard';
 
 class Project extends Component {
   constructor(props) {
