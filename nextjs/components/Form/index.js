@@ -27,12 +27,17 @@ const StyledForm = styled.form`
     .form-button{
         text-decoration: underline;
         font-weight:800;
+        font-size: 1rem;
+      }
+      .form-header{
+        padding-bottom: 10%;
+        padding-top: 10%;
       }
 
 .user-input-wrp {
 	position: relative;
 	width: 100%;
-  color:gray;
+  color: #333333;
   padding-bottom: 10%;
 }
 .user-input-wrp .inputText{
@@ -40,11 +45,11 @@ const StyledForm = styled.form`
 	width: 100%;
 	outline: none;
 	border:none;
-	border-bottom: 1px solid #777;
+	border-bottom: 1px solid black;
  	box-shadow: none !important;
 }
 .user-input-wrp .inputText:focus{
-	border-color: blue;
+	border-color: ${props => props.formColor || 'white'};
 	border-width: medium medium 1px;
 }
 .user-input-wrp .floating-label {
@@ -58,6 +63,7 @@ const StyledForm = styled.form`
 .user-input-wrp input:not(:focus):valid ~ .floating-label{
 	top: 0px;
 	left: 0%;
+  color: ${props => props.formColor || 'white'};
 	// font-size: 13px;
   font-weight: bold;
 	opacity: 1;
@@ -75,35 +81,35 @@ class Form extends React.Component {
 
     return (
 
-      <StyledForm>
+      <StyledForm {...this.props}>
 
         <div className="form-container">
 
-        <h2>{this.props.title}</h2>
 
+        <H2 color="#000" className="form-header">{this.props.title}</H2>
 
-          <div class="user-input-wrp">
+          <div className="user-input-wrp">
             <br/>
-            <input type="text" class="inputText" required/>
-            <span class="floating-label">{this.props.name}</span>
+            <input type="text" className="inputText" required/>
+            <span className="floating-label">{this.props.name}</span>
           </div>
 
-          <div class="user-input-wrp">
+          <div className="user-input-wrp">
             <br/>
-            <input type="text" class="inputText" required/>
-            <span class="floating-label">{this.props.phone}</span>
+            <input type="text" className="inputText" required/>
+            <span className="floating-label">{this.props.phone}</span>
           </div>
 
-          <div class="user-input-wrp">
+          <div className="user-input-wrp">
             <br/>
-            <input type="text" class="inputText" required/>
-            <span class="floating-label">{this.props.email}</span>
+            <input type="text" className="inputText" required/>
+            <span className="floating-label">{this.props.email}</span>
           </div>
 
-          <div class="user-input-wrp">
+          <div className="user-input-wrp">
             <br/>
-            <input type="textarea" class="inputText" required/>
-            <span class="floating-label">{this.props.subject}</span>
+            <input type="textarea" className="inputText" required/>
+            <span className="floating-label">{this.props.subject}</span>
           </div>
 
           <div className="form-button-div">

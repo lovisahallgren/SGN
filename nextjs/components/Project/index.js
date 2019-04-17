@@ -18,7 +18,8 @@ import ReadMoreCard from '../ReadMoreCard';
 import ReadMoreButton from '../ReadMoreButton';
 import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
-import PostItCard from '../PostItCard';
+import Form from '../Form';
+
 class Project extends Component {
   constructor(props) {
     super(props);
@@ -181,6 +182,15 @@ class Project extends Component {
         <SmallP color="#000" textAlign="right" margin="1rem">
           {this.props.projects[1].quote_name}
         </SmallP>
+        <Form
+          formColor="var(--secondary-tint-purple)"
+          title="Vill du engagera dig i vårt project?"
+          name="Namn"
+          phone="Telefonnummer"
+          email="E-mail"
+          submit="Skicka"
+          subject="Ärende"
+        />
       </Layout>
     );
   }

@@ -115,14 +115,7 @@ class Layout extends Component {
         )}
 
         {children}
-        <Form
-          title="Vill du kontakta oss?"
-          name="Namn"
-          phone="Telefonnummer"
-          email="E-mail"
-          submit="Skicka"
-          subject="Ärende"
-        />
+      
 
         <Footer
           contrast={isHighContrastMode}
