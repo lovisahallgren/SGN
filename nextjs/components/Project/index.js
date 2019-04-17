@@ -18,6 +18,7 @@ import ReadMoreCard from '../ReadMoreCard';
 import ReadMoreButton from '../ReadMoreButton';
 import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
+import Form from '../Form';
 
 class Project extends Component {
   constructor(props) {
@@ -160,8 +161,17 @@ class Project extends Component {
             </div>
           );
         })}
-        <QuoteBig color="#000" margin="2rem 0 1rem 0">"{this.props.projects[1].quote}"</QuoteBig>
-        <SmallP color="#000" textAlign="right" margin="1rem">{this.props.projects[1].quote_name}</SmallP>
+        <QuoteBig color="#000" margin="2rem 0 1rem 0">"{this.props.projects[0].quote}"</QuoteBig>
+        <SmallP color="#000" textAlign="right" margin="1rem">{this.props.projects[0].quote_name}</SmallP>
+        <Form
+          formColor="var(--secondary-tint-purple)"
+          title="Vill du engagera dig i vårt project?"
+          name="Namn"
+          phone="Telefonnummer"
+          email="E-mail"
+          submit="Skicka"
+          subject="Ärende"
+        />
       </Layout>
     );
   }
