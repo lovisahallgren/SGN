@@ -16,10 +16,10 @@ import LetterBig from '../LetterBig'
 import ReadMoreCard from '../ReadMoreCard';
 import ReadMoreButton from '../ReadMoreButton';
 import ArrowUp from '../SVGs/ArrowUp';
+import Form from '../Form';
 import nookies from 'nookies';
-import PostItCard from '../PostItCard';
 
-class Information extends Component {
+class Activities extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -43,30 +43,30 @@ class Information extends Component {
                 <NavIndicator
                 style={
                     isHighContrastMode
-                    ? { background: 'var(--secondary-red)' }
-                    : { background: 'var(--primary-red)' }
+                    ? { background: 'var(--secondary-pink)' }
+                    : { background: 'var(--primary-pink)' }
                 }
                 >
-                <LetterBig>I</LetterBig>
-                <div>
+                <LetterBig>A</LetterBig>
+                <div style={{alignItems: "flex-end"}}>
                     <SmallP>
                     <Link href='/'>
                         <a href="">Home</a>
-                    </Link> > {this.props.info[0].type}
+                    </Link> > {this.props.activities[0].type}
                     </SmallP>
                     <H1>
-                    {this.props.info[0].type}
+                    {this.props.activities[0].type}
                     </H1>
                 </div>
                 </NavIndicator>
-                {this.props.info.map(item => {
+                {this.props.activities.map(item => {
                 return (
                     <div key={item.id}>
                     <Card
                         style={
                         isHighContrastMode
-                            ? { background: 'var(--secondary-red)' }
-                            : { background: 'var(--primary-red)' }
+                            ? { background: 'var(--secondary-pink)' }
+                            : { background: 'var(--primary-pink)' }
                         }
                     >
                         <SmallP>{item.category}</SmallP>
@@ -85,16 +85,16 @@ class Information extends Component {
                             style={
                             isHighContrastMode
                                 ? {
-                                    background: 'var(--secondary-red)',
-                                    borderTop: '2px solid var(--primary-red)'
+                                    background: 'var(--secondary-pink)',
+                                    borderTop: '2px solid var(--primary-pink)'
                                 }
                                 : {
-                                    background: 'var(--primary-red)',
+                                    background: 'var(--primary-pink)',
                                     border: 'none'
                                 }
                             }
-                            topColor={isHighContrastMode ? 'var(--primary-red)' : "var(--secondary-red)" }
-                            bottomColor={isHighContrastMode ? 'var(--primary-tint-red)' : "var(--secondary-tint-red)"}
+                            topColor={isHighContrastMode ? 'var(--primary-pink)' : "var(--secondary-pink)" }
+                            bottomColor={isHighContrastMode ? 'var(--primary-tint-pink)' : "var(--secondary-tint-pink)"}
                             display={'none'}
                             marginTop={isHighContrastMode ? '-2.1rem' : '-2rem'}
                         >
@@ -102,14 +102,14 @@ class Information extends Component {
                             style={
                                 isHighContrastMode
                                 ? {
-                                    background: 'var(--secondary-red)',
-                                    borderTop: '2px solid var(--primary-red)'
+                                    background: 'var(--secondary-pink)',
+                                    borderTop: '2px solid var(--primary-pink)'
                                     }
-                                : { background: 'var(--secondary-red)' }
+                                : { background: 'var(--secondary-pink)' }
                             }
-                            background="var(--primary-red)"
+                            background="var(--primary-pink)"
                             >
-                            {item.image === false ? null :
+                            {item.image === false ? null : 
                             <div>
                                 <img src={item.image || undefined} alt={item.name} />
                                 <div style={{ display: 'flex' }}>
@@ -124,8 +124,8 @@ class Information extends Component {
                                     {item.image_description}
                                     </P>
                                 </div>
-                            </div>}
-
+                            </div>} 
+                            
                             {item.quote !== '' ? (
                                 <div>
                                 <Line />
@@ -150,9 +150,18 @@ class Information extends Component {
                     </div>
                 );
                 })}
+                <Form
+                    color="var(--secondary-pink)"
+                    title="Skulle du vilja delta eller starta en aktivitet?"
+                    name="Namn"
+                    phone="Telefonnummer"
+                    email="E-mail"
+                    submit="Skicka"
+                    subject="Ärende"
+                />
             </Layout>
         )
     }
 }
 
-export default Information;
+export default Activities;

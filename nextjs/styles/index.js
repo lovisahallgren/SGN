@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i');
@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: 16px;
+    font-size: ${props => props.isBigText || '16px'};
   }
 
   body {
@@ -18,8 +18,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0.8889rem;
     height: auto;
     font-family: 'Noto Sans', sans-serif;
-    /* display: grid;
-    grid-template-columns: repeat(12, 1fr); */
   }
 
   :root {
@@ -35,6 +33,21 @@ const GlobalStyle = createGlobalStyle`
    --secondary-green: #206A66;
    --secondary-pink: #8F3275;
    --secondary-red: #9B3030;
+   --primary-tint-purple: #B1AAFF;
+   --primary-tint-red: #FFA2A2;
+   --primary-tint-yellow: #FFAA5C;
+   --primary-tint-green: #47D0C8;
+   --primary-tint-blue: #7DACFD;
+   --primary-tint-pink: #FD9DE2;
+   --secondary-tint-purple: #5951A8;
+   --secondary-tint-red: #A03A3A;
+   --secondary-tint-yellow: #89501C;
+   --secondary-tint-green: #2B716E;
+   --secondary-tint-blue: #275CA9;
+   --secondary-tint-pink: #953C7C;
+
+   --test: url('../static/images/Pattern_Circle_1080x1080.svg');
  }
-`
- export default GlobalStyle;
+`;
+
+export default GlobalStyle;

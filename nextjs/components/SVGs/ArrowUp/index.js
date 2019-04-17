@@ -1,20 +1,18 @@
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+const StyledSvg = styled.svg`
+  width: 6%;
+  height: 7%;
+  fill: #fff;
+  margin: 0 1rem;
+`;
 
-const Image = styled.div`
-	/* display: flex; */
-	width: 7%;
-  margin: -1.5rem 1rem 0 1rem;
-	/* justify-content: space-around; */
-	/* align-items: center; */
-	/* margin-top: 3.5rem; */
-`
+const ArrowUp = () => {
+  return (
+    <StyledSvg viewBox="0 0 580 580" xmlns="http://www.w3.org/2000/svg">
+      <path d="M328 571h-79V171L107 320l-58-60L289 9l242 251-59 61-144-148z" />
+    </StyledSvg>
+  );
+};
 
-export default props => {
-	const arrowUp = '/static/images/sgn_symbol_arrow-up.svg'
-
-	return (
-		<Image>
-			<img src={arrowUp} alt="" />
-		</Image>
-	)
-}
+export default ArrowUp;

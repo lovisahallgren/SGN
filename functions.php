@@ -139,6 +139,48 @@ function my_rest_prepare_project($data, $post, $request) {
 }
 add_filter("rest_prepare_project", 'my_rest_prepare_project', 10, 3);
 
+// Get the advanced custom fields for Activities in JSON
+function my_rest_prepare_activities($data, $post, $request) {
+  $_data = $data->data;
+
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+
+  return $data;
+}
+add_filter("rest_prepare_activities", 'my_rest_prepare_activities', 10, 3);
+
+// Get the advanced custom fields for Contibute in JSON
+function my_rest_prepare_contibute($data, $post, $request) {
+  $_data = $data->data;
+
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+
+  return $data;
+}
+add_filter("rest_prepare_contibute", 'my_rest_prepare_contibute', 10, 3);
+
+// Get the advanced custom fields for Contact in JSON
+function my_rest_prepare_contact($data, $post, $request) {
+  $_data = $data->data;
+
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+
+  return $data;
+}
+add_filter("rest_prepare_contact", 'my_rest_prepare_contact', 10, 3);
+
 // Register plugin helpers.
 require template_path('includes/plugins/plate.php');
 

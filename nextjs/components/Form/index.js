@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import H2 from '../H2';
 
 const StyledForm = styled.form`
-
-  width:100%;
+  width: 100%;
 
   .form-container {
     width: 100%;
@@ -65,8 +64,6 @@ const StyledForm = styled.form`
 }
 
 `
-
-
 
 class Form extends React.Component {
   constructor(props) {
