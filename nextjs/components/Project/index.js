@@ -51,17 +51,23 @@ class Project extends Component {
           }
         >
           <LetterBig>P</LetterBig>
-          <div style={{alignItems: "flex-end"}}>
+          <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
-              <Link href='/'>
+              <Link href="/">
                 <a href="">Home</a>
-              </Link> > {this.props.projects[0].type}
+              </Link>{' '}
+              > {this.props.projects[0].type}
             </SmallP>
-            <H1>
-              {this.props.projects[0].type}
-            </H1>
+            <H1>{this.props.projects[0].type}</H1>
           </div>
         </NavIndicator>
+        <PostItCard
+          style={
+            isHighContrastMode
+              ? { background: 'var(--secondary-purple)' }
+              : { background: 'var(--primary-purple)' }
+          }
+        />
         {this.props.projects.map(item => {
           return (
             <div key={item.id}>
@@ -74,7 +80,7 @@ class Project extends Component {
               >
                 <SmallP>{item.project_name}</SmallP>
                 <Line />
-                {item.image === false ? null :
+                {item.image === false ? null : (
                   <div>
                     <img
                       src={item.logo}
@@ -82,7 +88,7 @@ class Project extends Component {
                       style={{ width: '50%', margin: '0 0 1rem 0' }}
                     />
                   </div>
-                }
+                )}
                 <H2>{item.title}</H2>
                 <P>{item.excerpt}</P>
                 <Line />
@@ -105,8 +111,16 @@ class Project extends Component {
                             border: 'none'
                           }
                     }
-                    topColor={isHighContrastMode ? 'var(--primary-purple)' : "var(--secondary-purple)" }
-                    bottomColor={isHighContrastMode ? 'var(--primary-tint-purple)' : "var(--secondary-tint-purple)"}
+                    topColor={
+                      isHighContrastMode
+                        ? 'var(--primary-purple)'
+                        : 'var(--secondary-purple)'
+                    }
+                    bottomColor={
+                      isHighContrastMode
+                        ? 'var(--primary-tint-purple)'
+                        : 'var(--secondary-tint-purple)'
+                    }
                     display={'none'}
                     marginTop={isHighContrastMode ? '-2.1rem' : '-2rem'}
                   >
@@ -121,22 +135,23 @@ class Project extends Component {
                       }
                       background="var(--primary-purple)"
                     >
-                      {item.image === false ? null :
+                      {item.image === false ? null : (
                         <div>
                           <img src={item.image || undefined} alt={item.name} />
                           <div style={{ display: 'flex' }}>
-                              <ArrowUp />
-                              <P
+                            <ArrowUp />
+                            <P
                               style={{
-                                  marginTop: '-0.7rem',
-                                  fontWeight: 'bold',
-                                  width: '100%'
+                                marginTop: '-0.7rem',
+                                fontWeight: 'bold',
+                                width: '100%'
                               }}
-                              >
+                            >
                               {item.image_description}
-                              </P>
+                            </P>
                           </div>
-                        </div>}
+                        </div>
+                      )}
                       {item.quote !== '' ? (
                         <div>
                           <Line />
@@ -161,8 +176,12 @@ class Project extends Component {
             </div>
           );
         })}
-        <QuoteBig color="#000" margin="2rem 0 1rem 0">"{this.props.projects[0].quote}"</QuoteBig>
-        <SmallP color="#000" textAlign="right" margin="1rem">{this.props.projects[0].quote_name}</SmallP>
+        <QuoteBig color="#000" margin="2rem 0 1rem 0">
+          "{this.props.projects[1].quote}"
+        </QuoteBig>
+        <SmallP color="#000" textAlign="right" margin="1rem">
+          {this.props.projects[1].quote_name}
+        </SmallP>
         <Form
           formColor="var(--secondary-tint-purple)"
           title="Vill du engagera dig i vårt project?"

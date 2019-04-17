@@ -13,6 +13,9 @@ const StyledHomeCard = styled.div`
   color: ${props => props.color || 'white'};
   padding: 16px 16px 20px 16px;
   margin: 16px 0;
+  background-position: center;
+  background-repeat: repeat;
+  /* object-fit: cover; */
 
   svg {
     fill: #fff;
