@@ -26,7 +26,7 @@ const StyledFooter = styled.footer`
   }
 
   article {
-    width: 100%;
+    width: 100vw;
     height: 70vh;
     background: ${props => props.background || 'rgba(0,0,0,0.75)'};
     display: flex;
@@ -34,7 +34,7 @@ const StyledFooter = styled.footer`
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem 0;
-    margin: 1rem 0 0 0;
+    margin: 1rem 0rem 0 -1rem;
   }
 
   &div {
@@ -175,7 +175,7 @@ class Footer extends Component {
         <article>
           <button onClick={this.handleContrastMode}>
             {contrastText}
-            <ArrowRight margin="0 0 0.1rem 1rem"/>
+            <ArrowRight margin="0 0 0.1rem 1rem" />
           </button>
           <main>
             <div>
@@ -183,7 +183,7 @@ class Footer extends Component {
               <Youtube />
               <Instagram />
             </div>
-            <div style={{display: "flex", justifyContent: "space-between"}}>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <SmallP textDecoration="underline">Facebook</SmallP>
               <SmallP textDecoration="underline">Youtube</SmallP>
               <SmallP textDecoration="underline">Instagram</SmallP>
@@ -191,17 +191,26 @@ class Footer extends Component {
           </main>
           <button>
             {languageText}
-            <ArrowDown fill="#000" margin="0 0 0.1rem 1rem"/>
+            <ArrowDown fill="#000" margin="0 0 0.1rem 1rem" />
           </button>
-          <div style={{ color: '#FFF', display: "flex", flexDirection: "column", marginLeft: "1rem" }}>
-            <p style={{fontWeight: "bold", marginBottom: "1rem"}}>{name}</p>
-            <p style={{width: "70%"}}>{street}</p>
+          <div
+            style={{
+              color: '#FFF',
+              display: 'flex',
+              flexDirection: 'column',
+              marginLeft: '2rem'
+            }}
+          >
+            <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>{name}</p>
+            <p style={{ width: '70%' }}>{street}</p>
             <p>{city}</p>
-            <p style={{margin: "1rem 0"}}>{country}</p>
+            <p style={{ margin: '1rem 0' }}>{country}</p>
             <p>{phone}</p>
             <p>{email}</p>
           </div>
-          <SmallP textDecoration="underline" margin="0 0 0 -24%">Privacy Policy / GDPR</SmallP>
+          <SmallP textDecoration="underline" margin="0 0 0 -18%">
+            Privacy Policy / GDPR
+          </SmallP>
         </article>
       </StyledFooter>
     );
