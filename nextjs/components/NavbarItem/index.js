@@ -11,17 +11,24 @@ const StyledNavbarItem = styled.li`
   align-items: flex-end;
   justify-content: space-between;
   font-size: 1rem;
+  /* height: 100%; */
 
   a {
     color: white !important;
     padding: 0 1rem;
     text-decoration: underline !important;
+    display: flex;
+    justify-content: space-between;
   }
 
   svg {
     fill: #fff;
-    width: 10%;
-    margin: 0.1rem 1rem;
+    width: 15%;
+    margin: 0.1rem 0rem;
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 `;
 
@@ -29,9 +36,11 @@ const NavbarItem = props => {
   return (
     <StyledNavbarItem style={props.style}>
       <Link href={props.link}>
-        <a href="">{props.text}</a>
+        <a href="">
+          {props.text}
+          <ArrowRight />
+        </a>
       </Link>
-      <ArrowRight />
     </StyledNavbarItem>
   );
 };
