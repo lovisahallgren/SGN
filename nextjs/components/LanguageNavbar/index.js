@@ -35,6 +35,7 @@ const StyledLanguageNavbar = styled.div`
     padding: 0.6rem 1rem;
     display: flex;
     justify-content: space-between;
+    display: none;
   }
 
   .isActive {

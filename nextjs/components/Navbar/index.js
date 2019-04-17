@@ -27,7 +27,6 @@ const StyledNavbar = styled.div`
   div {
     justify-content: center;
     font-weight: bold;
-    padding-top: 1rem;
     opacity: 0;
     height: 0;
   }
@@ -40,7 +39,6 @@ const StyledNavbar = styled.div`
 
   .border {
     border-left: 2px solid black;
-    height: 1.25rem;
   }
 
   button {
@@ -51,6 +49,8 @@ const StyledNavbar = styled.div`
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
+    height: 0;
+    display: none;
   }
 
   ul.visible {
@@ -65,10 +65,15 @@ const StyledNavbar = styled.div`
   div.visible {
     display: flex;
     opacity: 1;
-    transition: opacity 1s ease;
+    transition: opacity 1.5s ease;
+    padding-top: 1rem;
 
     button {
       display: block;
+      height: auto;
+    }
+    .border {
+      height: 1.25rem;
     }
   }
 `;

@@ -65,7 +65,6 @@ class Header extends Component {
 
   render() {
     const showmenuStyle = {
-      // display: 'block',
       height: '28vh',
       transition: 'height 0.25s ease'
     };

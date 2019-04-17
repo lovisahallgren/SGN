@@ -11,6 +11,7 @@ const StyledNavbarItem = styled.li`
   align-items: flex-end;
   justify-content: space-between;
   font-size: 1rem;
+  display: none;
 
   a {
     color: white !important;
