@@ -38,7 +38,7 @@ const LanguageNavbarItem = props => {
       style={props.style}
     >
       {props.text}
-      <img isActiveLanguage={props.isActiveLanguage} src={props.src} alt="" />
+      <img src={props.src} alt="" />
     </StyledLanguageNavbarItem>
   );
 };
