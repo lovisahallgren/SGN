@@ -115,7 +115,6 @@ class Layout extends Component {
         )}
 
         {children}
-      
 
         <Footer
           contrast={isHighContrastMode}

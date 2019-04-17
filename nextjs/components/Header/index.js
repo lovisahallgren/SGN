@@ -81,13 +81,8 @@ class Header extends Component {
         <Link href="/">
           <a href="/"> Home </a>
         </Link>
-        <Link href="/">
-          <a href="/" style={{ marginRight: '-1rem' }}>
-            SGN
-          </a>
-        </Link>
         <Flag
-          style={{ marginRight: '-5rem' }}
+          style={{ marginRight: '-14rem' }}
           openLanguage={this.handleLanguage}
           src={'/static/images/sweden.svg'}
         />
