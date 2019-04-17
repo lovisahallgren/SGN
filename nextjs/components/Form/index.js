@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import H2 from '../H2';
+import ArrowRight from '../SVGs/ArrowRight';
 
 const StyledForm = styled.form`
   width: 100%;
@@ -21,13 +22,17 @@ const StyledForm = styled.form`
   }
 
   .form-button-div{
-      padding-left: 80%;
+      padding-left: 70%;
       padding-top: 5%;
+
+
     }
     .form-button{
         text-decoration: underline;
         font-weight:800;
         font-size: 1rem;
+        display:flex;
+        flex-direction: row;
       }
       .form-header{
         padding-bottom: 10%;
@@ -113,9 +118,11 @@ class Form extends React.Component {
           </div>
 
           <div className="form-button-div">
-            <input className="form-button" type="submit" value={this.props.submit} />
+            <button className="form-button" type="submit">
+              <p>{this.props.submit}</p>
+              <ArrowRight width="20%"></ArrowRight>
+            </button>
           </div>
-
         </div>
       </StyledForm>
     )
