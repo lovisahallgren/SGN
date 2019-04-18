@@ -19,6 +19,9 @@ import ArrowUp from '../SVGs/ArrowUp';
 import Form from '../Form';
 import ImageCard from '../ImageCard';
 import nookies from 'nookies';
+import PostItCard from '../PostItCard';
+import ActivitiesPrimaryFlap from '../SVGs/ActivitiesPrimaryFlap'
+import ActivitiesSecondaryFlap from '../SVGs/ActivitiesSecondaryFlap'
 
 class Activities extends Component {
   constructor(props) {
@@ -74,6 +77,34 @@ class Activities extends Component {
             {this.props.activities[0].image_description}
           </SmallP>
         </ImageCard> */}
+
+        <PostItCard
+          style= {
+            isHighContrastMode
+              ? {
+                background: 'var(--secondary-pink)',
+              }
+              : {
+                background: 'var(--primary-pink)',
+              }
+          }
+          frontFace={
+            {
+              flap: isHighContrastMode ? <ActivitiesSecondaryFlap/> : <ActivitiesPrimaryFlap />,
+              category: this.props.activities[0].category,
+              content: this.props.activities[0].content,
+            }
+          }
+          backFace= {
+            {
+              flap: <ActivitiesSecondaryFlap />,
+            category: this.props.activities[0].category,
+              content: this.props.activities[0].content,
+              background: 'var(--secondary-pink)'
+            }
+          }
+        />
+
         <Card>
           <H2 color="#000">{this.props.activities[0].title}</H2>
           <P color="#000">{this.props.activities[0].excerpt}</P>

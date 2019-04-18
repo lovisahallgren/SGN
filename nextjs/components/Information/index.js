@@ -20,6 +20,10 @@ import nookies from 'nookies';
 import PostItCard from '../PostItCard';
 import ImageCard from '../ImageCard';
 import Form from '../Form';
+import InfoPrimaryFlap from '../SVGs/InfoPrimaryFlap'
+import InfoSecondaryFlap from '../SVGs/InfoSecondaryFlap'
+
+
 class Information extends Component {
   constructor(props) {
     super(props);
@@ -79,20 +83,28 @@ class Information extends Component {
             isHighContrastMode
               ? {
                 background: 'var(--secondary-red)',
-                borderColor: 'var(--primary-red)'
               }
               : {
                 background: 'var(--primary-red)',
-                borderColor: 'var(--secondary-red)'
               }
+          }
+          frontFace={
+            {
+              flap: isHighContrastMode ? <InfoSecondaryFlap/> : <InfoPrimaryFlap />,
+              category: this.props.info[0].category,
+              content: this.props.info[0].content,
+            }
           }
           backFace= {
             {
-              background: 'var(--secondary-red)',
-              borderColor: 'var(--primary-red)'
+              flap: <InfoSecondaryFlap />,
+              category: this.props.info[0].category,
+              content: this.props.info[0].content,
+              background: 'var(--secondary-red)'
             }
           }
         />
+
         <Card>
           <H2 color="#000">{this.props.info[0].title}</H2>
           <P color="#000">{this.props.info[0].excerpt}</P>

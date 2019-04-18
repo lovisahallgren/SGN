@@ -21,6 +21,8 @@ import nookies from 'nookies';
 import Form from '../Form';
 import ImageCard from '../ImageCard';
 import PostItCard from '../PostItCard';
+import ProjectPrimaryFlap from '../SVGs/ProjectPrimaryFlap'
+import ProjectSecondaryFlap from '../SVGs/ProjectSecondaryFlap'
 
 class Project extends Component {
   constructor(props) {
@@ -82,6 +84,34 @@ class Project extends Component {
           <P color="#000">{this.props.projects[0].excerpt}</P>
           <Line backgroundColor="#000" />
         </Card>
+
+        <PostItCard
+          style= {
+            isHighContrastMode
+              ? {
+                background: 'var(--secondary-purple)',
+              }
+              : {
+                background: 'var(--primary-purple)',
+              }
+          }
+          frontFace={
+            {
+              flap: isHighContrastMode ? <ProjectSecondaryFlap/> : <ProjectPrimaryFlap />,
+              category: this.props.info[0].category,
+              content: this.props.info[0].content,
+            }
+          }
+          backFace= {
+            {
+              flap: <ProjectSecondaryFlap />,
+              category: this.props.info[0].category,
+              content: this.props.info[0].content,
+              background: 'var(--secondary-purple)'
+            }
+          }
+        />
+
         {this.props.projects.map(item => {
           return (
             <div key={item.id}>
@@ -202,10 +232,10 @@ class Project extends Component {
           );
         })}
         <QuoteBig color="#000" margin="2rem 0 1rem 0">
-          "{this.props.projects[1].quote}"
+          "{this.props.projects[0].quote}"
         </QuoteBig>
         <SmallP color="#000" textAlign="right" margin="1rem">
-          {this.props.projects[1].quote_name}
+          {this.props.projects[0].quote_name}
         </SmallP>
         <Form
           formColor="var(--secondary-purple)"
