@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Navbar from '../Navbar';
 import LanguageNavbar from '../LanguageNavbar';
 import Layout from '../Layout';
-import Hamburger from '../SVGs/Hamburger';
+import Hamburger from '../Hamburger';
 import Flag from '../SVGs/Flag';
 import Logo from '../SVGs/Logo';
 import nookies from 'nookies';
@@ -58,6 +58,8 @@ class Header extends Component {
   }
 
   handleClick() {
+    const burgerIcon= document.getElementById("burger-icon");
+    burgerIcon.classList.toggle("transform");
     this.setState({
       menuIsOpen: !this.state.menuIsOpen
     });
@@ -69,6 +71,7 @@ class Header extends Component {
   }
 
   handleLanguage() {
+
     this.setState({
       languageIsOpen: !this.state.languageIsOpen
     });

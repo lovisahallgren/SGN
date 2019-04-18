@@ -9,22 +9,22 @@ display: block;
 height: auto;
 right: 1vw;
 z-index: 99;
-padding: 15px 10px;
+padding: 0.9375rem 0.625rem;
 cursor: pointer;
 
 
 #bar-one,
 #bar-two,
 #bar-three {
-  width: 35px;
-  height: 5px;
+  width: 2.1875rem;
+  height: 0.3125rem;
   background-color: #333;
-  margin: 6px 0;
+  margin: 0.375rem 0;
   transition: 0.2s;
 }
 
 .transform #bar-one {
-  transform: rotate(-45deg) translate(-7px, 8px);
+  transform: rotate(-45deg) translate(-0.4375rem, 0.5rem);
 }
 
 .transform #bar-two {
@@ -32,7 +32,7 @@ cursor: pointer;
 }
 
 .transform #bar-three {
-  transform: rotate(45deg) translate(-7px, -9px);
+  transform: rotate(45deg) translate(-0.4375rem, -0.5625rem);
 }
 
 `;
