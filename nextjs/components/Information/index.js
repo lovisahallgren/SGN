@@ -156,21 +156,33 @@ class Information extends Component {
                       }
                       background="var(--primary-red)"
                     >
-                      {item.quote !== '' && (
+                      {item.image === false ? null : (
+                        <div>
+                          <img
+                            src={item.image || undefined}
+                            alt={item.name}
+                            style={{ width: '100%' }}
+                          />
+                          <SmallP margin="0.5rem 0 0.5rem 0" fontWeight="bold">
+                            {item.image_description}
+                          </SmallP>
+                        </div>
+                      )}
+                      {item.quote !== '' ? (
                         <div>
                           <Line />
                           <QuoteSmall style={{ marginTop: '1rem' }}>
                             "{item.quote}"
                           </QuoteSmall>
+                          <SmallP
+                            fontStyle="italic"
+                            textAlign="right"
+                            margin="1rem 0"
+                          >
+                            {item.quote_name}
+                          </SmallP>
                         </div>
-                      )}
-                      <SmallP
-                        fontStyle="italic"
-                        textAlign="right"
-                        margin="1rem 0"
-                      >
-                        {item.quote_name}
-                      </SmallP>
+                      ) : null}
                       <Line />
                       <P>{item.content}</P>
                     </ReadMoreCard>

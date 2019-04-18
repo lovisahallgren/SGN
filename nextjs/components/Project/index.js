@@ -82,13 +82,6 @@ class Project extends Component {
           <P color="#000">{this.props.projects[0].excerpt}</P>
           <Line backgroundColor="#000" />
         </Card>
-        <PostItCard
-          style={
-            isHighContrastMode
-              ? { background: 'var(--secondary-purple)' }
-              : { background: 'var(--primary-purple)' }
-          }
-        />
         {this.props.projects.map(item => {
           return (
             <div key={item.id}>
@@ -156,21 +149,33 @@ class Project extends Component {
                       }
                       background="var(--primary-purple)"
                     >
-                      {item.quote !== '' && (
+                      {item.image === false ? null : (
+                        <div>
+                          <img
+                            src={item.image || undefined}
+                            alt={item.name}
+                            style={{ width: '100%' }}
+                          />
+                          <SmallP margin="0.5rem 0 0.5rem 0" fontWeight="bold">
+                            {item.image_description}
+                          </SmallP>
+                        </div>
+                      )}
+                      {item.quote !== '' ? (
                         <div>
                           <Line />
                           <QuoteSmall style={{ marginTop: '1rem' }}>
                             "{item.quote}"
                           </QuoteSmall>
+                          <SmallP
+                            fontStyle="italic"
+                            textAlign="right"
+                            margin="1rem 0"
+                          >
+                            {item.quote_name}
+                          </SmallP>
                         </div>
-                      )}
-                      <SmallP
-                        fontStyle="italic"
-                        textAlign="right"
-                        margin="1rem 0"
-                      >
-                        {item.quote_name}
-                      </SmallP>
+                      ) : null}
                       <Line />
                       <P>{item.content}</P>
                     </ReadMoreCard>

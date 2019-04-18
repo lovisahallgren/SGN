@@ -60,7 +60,7 @@ const StyledForm = styled.form`
     pointer-events: none;
     top: 18px;
     left: 0%;
-    transition: 0.2s ease all;
+    transition: 0.15s ease all;
   }
   .user-input-wrp input:focus ~ .floating-label,
   .user-input-wrp input:not(:focus):valid ~ .floating-label {
@@ -76,8 +76,21 @@ const StyledForm = styled.form`
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { addClass: false };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+
+  handleSubmit(event){
+    alert(this.name.value);
+    alert(this.phone.value);
+    alert(this.email.value);
+    alert(this.subject.value);
+    
+
+    event.preventDefault();
+  }
+
+
 
   render() {
     return (
@@ -87,38 +100,43 @@ class Form extends React.Component {
             {this.props.title}
           </H2>
 
-          <div className="user-input-wrp">
-            <br />
-            <input type="text" className="inputText" required />
-            <span className="floating-label">{this.props.name}</span>
-          </div>
 
-          <div className="user-input-wrp">
-            <br />
-            <input type="text" className="inputText" required />
-            <span className="floating-label">{this.props.phone}</span>
-          </div>
+          <form onSubmit={this.handleSubmit} >
 
-          <div className="user-input-wrp">
-            <br />
-            <input type="text" className="inputText" required />
-            <span className="floating-label">{this.props.email}</span>
-          </div>
+            <div className="user-input-wrp">
+              <br />
+              <input type="text" ref={nameInput => this.name = nameInput} className="inputText" required />
+              <span className="floating-label">{this.props.name}</span>
+            </div>
 
-          <div className="user-input-wrp">
-            <br />
-            <input type="textarea" className="inputText" required />
-            <span className="floating-label">{this.props.subject}</span>
-          </div>
+            <div className="user-input-wrp">
+              <br />
+              <input type="text" ref={phoneInput => this.phone = phoneInput} className="inputText" required />
+              <span className="floating-label">{this.props.phone}</span>
+            </div>
 
-          <div className="form-button-div">
-            <button className="form-button" type="submit">
-              <p>{this.props.submit}</p>
-              <ArrowRight width="20%" />
-            </button>
-          </div>
+            <div className="user-input-wrp">
+              <br />
+              <input type="text" ref={emailInput => this.email = emailInput}  className="inputText" required />
+              <span className="floating-label">{this.props.email}</span>
+            </div>
+
+            <div className="user-input-wrp">
+              <br />
+              <input type="textarea" ref={subjectInput => this.subject = subjectInput} className="inputText" required />
+              <span className="floating-label">{this.props.subject}</span>
+            </div>
+
+            <div className="form-button-div">
+              <button className="form-button" type="submit">
+                <p>{this.props.submit}</p>
+                <ArrowRight width="20%" />
+              </button>
+            </div>
+          </form>
         </div>
       </StyledForm>
+
     );
   }
 }

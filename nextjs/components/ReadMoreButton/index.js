@@ -22,14 +22,15 @@ const StyledReadMoreButton = styled.button`
   border-left: none;
   display: flex;
   justify-content: space-between;
+  transition: height 0.25s ease;
 
   div {
     width: 100%;
     height: 0%;
     left: 0;
-    background-color: #FFF;
+    background-color: #fff;
     position: absolute;
-    margin-top: ${props => props.marginTop || '-2rem'};;
+    margin-top: ${props => props.marginTop || '-2rem'};
     border-left: 0.5rem solid transparent;
     border-right: 0.5rem solid transparent;
     border-bottom: 0.5rem solid ${props => props.topColor || 'white'};
@@ -42,18 +43,11 @@ class ReadMoreButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isHighContrastMode: null,
+      // isHighContrastMode: null,
       isExpanded: false
     };
 
     this.expandReadMore = this.expandReadMore.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState({
-      isHighContrastMode:
-        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false',
-    });
   }
 
   expandReadMore() {
@@ -66,19 +60,18 @@ class ReadMoreButton extends Component {
 
   render() {
     const { children } = this.props;
-    const isHighContrastMode = this.state.isHighContrastMode === 'true';
-
     return (
       <div>
         {this.state.isExpanded && children}
         <StyledReadMoreButton
           onClick={this.expandReadMore}
           style={this.props.style}
-          topColor={this.props.topColor} bottomColor={this.props.bottomColor}
+          topColor={this.props.topColor}
+          bottomColor={this.props.bottomColor}
           display={this.state.isExpanded ? this.props.display : null}
           marginTop={this.props.marginTop}
         >
-          <div></div>
+          <div />
           {this.state.isExpanded ? 'Läs mindre' : 'Läs mer'}
           {this.state.isExpanded ? <ArrowUp /> : <ArrowDown />}
         </StyledReadMoreButton>
