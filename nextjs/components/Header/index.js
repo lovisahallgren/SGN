@@ -8,6 +8,7 @@ import Layout from '../Layout';
 import Hamburger from '../SVGs/Hamburger';
 import Flag from '../SVGs/Flag';
 import Logo from '../SVGs/Logo';
+import nookies from 'nookies';
 
 const StyledHeader = styled.div`
   position: fixed;
@@ -19,13 +20,11 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   z-index: 99;
-  /* height: 6vh; */
 
   > a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    /* height: 30%; */
     width: 30%;
   }
 `;
@@ -35,14 +34,27 @@ class Header extends Component {
     super(props);
     this.state = {
       menuIsOpen: false,
-      languageIsOpen: false
+      languageIsOpen: false,
+      language: 'swedish'
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.handleLanguage = this.handleLanguage.bind(this);
   }
 
-  componentDidMount() {}
+  static async getInitialProps(ctx) {
+    this.setState({
+      ctx: ctx
+    });
+  }
+
+  componentDidMount() {
+    const lang = nookies.get(this.state.ctx).language;
+
+    this.setState({
+      language: lang
+    })
+  }
 
   handleClick() {
     this.setState({
@@ -88,7 +100,7 @@ class Header extends Component {
         <Flag
           style={{ marginRight: '-10rem' }}
           openLanguage={this.handleLanguage}
-          src={'/static/images/sweden.svg'}
+          src={this.state.language}
         />
         <Hamburger openMenu={this.handleClick} />
         <LanguageNavbar

@@ -75,7 +75,23 @@ class LanguageNavbar extends Component {
     };
   }
 
+  static async getInitialProps(ctx) {
+    this.setState({
+      ctx: ctx,
+    })
+  }
+
+  componentDidMount() {
+    const flag = nookies.get(this.state.ctx).language
+    this.setState({
+      activeFlag: flag
+    })
+  }
+
   render() {
+    const engActive = this.state.activeFlag == '/static/images/united-kingdom.svg' ? 'isActive' : null
+    const sweActive = this.state.activeFlag == '/static/images/sweden.svg' ? 'isActive' : null
+
     return (
       <StyledLanguageNavbar
         onClick={this.handleActiveLanguage}
@@ -83,32 +99,40 @@ class LanguageNavbar extends Component {
       >
         <ul className={this.props.openLanguage ? 'visible' : null}>
           <LanguageNavbarItem
-            onClick={() =>
+            onClick={() => {
+
               this.setState({
                 languages: 'swedish',
                 isActiveLanguage: 'swedish',
                 activeFlag: '/static/images/sweden.svg'
               })
+              nookies.set(this.state.ctx, 'language', '/static/images/sweden.svg')
+              document.location.reload();
+            }
             }
             // link="/contribute"
             text="Svenska"
             className={
-              this.state.isActiveLanguage == 'swedish' ? 'isActive' : null
+              sweActive
             }
             src="/static/images/sweden.svg"
           />
           <LanguageNavbarItem
-            onClick={() =>
+            onClick={() => {
+
               this.setState({
                 languages: 'english',
                 isActiveLanguage: 'english',
                 activeFlag: '/static/images/united-kingdom.svg'
               })
+              nookies.set(this.state.ctx, 'language', '/static/images/united-kingdom.svg')
+              document.location.reload();
+            }
             }
             // link="/contact"
             text="Engelska"
             className={
-              this.state.isActiveLanguage == 'english' ? 'isActive' : null
+              engActive
             }
             src="/static/images/united-kingdom.svg"
           />
