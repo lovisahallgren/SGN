@@ -10,15 +10,14 @@ import GlobalStyle from '../../styles';
 const StyledGDPR = styled.div`
   width: 100%;
   height: auto;
-  padding: 5rem 2rem;
   font-family: 'Roboto';
 
   > h1 {
-    margin: 5rem 0;
+    margin: 5rem 0 2rem 0;
   }
 
   > h2 {
-    margin: 5rem 0;
+    margin: 1rem 0;
   }
 `;
 
@@ -26,9 +25,9 @@ const GDPR = props => {
   return (
     <StyledGDPR>
       <GlobalStyle />
-      <H2 color="#000" fontWeight="bold">
+      <H1 color="#000" fontWeight="bold" fontSize="1.5rem">
         HAVING YOUR PERSONAL DATA ACCORDING TO GDPR
-      </H2>
+      </H1>
       <P color="#000">
         Support Group Network-SGN Sweden’s Privacy Policy – How We Process Your
         Personal Data. Support Group Network-SGN is keen that you feel confident

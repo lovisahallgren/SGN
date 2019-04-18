@@ -107,12 +107,6 @@ class Layout extends Component {
           bigText={this.state.isBigText}
         />
         <div style={{ width: '100%', height: '7vh' }} />
-        {!cookiesAccepted && (
-          <CookiePolicy
-            onAccept={this.handleCookies}
-            accept={this.state.cookiesAccepted}
-          />
-        )}
 
         {children}
 
@@ -130,6 +124,12 @@ class Layout extends Component {
           phone="+4676-884 08 84"
           email="info@supportgroup.se"
         />
+        {!cookiesAccepted && (
+          <CookiePolicy
+            onAccept={this.handleCookies}
+            accept={this.state.cookiesAccepted}
+          />
+        )}
       </>
     );
   }
