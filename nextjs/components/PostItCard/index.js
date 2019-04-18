@@ -41,35 +41,24 @@ a {
   padding: 1rem 4.5rem 0rem 1rem;
 }
 
+.back-face::before,
 .front-face::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
-  border-width: 0 3.5625rem 3.5625rem 0;
+  border-width: 0 2.75125rem 2.6875rem 0;
   border-style: solid;
-  border-color: #fff #fff ${props => props.borderColor || 'white'} ${props => props.borderColor || 'white'};
+  border-color: #fff #fff;
   display: block;
   width: 0;
 }
 
 .back-face {
-  background: #9B3030;
   transform: rotateY(-180deg);
   backface-visibility: hidden;
 }
 
-.back-face::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-width: 0 3.5625rem 3.5625rem 0;
-  border-style: solid;
-  border-color: #fff #fff ${props => props.borderColor || 'white'} ${props => props.borderColor || 'white'};
-  display: block;
-  width: 0;
-}
 
 .content-container {
   padding: 1rem;
@@ -77,6 +66,17 @@ a {
 
 #post-it-card.flip {
   transform: rotateY(180deg);
+}
+
+${H2} {
+
+  height: 9.875rem;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 `;
@@ -109,32 +109,33 @@ class PostItCard extends Component {
 
       <StyledPostItCard onClick={this.handleClick}>
 
-        <div id="post-it-card">
+        <div id="post-it-card" >
           <div style={this.props.style} className="front-face">
 
             <div className="h3-container">
-              <h3>About us</h3>
+              <h3>{this.props.frontFace.category}</h3>
               <h3><a href="#">Vänd</a></h3>
+              <div className="flap">{this.props.frontFace.flap}</div>
             </div>
             <Line style={{marginLeft: "1rem"}}/>
 
 
-
-            <H2 style={{padding: "1rem"}}>Support Group Network är ett samarbete där svenskar och flyktingar tillsammans stöttar och hjälper flyktingar</H2>
+            <H2 style={{padding: "1rem"}}>{this.props.frontFace.content}</H2>
 
             <Line style={{margin: "0 1rem"}}/>
 
           </div>
 
-          <div style={this.props.backFace} className="back-face">
+          <div style={{background: this.props.backFace.background}} className="back-face">
             <div className="h3-container">
-              <h3>About us</h3>
+              <h3>{this.props.backFace.category}</h3>
               <h3><a href="#">Vänd</a></h3>
+                <div className="flap">{this.props.backFace.flap}</div>
             </div>
 
             <Line style={{marginLeft: "1rem"}}/>
 
-            <H2 style={{padding: "1rem"}}>Support Group Network är ett samarbete där svenskar och flyktingar tillsammans stöttar och hjälper flyktingar</H2>
+            <H2 style={{padding: "1rem"}}>{this.props.backFace.content}</H2>
 
             <Line style={{margin: "0 1rem"}}/>
           </div>
