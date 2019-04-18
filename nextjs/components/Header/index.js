@@ -58,8 +58,8 @@ class Header extends Component {
   }
 
   handleClick() {
-    const burgerIcon= document.getElementById("burger-icon");
-    burgerIcon.classList.toggle("transform");
+    const burgerIcon = document.getElementById('burger-icon');
+    burgerIcon.classList.toggle('transform');
     this.setState({
       menuIsOpen: !this.state.menuIsOpen
     });
@@ -71,7 +71,6 @@ class Header extends Component {
   }
 
   handleLanguage() {
-
     this.setState({
       languageIsOpen: !this.state.languageIsOpen
     });
@@ -102,7 +101,7 @@ class Header extends Component {
           </a>
         </Link>
         <Flag
-          style={{ margin: '0.5rem -6rem 0 0' }}
+          style={{ margin: '0.5rem 3rem 0 0' }}
           openLanguage={this.handleLanguage}
           src={this.state.language}
         />

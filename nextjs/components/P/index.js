@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const P = styled.p`
@@ -7,10 +7,9 @@ const P = styled.p`
   color: ${props => props.color || '#FFF'};
   letter-spacing: ${props => props.letterSpacing || '0.02em'};
   text-indent: ${props => props.textIndent || '0'};
-`
+  font-weight: ${props => props.fontWeight || null};
+`;
 
-P.propTypes = {
-
-};
+P.propTypes = {};
 
 export default P;
