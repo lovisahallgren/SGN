@@ -54,7 +54,7 @@ const StyledForm = styled.form`
     border-bottom: 1px solid black;
     box-shadow: none !important;
     padding-bottom: 3%;
-    color:red;
+    color:#333;
   }
   .user-input-wrp .inputText:focus {
     border-color: ${props => props.formColor || 'white'};
@@ -79,29 +79,41 @@ const StyledForm = styled.form`
     opacity: 1;
   }
 
-  //Form sent animations and divs bellow
+  //Form completion message animations and divs bellow
 
   .sent-email-div{
-    z-index:-1;
-    position: absolute;
-    max-height: 50rem;
-    min-height: 30rem;
-    overflow: hidden;
-    display: none;
-    background: ${props => props.background || 'red'};
-    color: black;
-    padding: 16px 16px 20px 16px;
-    margin: 16px 0;
-    
-  }
-
-  .sent-email-div-active{
     z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-content: center;
+
+    position: absolute;
+    max-height: 50rem;
+    min-height: 33rem;
+    overflow: hidden;
+    // display: none;
+    background: ${props => props.background || 'gray'};
+    color: black;
+
+    padding: 16px 16px 20px 16px;
+    margin: 16px 0;
+    
+  }
+
+  // .sent-email-div-active{
+  //   z-index: 1;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   text-align: center;
+  //   align-content: center;
+  // }
+
+  .sent-email-div-content-image{
+    width: 35%;
+        
   }
 
 `;
@@ -109,15 +121,23 @@ const StyledForm = styled.form`
 class Form extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isEmailSent: false
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
   handleSubmit(event){
-    alert(this.name.value);
-    alert(this.phone.value);
-    alert(this.email.value);
-    alert(this.subject.value);
+
+    this.setState({
+      isEmailSent: true
+    })
+    // alert(this.name.value);
+    // alert(this.phone.value);
+    // alert(this.email.value);
+    // alert(this.subject.value);
     
 
     event.preventDefault();
@@ -127,19 +147,21 @@ class Form extends React.Component {
 
   render() {
     return (
+
       <StyledForm {...this.props} id="form">
+      
+         {this.state.isEmailSent && <div className="sent-email-div">
+            <div className="sent-email-div-content" >
+              <img className="sent-email-div-content-image" src="static/images/sgn_figure_wave_pants.gif"></img>
+              <H2 color="#000">Tack för ditt mail!</H2>
+              <P color="#000">Vi återkommer med ett <br></br> svar så fort vi kan.</P>
+            </div>
+          </div>}
+          
         <div className="form-container">
           <H2 color="#000" className="form-header">
             {this.props.title}
           </H2>
-
-          <div className="sent-email-div sent-email-div-active">
-            <div className="sent-email-div-content" >
-              <img src="https://assets.pernod-ricard.com/nz/media_images/test.jpg?hUV74FvXQrWUBk1P2.fBvzoBUmjZ1wct" height="25" width="25%"></img>
-              <H2 color="#000">Tack för ditt mail!</H2>
-              <P color="#000">Vi återkommer med ett svar så fort vi kan.</P>
-            </div>
-          </div>
 
           <form onSubmit={this.handleSubmit} >
 
