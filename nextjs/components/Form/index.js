@@ -3,10 +3,13 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import H2 from '../H2';
 import ArrowRight from '../SVGs/ArrowRight';
+import P from '../P';
 
 const StyledForm = styled.form`
   width: 100%;
-
+  
+  position: relative;
+  
   .form-container {
     width: 100%;
     max-height: 50rem;
@@ -71,6 +74,30 @@ const StyledForm = styled.form`
     font-weight: bold;
     opacity: 1;
   }
+
+  //Form sent animations and divs bellow
+
+  .sent-email-div{
+    z-index:-1;
+    position: absolute;
+    max-height: 50rem;
+    min-height: 30rem;
+    overflow: hidden;
+    display: flex;
+    background: ${props => props.background || 'red'};
+    color: black;
+    padding: 16px 16px 20px 16px;
+    margin: 16px 0;
+    
+  }
+  .sent-email-div-active{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+
 `;
 
 class Form extends React.Component {
@@ -100,6 +127,10 @@ class Form extends React.Component {
             {this.props.title}
           </H2>
 
+          <div className="sent-email-div sent-email-div-active">
+            <H2 color="#000">Tack för ditt mail!</H2>
+            <P color="#000">Vi återkommer med ett svar så fort vi kan.</P>
+          </div>
 
           <form onSubmit={this.handleSubmit} >
 
@@ -135,6 +166,9 @@ class Form extends React.Component {
             </div>
           </form>
         </div>
+
+       
+
       </StyledForm>
 
     );

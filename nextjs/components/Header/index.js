@@ -17,7 +17,7 @@ const StyledHeader = styled.div`
   background: white;
   display: flex;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 99;
 
   a {
     text-decoration: none;
