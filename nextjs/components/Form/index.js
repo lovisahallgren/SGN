@@ -82,6 +82,10 @@ class Form extends React.Component {
 
   handleSubmit(event){
     alert(this.name.value);
+    alert(this.phone.value);
+    alert(this.email.value);
+    alert(this.subject.value);
+    
 
     event.preventDefault();
   }
@@ -107,19 +111,19 @@ class Form extends React.Component {
 
             <div className="user-input-wrp">
               <br />
-              <input type="text" className="inputText" required />
+              <input type="text" ref={phoneInput => this.phone = phoneInput} className="inputText" required />
               <span className="floating-label">{this.props.phone}</span>
             </div>
 
             <div className="user-input-wrp">
               <br />
-              <input type="text" className="inputText" required />
+              <input type="text" ref={emailInput => this.email = emailInput}  className="inputText" required />
               <span className="floating-label">{this.props.email}</span>
             </div>
 
             <div className="user-input-wrp">
               <br />
-              <input type="textarea" className="inputText" required />
+              <input type="textarea" ref={subjectInput => this.subject = subjectInput} className="inputText" required />
               <span className="floating-label">{this.props.subject}</span>
             </div>
 
@@ -132,6 +136,7 @@ class Form extends React.Component {
           </form>
         </div>
       </StyledForm>
+
     );
   }
 }
