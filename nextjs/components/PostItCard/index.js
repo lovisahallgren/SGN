@@ -4,23 +4,48 @@ import Line from '../Line';
 import H2 from '../H2';
 import FrontFace from './FrontFace';
 import BackFace from './BackFace';
+import nookies from 'nookies';
 
 const StyledPostItCard = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-position: relative;
-line-height: 40px;
-padding: 0 20px;
-width: 100%;
 height: 16rem;
-font-weight: 100;
-margin-bottom: 10px;
-background: ${props => props.background || 'white'};
-transform-style: preserve-3d;
+margin: 1rem auto;
+background: none !important;
 
+h3,
+a {
+  color: #fff;
+}
 
-:before {
+#post-it-card {
+  height: 17.5rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .8s;
+}
+
+.front-face,
+.back-face {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  background: #FF9797;
+}
+
+.front-face .h3-container,
+.back-face .h3-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4.5rem 0rem 1rem;
+}
+
+.front-face::before {
   content: "";
   position: absolute;
   top: 0;
@@ -32,43 +57,30 @@ transform-style: preserve-3d;
   width: 0;
 }
 
-
-.front-face,
 .back-face {
-  position: absolute;
-	background-size: 100% 100%;
-	height: 100%;
-	width: 100%;
-	pointer-events: none;
-	border-radius: 5px;
-	backface-visibility: hidden;
-}
-
-.back-face {
+  background: #9B3030;
   transform: rotateY(-180deg);
+  backface-visibility: hidden;
 }
 
-.front-face {
-  z-index: 2;
+.back-face::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 3.5625rem 3.5625rem 0;
+  border-style: solid;
+  border-color: #fff #fff ${props => props.background || '#FF9797'} ${props => props.background || '#FF9797'};
+  display: block;
+  width: 0;
 }
 
-.post-it-card .flip {
+.content-container {
+  padding: 1rem;
+}
+
+#post-it-card.flip {
   transform: rotateY(180deg);
-}
-
-a{
-  text-decoration: underline;
-  color: ${props => props.color || '#FFF'};
-  margin-left: 10rem;
-}
-
-h3 {
-  display: inline-flex;
-  color: ${props => props.color || '#FFF'};
-}
-
-div {
-  margin-bottom: -.9rem;
 }
 
 `;
@@ -80,46 +92,62 @@ class PostItCard extends Component {
     };
   };
 
+  componentDidMount() {
+    this.setState({
+      isHighContrastMode:
+        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false'
+    });
+  }
+
   handleClick(e) {
-    console.log("lol");
-    const postItCard = document.querySelector(".post-it-card");
+    e.preventDefault();
+    const postItCard= document.getElementById("post-it-card");
     postItCard.classList.toggle("flip");
-    const back = document.querySelector(".back-face")
-    back.classList.toggle("flip")
+
   }
 
   render() {
     const { children } = this.props;
 
+
     return (
 
-      <StyledPostItCard style={this.props.style} onClick={this.handleClick} className="post-it-card">
+      <StyledPostItCard style={this.props.style} onClick={this.handleClick}>
 
-          <FrontFace>
+        <div id="post-it-card">
+          <div className="front-face">
 
             <div className="h3-container">
               <h3>About us</h3>
               <h3><a href="#">Vänd</a></h3>
             </div>
+            <Line style={{marginLeft: "1rem"}}/>
 
-            <Line style={{marginTop: "0rem"}}/>
 
-            <H2>Support Group Network är ett samarbete där svenskar och flyktingar tillsammans stöttar och hjälper flyktingar</H2>
 
-            <Line style={{marginTop: "0rem"}} />
+            <H2 style={{padding: "1rem"}}>Support Group Network är ett samarbete där svenskar och flyktingar tillsammans stöttar och hjälper flyktingar</H2>
 
-          </FrontFace>
+            <Line style={{margin: "0 1rem"}}/>
 
-          <BackFace>lol</BackFace>
+          </div>
 
+          <div className="back-face">
+            <div className="h3-container">
+              <h3>About us</h3>
+              <h3><a href="#">Vänd</a></h3>
+            </div>
+
+            <Line style={{marginLeft: "1rem"}}/>
+
+            <H2 style={{padding: "1rem"}}>Support Group Network är ett samarbete där svenskar och flyktingar tillsammans stöttar och hjälper flyktingar</H2>
+
+            <Line style={{margin: "0 1rem"}}/>
+          </div>
+        </div>
       </StyledPostItCard>
 
     );
   }
 }
-
-PostItCard.propTypes = {
-
-};
 
 export default PostItCard;
