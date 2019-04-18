@@ -43,34 +43,38 @@ const StyledForm = styled.form`
   .user-input-wrp {
     position: relative;
     width: 100%;
-    color: #333333;
+    color: #333;
     padding-bottom: 10%;
   }
   .user-input-wrp .inputText {
-    font-size: 1.5rem;
+    font-size: 1rem;
     width: 100%;
     outline: none;
     border: none;
     border-bottom: 1px solid black;
     box-shadow: none !important;
+    padding-bottom: 3%;
+    color:red;
   }
   .user-input-wrp .inputText:focus {
     border-color: ${props => props.formColor || 'white'};
     border-width: medium medium 1px;
+    color: #333;
   }
   .user-input-wrp .floating-label {
     position: absolute;
     pointer-events: none;
-    top: 18px;
+    top: 25%;
     left: 0%;
     transition: 0.15s ease all;
+    color: #333;
   }
   .user-input-wrp input:focus ~ .floating-label,
   .user-input-wrp input:not(:focus):valid ~ .floating-label {
-    top: 0px;
+    top: -4%;
     left: 0%;
     color: ${props => props.formColor || 'white'};
-    // font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     opacity: 1;
   }
@@ -83,19 +87,21 @@ const StyledForm = styled.form`
     max-height: 50rem;
     min-height: 30rem;
     overflow: hidden;
-    display: flex;
+    display: none;
     background: ${props => props.background || 'red'};
     color: black;
     padding: 16px 16px 20px 16px;
     margin: 16px 0;
     
   }
+
   .sent-email-div-active{
     z-index: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-
+    justify-content: center;
+    text-align: center;
+    align-content: center;
   }
 
 `;
@@ -128,8 +134,11 @@ class Form extends React.Component {
           </H2>
 
           <div className="sent-email-div sent-email-div-active">
-            <H2 color="#000">Tack för ditt mail!</H2>
-            <P color="#000">Vi återkommer med ett svar så fort vi kan.</P>
+            <div className="sent-email-div-content" >
+              <img src="https://assets.pernod-ricard.com/nz/media_images/test.jpg?hUV74FvXQrWUBk1P2.fBvzoBUmjZ1wct" height="25" width="25%"></img>
+              <H2 color="#000">Tack för ditt mail!</H2>
+              <P color="#000">Vi återkommer med ett svar så fort vi kan.</P>
+            </div>
           </div>
 
           <form onSubmit={this.handleSubmit} >
