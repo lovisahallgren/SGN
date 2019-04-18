@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 const StyledNavIndicator = styled.div`
   width: 100%;
-  height: 13vh;
+  height: 11vh;
   background-color: ${props => props.background || 'white'};
   color: black;
-  padding: 15px 15px 11px 13px;
+  padding: 11px 13px;
   display: flex;
   justify-content: space-between;
 
@@ -21,31 +21,30 @@ const StyledNavIndicator = styled.div`
     justify-content: space-between;
     text-align: right;
   }
-  /* top: 100vh; */
-  /* margin: 10px; */
-  /* padding: 16px; */
+
+  img {
+    height: 100%;
+    margin-top: 0.3rem;
+    margin-left: -0.4rem;
+  }
 `;
 
 class NavIndicator extends Component {
   constructor(props) {
     super();
-    this.state = {
-
-    }
+    this.state = {};
   }
 
   render() {
     const { children } = this.props;
     return (
-        <StyledNavIndicator style={this.props.style}>
-          {children}
-        </StyledNavIndicator>
+      <StyledNavIndicator style={this.props.style}>
+        {children}
+      </StyledNavIndicator>
     );
   }
 }
 
-NavIndicator.propTypes = {
-
-};
+NavIndicator.propTypes = {};
 
 export default NavIndicator;

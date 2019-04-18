@@ -52,7 +52,7 @@ class Project extends Component {
               : { background: 'var(--primary-purple)' }
           }
         >
-          <LetterBig>P</LetterBig>
+          <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
           <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
               <Link href="/">
