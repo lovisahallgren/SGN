@@ -20,12 +20,13 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   z-index: 99;
+  height: 8vh;
 
   > a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    width: 30%;
+    width: 40%;
   }
 `;
 
@@ -53,7 +54,7 @@ class Header extends Component {
 
     this.setState({
       language: lang
-    })
+    });
   }
 
   handleClick() {
@@ -95,10 +96,10 @@ class Header extends Component {
         <Link href="/">
           <a href="/">
             <Logo />
-           </a>
+          </a>
         </Link>
         <Flag
-          style={{ marginRight: '-10rem' }}
+          style={{ margin: '0.5rem -6rem 0 0' }}
           openLanguage={this.handleLanguage}
           src={this.state.language}
         />
