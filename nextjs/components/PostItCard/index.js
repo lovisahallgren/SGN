@@ -7,7 +7,7 @@ import BackFace from './BackFace';
 import nookies from 'nookies';
 
 const StyledPostItCard = styled.div`
-height: 16rem;
+
 margin: 1rem auto;
 background: none !important;
 
@@ -34,10 +34,6 @@ a {
   backface-visibility: hidden;
 }
 
-.front-face {
-  background: #FF9797;
-}
-
 .front-face .h3-container,
 .back-face .h3-container {
   display: flex;
@@ -52,7 +48,7 @@ a {
   right: 0;
   border-width: 0 3.5625rem 3.5625rem 0;
   border-style: solid;
-  border-color: #fff #fff ${props => props.background || '#9B3030'} ${props => props.background || '#9B3030'};
+  border-color: #fff #fff ${props => props.borderColor || 'white'} ${props => props.borderColor || 'white'};
   display: block;
   width: 0;
 }
@@ -70,7 +66,7 @@ a {
   right: 0;
   border-width: 0 3.5625rem 3.5625rem 0;
   border-style: solid;
-  border-color: #fff #fff ${props => props.background || '#FF9797'} ${props => props.background || '#FF9797'};
+  border-color: #fff #fff ${props => props.borderColor || 'white'} ${props => props.borderColor || 'white'};
   display: block;
   width: 0;
 }
@@ -109,13 +105,12 @@ class PostItCard extends Component {
   render() {
     const { children } = this.props;
 
-
     return (
 
-      <StyledPostItCard style={this.props.style} onClick={this.handleClick}>
+      <StyledPostItCard onClick={this.handleClick}>
 
         <div id="post-it-card">
-          <div className="front-face">
+          <div style={this.props.style} className="front-face">
 
             <div className="h3-container">
               <h3>About us</h3>
@@ -131,7 +126,7 @@ class PostItCard extends Component {
 
           </div>
 
-          <div className="back-face">
+          <div style={this.props.backFace} className="back-face">
             <div className="h3-container">
               <h3>About us</h3>
               <h3><a href="#">Vänd</a></h3>

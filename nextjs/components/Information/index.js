@@ -74,6 +74,25 @@ class Information extends Component {
             {this.props.info[0].image_description}
           </SmallP>
         </ImageCard> */}
+        <PostItCard
+          style= {
+            isHighContrastMode
+              ? {
+                background: 'var(--secondary-red)',
+                borderColor: 'var(--primary-red)'
+              }
+              : {
+                background: 'var(--primary-red)',
+                borderColor: 'var(--secondary-red)'
+              }
+          }
+          backFace= {
+            {
+              background: 'var(--secondary-red)',
+              borderColor: 'var(--primary-red)'
+            }
+          }
+        />
         <Card>
           <H2 color="#000">{this.props.info[0].title}</H2>
           <P color="#000">{this.props.info[0].excerpt}</P>
