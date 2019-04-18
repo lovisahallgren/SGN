@@ -5,8 +5,10 @@ import styled from 'styled-components';
 import Navbar from '../Navbar';
 import LanguageNavbar from '../LanguageNavbar';
 import Layout from '../Layout';
-import Hamburger from '../Hamburger';
+import Hamburger from '../SVGs/Hamburger';
 import Flag from '../SVGs/Flag';
+import Logo from '../SVGs/Logo';
+import nookies from 'nookies';
 
 const StyledHeader = styled.div`
   position: fixed;
@@ -17,13 +19,14 @@ const StyledHeader = styled.div`
   background: white;
   display: flex;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 99;
+  height: 8vh;
 
-  a {
+  > a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    height: 10%;
+    width: 40%;
   }
 `;
 
@@ -32,19 +35,29 @@ class Header extends Component {
     super(props);
     this.state = {
       menuIsOpen: false,
-      languageIsOpen: false
+      languageIsOpen: false,
+      language: 'swedish'
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.handleLanguage = this.handleLanguage.bind(this);
   }
 
-  componentDidMount() {}
+  static async getInitialProps(ctx) {
+    this.setState({
+      ctx: ctx
+    });
+  }
+
+  componentDidMount() {
+    const lang = nookies.get(this.state.ctx).language;
+
+    this.setState({
+      language: lang
+    });
+  }
 
   handleClick() {
-    const burgerIcon= document.getElementById("burger-icon");
-    burgerIcon.classList.toggle("transform");
-
     this.setState({
       menuIsOpen: !this.state.menuIsOpen
     });
@@ -81,16 +94,16 @@ class Header extends Component {
     return (
       <StyledHeader>
         <Link href="/">
-          <a href="/"> Home </a>
+          <a href="/">
+            <Logo />
+          </a>
         </Link>
         <Flag
-          style={{ marginRight: '-14rem' }}
+          style={{ margin: '0.5rem -6rem 0 0' }}
           openLanguage={this.handleLanguage}
-          src={'/static/images/sweden.svg'}
+          src={this.state.language}
         />
-
-      <Hamburger openMenu={this.handleClick}/>
-
+        <Hamburger openMenu={this.handleClick} />
         <LanguageNavbar
           contrast={this.props.contrast}
           style={this.state.languageIsOpen ? showlanguageStyle : null}

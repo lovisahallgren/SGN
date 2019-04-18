@@ -106,7 +106,7 @@ class Layout extends Component {
           bigTextFunction={this.handleFontSize}
           bigText={this.state.isBigText}
         />
-        <div style={{ width: '100%', height: '6vh' }} />
+        <div style={{ width: '100%', height: '7vh' }} />
         {!cookiesAccepted && (
           <CookiePolicy
             onAccept={this.handleCookies}

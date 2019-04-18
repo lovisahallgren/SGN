@@ -8,6 +8,7 @@ import ArrowDown from '../SVGs/ArrowDown';
 import Facebook from '../SVGs/Facebook';
 import Youtube from '../SVGs/Youtube';
 import Instagram from '../SVGs/Instagram';
+import Link from 'next/link';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -208,9 +209,11 @@ class Footer extends Component {
             <p>{phone}</p>
             <p>{email}</p>
           </div>
-          <SmallP textDecoration="underline" margin="0 0 0 -18%">
-            Privacy Policy / GDPR
-          </SmallP>
+          <Link href="/gdpr">
+            <SmallP textDecoration="underline" margin="0 0 0 -18%">
+              Privacy Policy / GDPR
+            </SmallP>
+          </Link>
         </article>
       </StyledFooter>
     );

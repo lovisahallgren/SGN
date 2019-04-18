@@ -117,9 +117,6 @@ class Navbar extends Component {
   render() {
     const isHighContrastMode = this.state.isHighContrastMode === 'true';
     const isBigTextFunction = this.props.isBigTextFunction;
-    const style = {
-      display: 'grid'
-    };
 
     return (
       <StyledNavbar style={this.props.style}>

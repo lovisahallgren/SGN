@@ -11,8 +11,8 @@ const StyledHomeCard = styled.div`
   align-items: stretch;
   background: ${props => props.background || 'white'};
   color: ${props => props.color || 'white'};
-  padding: 16px 16px 20px 16px;
-  margin: 16px 0;
+  padding: 0.5rem 0.8125rem 0.625rem 0.8125rem;
+  margin: 1rem 0;
   background-position: center;
   background-repeat: repeat;
   /* object-fit: cover; */
@@ -20,8 +20,13 @@ const StyledHomeCard = styled.div`
   svg {
     fill: #fff;
     /* width: 25%; */
-    height: 20%;
-    /* margin: 0.1rem 1rem; */
+    height: 35%;
+    margin: 0 0 -0.5rem 1rem;
+  }
+  img {
+    height: 60%;
+    margin-top: 0.3rem;
+    margin-left: -0.4rem;
   }
 
   &:active {
