@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import H2 from '../H2';
+import ArrowRight from '../SVGs/ArrowRight';
 
 const StyledForm = styled.form`
   width: 100%;
@@ -20,99 +21,105 @@ const StyledForm = styled.form`
     margin: 16px 0;
   }
 
-  .form-button-div{
-      padding-left: 80%;
-      padding-top: 5%;
-    }
-    .form-button{
-        text-decoration: underline;
-        font-weight:800;
-      }
+  .form-button-div {
+    padding-left: 70%;
+    padding-top: 5%;
+  }
+  .form-button {
+    text-decoration: underline;
+    font-weight: 800;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .form-header {
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
 
-.user-input-wrp {
-	position: relative;
-	width: 100%;
-  color:gray;
-  padding-bottom: 10%;
-}
-.user-input-wrp .inputText{
-  font-size: 1.5rem;
-	width: 100%;
-	outline: none;
-	border:none;
-	border-bottom: 1px solid #777;
- 	box-shadow: none !important;
-}
-.user-input-wrp .inputText:focus{
-	border-color: blue;
-	border-width: medium medium 1px;
-}
-.user-input-wrp .floating-label {
-	position: absolute;
-	pointer-events: none;
-	top: 18px;
-	left: 0%;
-	transition: 0.2s ease all;
-}
-.user-input-wrp input:focus ~ .floating-label,
-.user-input-wrp input:not(:focus):valid ~ .floating-label{
-	top: 0px;
-	left: 0%;
-	// font-size: 13px;
-  font-weight: bold;
-	opacity: 1;
-}
-
-`
+  .user-input-wrp {
+    position: relative;
+    width: 100%;
+    color: #333333;
+    padding-bottom: 10%;
+  }
+  .user-input-wrp .inputText {
+    font-size: 1.5rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    box-shadow: none !important;
+  }
+  .user-input-wrp .inputText:focus {
+    border-color: ${props => props.formColor || 'white'};
+    border-width: medium medium 1px;
+  }
+  .user-input-wrp .floating-label {
+    position: absolute;
+    pointer-events: none;
+    top: 18px;
+    left: 0%;
+    transition: 0.2s ease all;
+  }
+  .user-input-wrp input:focus ~ .floating-label,
+  .user-input-wrp input:not(:focus):valid ~ .floating-label {
+    top: 0px;
+    left: 0%;
+    color: ${props => props.formColor || 'white'};
+    // font-size: 13px;
+    font-weight: bold;
+    opacity: 1;
+  }
+`;
 
 class Form extends React.Component {
   constructor(props) {
-  super(props);
-  this.state = {addClass: false}
+    super(props);
+    this.state = { addClass: false };
   }
 
-  render(){
-
+  render() {
     return (
-
-      <StyledForm>
-
+      <StyledForm {...this.props} id="form">
         <div className="form-container">
+          <H2 color="#000" className="form-header">
+            {this.props.title}
+          </H2>
 
-        <h2>{this.props.title}</h2>
-
-
-          <div class="user-input-wrp">
-            <br/>
-            <input type="text" class="inputText" required/>
-            <span class="floating-label">{this.props.name}</span>
+          <div className="user-input-wrp">
+            <br />
+            <input type="text" className="inputText" required />
+            <span className="floating-label">{this.props.name}</span>
           </div>
 
-          <div class="user-input-wrp">
-            <br/>
-            <input type="text" class="inputText" required/>
-            <span class="floating-label">{this.props.phone}</span>
+          <div className="user-input-wrp">
+            <br />
+            <input type="text" className="inputText" required />
+            <span className="floating-label">{this.props.phone}</span>
           </div>
 
-          <div class="user-input-wrp">
-            <br/>
-            <input type="text" class="inputText" required/>
-            <span class="floating-label">{this.props.email}</span>
+          <div className="user-input-wrp">
+            <br />
+            <input type="text" className="inputText" required />
+            <span className="floating-label">{this.props.email}</span>
           </div>
 
-          <div class="user-input-wrp">
-            <br/>
-            <input type="textarea" class="inputText" required/>
-            <span class="floating-label">{this.props.subject}</span>
+          <div className="user-input-wrp">
+            <br />
+            <input type="textarea" className="inputText" required />
+            <span className="floating-label">{this.props.subject}</span>
           </div>
 
           <div className="form-button-div">
-            <input className="form-button" type="submit" value={this.props.submit} />
+            <button className="form-button" type="submit">
+              <p>{this.props.submit}</p>
+              <ArrowRight width="20%" />
+            </button>
           </div>
-
         </div>
       </StyledForm>
-    )
+    );
   }
 }
 export default Form;

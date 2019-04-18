@@ -6,14 +6,14 @@ import NavbarItem from '../NavbarItem';
 import nookies from 'nookies';
 
 const StyledNavbar = styled.div`
-  display: none;
   position: absolute;
   left: 0;
   top: 98%;
   width: 100%;
   padding: 0 1rem;
   background: white;
-  height: 28vh;
+  height: 0vh;
+  transition: height 0.25s ease;
 
   ul {
     display: grid;
@@ -21,13 +21,14 @@ const StyledNavbar = styled.div`
     list-style: none;
     margin-inline-start: -6px;
     margin-inline-end: -6px;
+    opacity: 0;
   }
 
   div {
-    display: flex;
     justify-content: center;
     font-weight: bold;
-    padding-top: 1rem;
+    opacity: 0;
+    height: 0;
   }
 
   a {
@@ -48,6 +49,32 @@ const StyledNavbar = styled.div`
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
+    height: 0;
+    display: none;
+  }
+
+  ul.visible {
+    display: grid;
+    opacity: 1;
+    transition: opacity 1s ease;
+    li {
+      display: flex;
+    }
+  }
+
+  div.visible {
+    display: flex;
+    opacity: 1;
+    transition: opacity 1.5s ease;
+    padding-top: 1rem;
+
+    button {
+      display: block;
+      height: auto;
+    }
+    .border {
+      height: 1.25rem;
+    }
   }
 `;
 
@@ -90,10 +117,13 @@ class Navbar extends Component {
   render() {
     const isHighContrastMode = this.state.isHighContrastMode === 'true';
     const isBigTextFunction = this.props.isBigTextFunction;
+    const style = {
+      display: 'grid'
+    };
 
     return (
       <StyledNavbar style={this.props.style}>
-        <ul>
+        <ul className={this.props.openMenu ? 'visible' : null}>
           <NavbarItem
             style={
               isHighContrastMode
@@ -149,7 +179,7 @@ class Navbar extends Component {
             text="Kontakt"
           />
         </ul>
-        <div>
+        <div className={this.props.openMenu ? 'visible' : null}>
           <button onClick={isBigTextFunction}>
             {this.props.isBigText ? 'Liten text' : 'Stor text'}
           </button>

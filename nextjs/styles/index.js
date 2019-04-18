@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
    --secondary-tint-blue: #275CA9;
    --secondary-tint-pink: #953C7C;
 
-   --test: url('../static/images/Pattern_Circle_1080x1080.svg');
+   --test: url('../static/images/Pattern_Circle_1920x1080.svg');
  }
 `;
 

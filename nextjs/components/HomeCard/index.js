@@ -13,12 +13,19 @@ const StyledHomeCard = styled.div`
   color: ${props => props.color || 'white'};
   padding: 16px 16px 20px 16px;
   margin: 16px 0;
+  background-position: center;
+  background-repeat: repeat;
+  /* object-fit: cover; */
 
   svg {
     fill: #fff;
     /* width: 25%; */
     height: 20%;
     /* margin: 0.1rem 1rem; */
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 `;
 
@@ -30,7 +37,12 @@ class HomeCard extends Component {
 
   render() {
     const { children } = this.props;
-    return <StyledHomeCard style={this.props.style}>{children}</StyledHomeCard>;
+
+    return (
+      <StyledHomeCard onClick={this.props.onClick} style={this.props.style}>
+        {children}
+      </StyledHomeCard>
+    );
   }
 }
 

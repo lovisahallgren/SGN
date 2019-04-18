@@ -34,146 +34,150 @@ class Home extends Component {
 
     return (
       <Layout>
-        <HomeCard
-          style={
-            isHighContrastMode
-              ? { background: 'var(--secondary-purple)' }
-              : { background: 'var(--primary-purple)' }
-          }
-        >
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              height: '50%'
-            }}
+        <Link href="/projects">
+          <HomeCard
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-purple)' }
+                : { background: 'var(--primary-purple)' }
+            }
           >
-            <Link href="/projects">
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                height: '50%'
+              }}
+            >
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
                 {this.props.projects[0].type}
               </SmallP>
-            </Link>
-            <LetterBig>P</LetterBig>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
-              height: '50%'
-            }}
-          >
-            <H2>{this.props.posts[0].title.rendered}</H2>
-            <Link href="/projects">
+              <LetterBig>P</LetterBig>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                height: '50%'
+              }}
+            >
+              <H2>{this.props.posts[0].title.rendered}</H2>
               <ArrowRight />
-            </Link>
-          </div>
-        </HomeCard>
-        <HomeCard
-          style={
-            isHighContrastMode
-              ? { background: 'var(--secondary-purple)' }
-              : { background: 'var(--primary-purple)' }
-          }
-        >
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              height: '50%'
-            }}
+            </div>
+          </HomeCard>
+        </Link>
+        <Link href="/projects">
+          <HomeCard
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-purple)' }
+                : { background: 'var(--primary-purple)' }
+            }
           >
-            <Link href="/projects">
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.projects[0].type}
-              </SmallP>
-            </Link>
-            <LetterBig>P</LetterBig>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
-              height: '50%'
-            }}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                height: '50%'
+              }}
+            >
+              <Link href="/projects">
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  {this.props.projects[0].type}
+                </SmallP>
+              </Link>
+              <LetterBig>P</LetterBig>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                height: '50%'
+              }}
+            >
+              <H2>{this.props.posts[0].title.rendered}</H2>
+              <Link href="/projects">
+                <ArrowRight />
+              </Link>
+            </div>
+          </HomeCard>
+        </Link>
+        <Link href="/activities">
+          <HomeCard
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-pink)' }
+                : { background: 'var(--primary-pink)' }
+            }
           >
-            <H2>{this.props.posts[0].title.rendered}</H2>
-            <Link href="/projects">
-              <ArrowRight />
-            </Link>
-          </div>
-        </HomeCard>
-        <HomeCard
-          style={
-            isHighContrastMode
-              ? { background: 'var(--secondary-pink)' }
-              : { background: 'var(--primary-pink)' }
-          }
-        >
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              height: '50%'
-            }}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                height: '50%'
+              }}
+            >
+              <Link href="/activities">
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  {this.props.activities[0].type}
+                </SmallP>
+              </Link>
+              <LetterBig>A</LetterBig>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                height: '50%'
+              }}
+            >
+              <H2>{this.props.posts[0].title.rendered}</H2>
+              <Link href="/activities">
+                <ArrowRight />
+              </Link>
+            </div>
+          </HomeCard>
+        </Link>
+        <Link href="/activities">
+          <HomeCard
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-pink)' }
+                : { background: 'var(--primary-pink)' }
+            }
           >
-            <Link href="/activities">
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.activities[0].type}
-              </SmallP>
-            </Link>
-            <LetterBig>A</LetterBig>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
-              height: '50%'
-            }}
-          >
-            <H2>{this.props.posts[0].title.rendered}</H2>
-            <Link href="/activities">
-              <ArrowRight />
-            </Link>
-          </div>
-        </HomeCard>
-        <HomeCard
-          style={
-            isHighContrastMode
-              ? { background: 'var(--secondary-pink)' }
-              : { background: 'var(--primary-pink)' }
-          }
-        >
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              height: '50%'
-            }}
-          >
-            <Link href="/activities">
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.activities[0].type}
-              </SmallP>
-            </Link>
-            <LetterBig>A</LetterBig>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
-              height: '50%'
-            }}
-          >
-            <H2>{this.props.posts[0].title.rendered}</H2>
-            <Link href="/activities">
-              <ArrowRight />
-            </Link>
-          </div>
-        </HomeCard>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                height: '50%'
+              }}
+            >
+              <Link href="/activities">
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  {this.props.activities[0].type}
+                </SmallP>
+              </Link>
+              <LetterBig>A</LetterBig>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                height: '50%'
+              }}
+            >
+              <H2>{this.props.posts[0].title.rendered}</H2>
+              <Link href="/activities">
+                <ArrowRight />
+              </Link>
+            </div>
+          </HomeCard>
+        </Link>
         <Form
           title="Vill du kontakta oss?"
           name="Namn"
@@ -182,76 +186,78 @@ class Home extends Component {
           submit="Skicka"
           subject="Ärende"
         />
-        <HomeCard
-          style={
-            isHighContrastMode
-              ? { background: 'var(--secondary-yellow)' }
-              : { background: 'var(--primary-yellow)' }
-          }
-        >
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              height: '50%'
-            }}
+        <Link href="/contact">
+          <HomeCard
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-yellow)' }
+                : { background: 'var(--primary-yellow)' }
+            }
           >
-            <Link href="/activities">
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.activities[0].type}
-              </SmallP>
-            </Link>
-            <LetterBig>K</LetterBig>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
-              height: '50%'
-            }}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                height: '50%'
+              }}
+            >
+              <Link href="/activities">
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  {this.props.activities[0].type}
+                </SmallP>
+              </Link>
+              <LetterBig>K</LetterBig>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                height: '50%'
+              }}
+            >
+              <H2>{this.props.posts[0].title.rendered}</H2>
+              <Link href="/activities">
+                <ArrowRight />
+              </Link>
+            </div>
+          </HomeCard>
+        </Link>
+        <Link href="/activities">
+          <HomeCard
+            style={
+              isHighContrastMode
+                ? { background: 'var(--secondary-red)' }
+                : { background: 'var(--test)' }
+            }
           >
-            <H2>{this.props.posts[0].title.rendered}</H2>
-            <Link href="/activities">
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                height: '50%'
+              }}
+            >
+              <Link href="/activities">
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  {this.props.activities[0].type}
+                </SmallP>
+              </Link>
+              <LetterBig>K</LetterBig>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                height: '50%'
+              }}
+            >
+              <H2>{this.props.posts[0].title.rendered}</H2>
               <ArrowRight />
-            </Link>
-          </div>
-        </HomeCard>
-        <HomeCard
-          style={
-            isHighContrastMode
-              ? { background: 'var(--secondary-red)' }
-              : { background: 'var(--test)' }
-          }
-        >
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              height: '50%'
-            }}
-          >
-            <Link href="/activities">
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.activities[0].type}
-              </SmallP>
-            </Link>
-            <LetterBig>K</LetterBig>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-end',
-              height: '50%'
-            }}
-          >
-            <H2>{this.props.posts[0].title.rendered}</H2>
-            <Link href="/activities">
-              <ArrowRight />
-            </Link>
-          </div>
-        </HomeCard>
+            </div>
+          </HomeCard>
+        </Link>
       </Layout>
     );
   }

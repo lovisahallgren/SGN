@@ -68,7 +68,14 @@ class Header extends Component {
 
   render() {
     const showmenuStyle = {
-      display: 'block'
+      height: '28vh',
+      transition: 'height 0.25s ease'
+    };
+
+    const showlanguageStyle = {
+      height: '10vh',
+      transition: 'height 0.25s ease',
+      zIndex: '999'
     };
 
     return (
@@ -76,13 +83,8 @@ class Header extends Component {
         <Link href="/">
           <a href="/"> Home </a>
         </Link>
-        <Link href="/">
-          <a href="/" style={{ marginRight: '-1rem' }}>
-            SGN
-          </a>
-        </Link>
         <Flag
-          style={{ marginRight: '-5rem' }}
+          style={{ marginRight: '-14rem' }}
           openLanguage={this.handleLanguage}
           src={'/static/images/sweden.svg'}
         />
@@ -91,13 +93,15 @@ class Header extends Component {
 
         <LanguageNavbar
           contrast={this.props.contrast}
-          style={this.state.languageIsOpen ? showmenuStyle : null}
+          style={this.state.languageIsOpen ? showlanguageStyle : null}
+          openLanguage={this.state.languageIsOpen}
         />
         <Navbar
           contrast={this.props.contrast}
           isBigTextFunction={this.props.bigTextFunction}
           isBigText={this.props.bigText}
           style={this.state.menuIsOpen ? showmenuStyle : null}
+          openMenu={this.state.menuIsOpen}
         />
       </StyledHeader>
     );

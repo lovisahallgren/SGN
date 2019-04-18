@@ -2,22 +2,25 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyledCard = styled.div`
+const StyledImageCard = styled.div`
   width: 100%;
-  /* max-height: 50rem;
-  min-height: 21rem; */
+  height: auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: ${props => props.alignItems || null};
   background: ${props => props.background || 'white'};
-  color: black;
-  padding: 1rem 1rem 1.25rem 1rem;
+  color: ${props => props.color || 'black'};
   margin: 1rem 0;
+
+  img {
+    margin-bottom: 1rem;
+    border-bottom: 5px solid ${props => props.border || '#000'};
+  }
 `;
 
-class Card extends Component {
+class ImageCard extends Component {
   constructor(props) {
     super();
     this.state = {};
@@ -25,10 +28,14 @@ class Card extends Component {
 
   render() {
     const { children } = this.props;
-    return <StyledCard style={this.props.style}>{children}</StyledCard>;
+    return (
+      <StyledImageCard {...this.props} style={this.props.style}>
+        {children}
+      </StyledImageCard>
+    );
   }
 }
 
-Card.propTypes = {};
+ImageCard.propTypes = {};
 
-export default Card;
+export default ImageCard;

@@ -12,6 +12,12 @@ const StyledLanguageNavbarItem = styled.li`
   justify-content: space-between;
   font-size: 1rem;
 
+  .isActive {
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    text-decoration: underline;
+  }
+
   a {
     color: white !important;
     padding: 0 1rem;

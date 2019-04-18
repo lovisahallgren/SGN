@@ -7,7 +7,7 @@ import nookies from 'nookies';
 import Flag from '../SVGs/Flag';
 
 const StyledLanguageNavbar = styled.div`
-  display: none;
+  /* display: none; */
   position: absolute;
   left: 0;
   top: 98%;
@@ -18,6 +18,8 @@ const StyledLanguageNavbar = styled.div`
   color: black;
   text-decoration: underline;
   font-weight: bold;
+  height: 0vh;
+  transition: height 0.25s ease;
 
   ul {
     display: grid;
@@ -25,11 +27,15 @@ const StyledLanguageNavbar = styled.div`
     list-style: none;
     margin-inline-start: -6px;
     margin-inline-end: -6px;
+    opacity: 0;
   }
 
   li {
     border: 1px solid #000;
     padding: 0.6rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    display: none;
   }
 
   .isActive {
@@ -38,10 +44,24 @@ const StyledLanguageNavbar = styled.div`
     text-decoration: underline;
   }
 
+  .visible {
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+
   a {
     padding: 0 1rem;
     text-decoration: none;
     color: black;
+  }
+
+  ul.visible {
+    display: grid;
+    opacity: 1;
+    transition: opacity 1s ease;
+    li {
+      display: flex;
+    }
   }
 `;
 
@@ -61,7 +81,7 @@ class LanguageNavbar extends Component {
         onClick={this.handleActiveLanguage}
         style={this.props.style}
       >
-        <ul>
+        <ul className={this.props.openLanguage ? 'visible' : null}>
           <LanguageNavbarItem
             onClick={() =>
               this.setState({
