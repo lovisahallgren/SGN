@@ -164,7 +164,6 @@ class Form extends React.Component {
           </H2>
 
           <form onSubmit={this.handleSubmit} >
-
             <div className="user-input-wrp">
               <br />
               <input type="text" ref={nameInput => this.name = nameInput} className="inputText" required />
