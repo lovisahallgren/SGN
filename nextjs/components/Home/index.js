@@ -13,6 +13,7 @@ import nookies from 'nookies';
 import Form from '../Form';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import Video from '../Video';
 
 class Home extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class Home extends Component {
 
     return (
       <Layout>
+        <Video />
         <Link href="/projects">
           <HomeCard
             style={
@@ -52,7 +54,7 @@ class Home extends Component {
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
                 {this.props.projects[0].type}
               </SmallP>
-              <LetterBig>P</LetterBig>
+              <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
             </div>
             <div
               style={{
@@ -62,7 +64,13 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <H2>{this.props.posts[0].title.rendered}</H2>
+              <H2>
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+              </H2>
               <ArrowRight />
             </div>
           </HomeCard>

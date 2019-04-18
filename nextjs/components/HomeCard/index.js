@@ -11,7 +11,7 @@ const StyledHomeCard = styled.div`
   align-items: stretch;
   background: ${props => props.background || 'white'};
   color: ${props => props.color || 'white'};
-  padding: 16px 16px 20px 16px;
+  padding: 8px 13px 10px 13px;
   margin: 16px 0;
   background-position: center;
   background-repeat: repeat;
@@ -22,6 +22,11 @@ const StyledHomeCard = styled.div`
     /* width: 25%; */
     height: 20%;
     /* margin: 0.1rem 1rem; */
+  }
+  img {
+    height: 60%;
+    margin-top: 0.3rem;
+    margin-left: -0.4rem;
   }
 
   &:active {
