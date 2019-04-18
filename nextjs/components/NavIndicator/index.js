@@ -7,7 +7,7 @@ const StyledNavIndicator = styled.div`
   height: 11vh;
   background-color: ${props => props.background || 'white'};
   color: black;
-  padding: 11px 13px;
+  padding: 0.6875rem 0.8125rem;
   display: flex;
   justify-content: space-between;
 

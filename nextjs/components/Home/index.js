@@ -90,12 +90,10 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <Link href="/projects">
-                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                  {this.props.projects[0].type}
-                </SmallP>
-              </Link>
-              <LetterBig>P</LetterBig>
+              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                {this.props.projects[0].type}
+              </SmallP>
+              <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
             </div>
             <div
               style={{
@@ -105,10 +103,14 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <H2>{this.props.posts[0].title.rendered}</H2>
-              <Link href="/projects">
-                <ArrowRight />
-              </Link>
+              <H2>
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+              </H2>
+              <ArrowRight />
             </div>
           </HomeCard>
         </Link>
@@ -127,12 +129,10 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <Link href="/activities">
-                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                  {this.props.activities[0].type}
-                </SmallP>
-              </Link>
-              <LetterBig>A</LetterBig>
+              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                {this.props.activities[0].type}
+              </SmallP>
+              <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
             </div>
             <div
               style={{
@@ -142,10 +142,14 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <H2>{this.props.posts[0].title.rendered}</H2>
-              <Link href="/activities">
-                <ArrowRight />
-              </Link>
+              <H2>
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+              </H2>
+              <ArrowRight />
             </div>
           </HomeCard>
         </Link>
@@ -164,12 +168,10 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <Link href="/activities">
-                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                  {this.props.activities[0].type}
-                </SmallP>
-              </Link>
-              <LetterBig>A</LetterBig>
+              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                {this.props.activities[0].type}
+              </SmallP>
+              <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
             </div>
             <div
               style={{
@@ -179,10 +181,14 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <H2>{this.props.posts[0].title.rendered}</H2>
-              <Link href="/activities">
-                <ArrowRight />
-              </Link>
+              <H2>
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+                {this.props.posts[0].title.rendered}
+              </H2>
+              <ArrowRight />
             </div>
           </HomeCard>
         </Link>

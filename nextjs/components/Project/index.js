@@ -57,7 +57,7 @@ class Project extends Component {
             <SmallP>
               <Link href="/">
                 <a href="">Home</a>
-              </Link>{' '}
+              </Link>
               > {this.props.projects[0].type}
             </SmallP>
             <H1>{this.props.projects[0].type}</H1>
