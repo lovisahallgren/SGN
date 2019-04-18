@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 const StyledSvg = styled.svg`
-  width: 6%;
+  width: 7%;
   /* height: 5%; */
   fill: ${props => props.fill || '#FFF'};
   margin: ${props => props.margin || '0 0 0 0'};

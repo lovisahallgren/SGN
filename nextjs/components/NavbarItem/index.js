@@ -19,11 +19,14 @@ const StyledNavbarItem = styled.li`
     text-decoration: underline !important;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
   }
 
   svg {
     fill: #fff;
     width: 15%;
+    height: 100%;
     margin: 0.1rem 0rem;
   }
 

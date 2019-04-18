@@ -21,7 +21,7 @@ const StyledHeader = styled.div`
   z-index: 1;
   /* height: 6vh; */
 
-  a {
+  > a {
     text-decoration: none;
     color: black;
     font-weight: bold;
