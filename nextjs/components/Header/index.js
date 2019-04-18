@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Navbar from '../Navbar';
 import LanguageNavbar from '../LanguageNavbar';
 import Layout from '../Layout';
-import Hamburger from '../SVGs/Hamburger';
+import Hamburger from '../Hamburger';
 import Flag from '../SVGs/Flag';
 
 const StyledHeader = styled.div`
@@ -42,6 +42,9 @@ class Header extends Component {
   componentDidMount() {}
 
   handleClick() {
+    const burgerIcon= document.getElementById("burger-icon");
+    burgerIcon.classList.toggle("transform");
+
     this.setState({
       menuIsOpen: !this.state.menuIsOpen
     });
@@ -83,7 +86,9 @@ class Header extends Component {
           openLanguage={this.handleLanguage}
           src={'/static/images/sweden.svg'}
         />
-        <Hamburger openMenu={this.handleClick} />
+
+      <Hamburger openMenu={this.handleClick}/>
+
         <LanguageNavbar
           contrast={this.props.contrast}
           style={this.state.languageIsOpen ? showmenuStyle : null}
