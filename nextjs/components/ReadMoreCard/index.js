@@ -15,11 +15,6 @@ const StyledReadMoreCard = styled.div`
   color: black;
   padding: 1rem 1rem 2.25rem 1rem;
   margin-top: -1rem;
-
-  img {
-    width: 100%;
-    margin: 1rem 0;
-  }
 `;
 
 class ReadMoreCard extends Component {
@@ -31,7 +26,7 @@ class ReadMoreCard extends Component {
     const { children } = this.props;
 
     return (
-      <StyledReadMoreCard style={this.props.style}>
+      <StyledReadMoreCard {...this.props} style={this.props.style}>
         {children}
         <CTAButton buttonText="Engagera dig" background={this.props.background}>
           {this.props.buttonText}

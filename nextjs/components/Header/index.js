@@ -5,8 +5,9 @@ import styled from 'styled-components';
 import Navbar from '../Navbar';
 import LanguageNavbar from '../LanguageNavbar';
 import Layout from '../Layout';
-import Hamburger from '../Hamburger';
+import Hamburger from '../SVGs/Hamburger';
 import Flag from '../SVGs/Flag';
+import Logo from '../SVGs/Logo';
 
 const StyledHeader = styled.div`
   position: fixed;
@@ -18,12 +19,14 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   z-index: 99;
+  /* height: 6vh; */
 
-  a {
+  > a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    height: 10%;
+    /* height: 30%; */
+    width: 30%;
   }
 `;
 
@@ -42,9 +45,6 @@ class Header extends Component {
   componentDidMount() {}
 
   handleClick() {
-    const burgerIcon= document.getElementById("burger-icon");
-    burgerIcon.classList.toggle("transform");
-
     this.setState({
       menuIsOpen: !this.state.menuIsOpen
     });
@@ -81,16 +81,16 @@ class Header extends Component {
     return (
       <StyledHeader>
         <Link href="/">
-          <a href="/"> Home </a>
+          <a href="/">
+            <Logo />
+           </a>
         </Link>
         <Flag
-          style={{ marginRight: '-14rem' }}
+          style={{ marginRight: '-10rem' }}
           openLanguage={this.handleLanguage}
           src={'/static/images/sweden.svg'}
         />
-
-      <Hamburger openMenu={this.handleClick}/>
-
+        <Hamburger openMenu={this.handleClick} />
         <LanguageNavbar
           contrast={this.props.contrast}
           style={this.state.languageIsOpen ? showlanguageStyle : null}
