@@ -9,6 +9,7 @@ import Facebook from '../SVGs/Facebook';
 import Youtube from '../SVGs/Youtube';
 import Instagram from '../SVGs/Instagram';
 import Link from 'next/link';
+import Flag from '../SVGs/Flag';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -70,7 +71,8 @@ class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isHighContrastMode: null
+      isHighContrastMode: null,
+      language: 'swedish'
     };
 
     this.handleContrastMode = this.handleContrastMode.bind(this);
@@ -85,7 +87,8 @@ class Footer extends Component {
   componentDidMount() {
     this.setState({
       isHighContrastMode:
-        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false'
+        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false',
+      language: nookies.get(this.state.ctx).language
     });
   }
 
@@ -192,6 +195,18 @@ class Footer extends Component {
           </main>
           <button>
             {languageText}
+            <Flag
+              style={{
+                height: '100%',
+                width: '10%',
+                position: 'relative',
+                top: '0.3rem',
+                marginTop: '-1rem',
+                marginLeft: '8rem',
+                padding: '0'
+              }}
+              src={this.state.language}
+            />
             <ArrowDown fill="#000" margin="0 0 0.1rem 1rem" />
           </button>
           <div
