@@ -10,7 +10,6 @@ import GlobalStyle from '../../styles';
 const StyledGDPR = styled.div`
   width: 100%;
   height: auto;
-  font-family: 'Roboto';
 
   > h1 {
     margin: 5rem 0 2rem 0;

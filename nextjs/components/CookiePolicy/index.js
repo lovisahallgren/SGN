@@ -7,7 +7,7 @@ import P from '../P';
 
 const StyledCookiePolicy = styled.div`
   width: 110%;
-  height: 70vh;
+  height: 60vh;
   position: sticky;
   bottom: 0;
   background: #fff;
@@ -36,7 +36,13 @@ const StyledCookiePolicy = styled.div`
 
   div {
     /* width: 80%; */
-    height: 40%;
+    height: 30%;
+    margin: 0rem 1rem;
+  }
+
+  img {
+    width: 70%;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -44,6 +50,7 @@ const CookiePolicy = props => {
   // console.log(props);
   return (
     <StyledCookiePolicy>
+      <img src="/static/images/sgn_logo_bw_small.svg" alt="" />
       <div>
         <H2 color="#000">Din data, ditt val.</H2>
         <P color="#000">
