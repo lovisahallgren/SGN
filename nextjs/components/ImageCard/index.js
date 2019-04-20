@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledImageCard = styled.div`
   width: 100%;
-  height: auto;
+  height: 35vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -17,6 +17,8 @@ const StyledImageCard = styled.div`
   img {
     margin-bottom: 1rem;
     border-bottom: 5px solid ${props => props.border || '#000'};
+    height: 80%;
+    width: 100%;
   }
 `;
 

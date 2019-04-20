@@ -72,7 +72,7 @@ class ReadMoreButton extends Component {
           marginTop={this.props.marginTop}
         >
           <div />
-          {this.state.isExpanded ? 'Läs mindre' : 'Läs mer'}
+          {this.state.isExpanded ? 'Minimera' : 'Expandera'}
           {this.state.isExpanded ? <ArrowUp /> : <ArrowDown />}
         </StyledReadMoreButton>
       </div>

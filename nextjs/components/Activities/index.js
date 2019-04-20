@@ -20,8 +20,8 @@ import Form from '../Form';
 import ImageCard from '../ImageCard';
 import nookies from 'nookies';
 import PostItCard from '../PostItCard';
-import ActivitiesPrimaryFlap from '../SVGs/ActivitiesPrimaryFlap'
-import ActivitiesSecondaryFlap from '../SVGs/ActivitiesSecondaryFlap'
+import ActivitiesPrimaryFlap from '../SVGs/ActivitiesPrimaryFlap';
+import ActivitiesSecondaryFlap from '../SVGs/ActivitiesSecondaryFlap';
 
 class Activities extends Component {
   constructor(props) {
@@ -63,10 +63,10 @@ class Activities extends Component {
             <H1>{this.props.activities[0].type}</H1>
           </div>
         </NavIndicator>
-        {/* <ImageCard border="var(--secondary-pink)">
+        <ImageCard border="var(--secondary-pink)">
           <img
-            src={this.props.activities[0].image || undefined}
-            alt={this.props.activities[0].name}
+            src={this.props.activities[3].image || undefined}
+            alt={this.props.activities[3].name}
             // border="5px solid var(--secondary-pink)"
           />
           <SmallP
@@ -74,42 +74,36 @@ class Activities extends Component {
             margin="-0.5rem 0 0.5rem 0"
             fontWeight="bold"
           >
-            {this.props.activities[0].image_description}
+            {this.props.activities[3].image_description}
           </SmallP>
-        </ImageCard> */}
+        </ImageCard>
 
         <PostItCard
-          style= {
+          style={
             isHighContrastMode
               ? {
-                background: 'var(--secondary-pink)',
-              }
+                  background: 'var(--secondary-pink)'
+                }
               : {
-                background: 'var(--primary-pink)',
-              }
+                  background: 'var(--primary-pink)'
+                }
           }
-          frontFace={
-            {
-              flap: isHighContrastMode ? <ActivitiesSecondaryFlap/> : <ActivitiesPrimaryFlap />,
-              category: this.props.activities[0].category,
-              content: this.props.activities[0].content,
-            }
-          }
-          backFace= {
-            {
-              flap: <ActivitiesSecondaryFlap />,
+          frontFace={{
+            flap: isHighContrastMode ? (
+              <ActivitiesSecondaryFlap />
+            ) : (
+              <ActivitiesPrimaryFlap />
+            ),
             category: this.props.activities[0].category,
-              content: this.props.activities[0].content,
-              background: 'var(--secondary-pink)'
-            }
-          }
+            content: this.props.activities[0].excerpt
+          }}
+          backFace={{
+            flap: <ActivitiesSecondaryFlap />,
+            category: this.props.activities[0].category,
+            content: this.props.activities[0].excerpt,
+            background: 'var(--secondary-pink)'
+          }}
         />
-
-        <Card>
-          <H2 color="#000">{this.props.activities[0].title}</H2>
-          <P color="#000">{this.props.activities[0].excerpt}</P>
-          <Line backgroundColor="#000" />
-        </Card>
         {this.props.activities.map(item => {
           return (
             <div key={item.id}>
@@ -122,6 +116,14 @@ class Activities extends Component {
               >
                 <SmallP>{item.category}</SmallP>
                 <Line />
+
+                {item.image === false ? null : (
+                  <img
+                    src={item.image || undefined}
+                    alt={item.name}
+                    style={{ width: '100%', margin: '1rem 0 2rem 0' }}
+                  />
+                )}
                 <H2>{item.title}</H2>
                 <P>{item.excerpt}</P>
                 <Line />
@@ -199,23 +201,37 @@ class Activities extends Component {
                       <P>{item.content}</P>
                     </ReadMoreCard>
                   </ReadMoreButton>
-                  {item.image === false ? null : (
-                    <ImageCard border="var(--secondary-pink)">
-                      <img src={item.image || undefined} alt={item.name} />
-                      <SmallP
-                        color="var(--secondary-pink)"
-                        margin="-0.5rem 0 0.5rem 0"
-                        fontWeight="bold"
-                      >
-                        {item.image_description}
-                      </SmallP>
-                    </ImageCard>
-                  )}
                 </div>
               ) : null}
             </div>
           );
         })}
+        <PostItCard
+          style={
+            isHighContrastMode
+              ? {
+                  background: 'var(--secondary-pink)'
+                }
+              : {
+                  background: 'var(--primary-pink)'
+                }
+          }
+          frontFace={{
+            flap: isHighContrastMode ? (
+              <ActivitiesSecondaryFlap />
+            ) : (
+              <ActivitiesPrimaryFlap />
+            ),
+            category: this.props.activities[2].category,
+            content: this.props.activities[3].content
+          }}
+          backFace={{
+            flap: <ActivitiesSecondaryFlap />,
+            category: this.props.activities[0].category,
+            content: this.props.activities[0].excerpt,
+            background: 'var(--secondary-pink)'
+          }}
+        />
         <Form
           formColor="var(--secondary-pink)"
           title="Skulle du vilja delta eller starta en aktivitet?"

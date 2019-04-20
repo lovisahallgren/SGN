@@ -23,6 +23,10 @@ const StyledFooter = styled.footer`
     list-style: none;
   }
 
+  li {
+    display: block;
+  }
+
   a {
     font-weight: bold;
   }
@@ -124,15 +128,6 @@ class Footer extends Component {
           <NavbarItem
             style={
               isHighContrastMode
-                ? { background: 'var(--secondary-red)' }
-                : { background: 'var(--primary-red)' }
-            }
-            link="/information"
-            text="Info"
-          />
-          <NavbarItem
-            style={
-              isHighContrastMode
                 ? { background: 'var(--secondary-pink)' }
                 : { background: 'var(--primary-pink)' }
             }
@@ -151,6 +146,15 @@ class Footer extends Component {
           <NavbarItem
             style={
               isHighContrastMode
+                ? { background: 'var(--secondary-green)' }
+                : { background: 'var(--primary-green)' }
+            }
+            link="/contribute"
+            text="Bidra"
+          />
+          <NavbarItem
+            style={
+              isHighContrastMode
                 ? { background: 'var(--secondary-purple)' }
                 : { background: 'var(--primary-purple)' }
             }
@@ -160,11 +164,11 @@ class Footer extends Component {
           <NavbarItem
             style={
               isHighContrastMode
-                ? { background: 'var(--secondary-green)' }
-                : { background: 'var(--primary-green)' }
+                ? { background: 'var(--secondary-red)' }
+                : { background: 'var(--primary-red)' }
             }
-            link="/contribute"
-            text="Bidra"
+            link="/information"
+            text="Info"
           />
           <NavbarItem
             style={

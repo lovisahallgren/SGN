@@ -20,8 +20,8 @@ const StyledHomeCard = styled.div`
   svg {
     fill: #fff;
     /* width: 25%; */
-    height: 35%;
-    margin: 0 0 -0.5rem 1rem;
+    height: 15%;
+    margin: 0 0 0.3rem 1rem;
   }
   img {
     height: 60%;
