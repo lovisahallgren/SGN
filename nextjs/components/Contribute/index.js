@@ -21,10 +21,10 @@ import nookies from 'nookies';
 import Form from '../Form';
 import ImageCard from '../ImageCard';
 import PostItCard from '../PostItCard';
-import ProjectPrimaryFlap from '../SVGs/ProjectPrimaryFlap';
-import ProjectSecondaryFlap from '../SVGs/ProjectSecondaryFlap';
+import ContributePrimaryFlap from '../SVGs/ContributePrimaryFlap';
+import ContributeSecondaryFlap from '../SVGs/ContributeSecondaryFlap';
 
-class Project extends Component {
+class Contribute extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,8 +50,8 @@ class Project extends Component {
         <NavIndicator
           style={
             isHighContrastMode
-              ? { background: 'var(--secondary-purple)' }
-              : { background: 'var(--primary-purple)' }
+              ? { background: 'var(--secondary-green)' }
+              : { background: 'var(--primary-green)' }
           }
         >
           <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
@@ -60,60 +60,59 @@ class Project extends Component {
               <Link href="/">
                 <a href="">Home</a>
               </Link>{' '}
-              > {this.props.projects[0].type}
+              > {this.props.contribute[0].type}
             </SmallP>
-            <H1>{this.props.projects[0].type}</H1>
+            <H1>{this.props.contribute[0].type}</H1>
           </div>
         </NavIndicator>
-        <ImageCard border="var(--secondary-purple)">
+        <ImageCard border="var(--secondary-green)">
           <img
-            src={this.props.projects[0].image || undefined}
-            alt={this.props.projects[0].name}
-            // border="5px solid var(--secondary-purple)"
+            src={this.props.contribute[0].image || undefined}
+            alt={this.props.contribute[0].name}
           />
           <SmallP
-            color="var(--secondary-purple)"
+            color="var(--secondary-green)"
             margin="-0.5rem 0 0.5rem 0"
             fontWeight="bold"
           >
-            {this.props.projects[0].image_description}
+            {this.props.contribute[0].image_description}
           </SmallP>
         </ImageCard>
         <PostItCard
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-purple)'
+                  background: 'var(--secondary-green)'
                 }
               : {
-                  background: 'var(--primary-purple)'
+                  background: 'var(--primary-green)'
                 }
           }
           frontFace={{
             flap: isHighContrastMode ? (
-              <ProjectSecondaryFlap />
+              <ContributeSecondaryFlap />
             ) : (
-              <ProjectPrimaryFlap />
+              <ContributePrimaryFlap />
             ),
-            category: this.props.info[0].category,
-            content: this.props.info[0].content
+            category: this.props.contribute[0].category,
+            content: this.props.contribute[0].excerpt
           }}
           backFace={{
-            flap: <ProjectSecondaryFlap />,
-            category: this.props.info[0].category,
-            content: this.props.info[0].content,
-            background: 'var(--secondary-purple)'
+            flap: <ContributeSecondaryFlap />,
+            category: this.props.contribute[0].category,
+            content: this.props.contribute[0].title,
+            background: 'var(--secondary-green)'
           }}
         />
 
-        {this.props.projects.map(item => {
+        {this.props.contribute.map(item => {
           return (
             <div key={item.id}>
               <Card
                 style={
                   isHighContrastMode
-                    ? { background: 'var(--secondary-purple)' }
-                    : { background: 'var(--primary-purple)' }
+                    ? { background: 'var(--secondary-green)' }
+                    : { background: 'var(--primary-green)' }
                 }
               >
                 <SmallP>{item.project_name}</SmallP>
@@ -121,9 +120,9 @@ class Project extends Component {
                 {item.image === false ? null : (
                   <div>
                     <img
-                      src={item.logo}
+                      src={item.image}
                       alt={item.name}
-                      style={{ width: '50%', margin: '0 0 1rem 0' }}
+                      style={{ width: '100%', margin: '0 0 1rem 0' }}
                     />
                   </div>
                 )}
@@ -141,23 +140,23 @@ class Project extends Component {
                     style={
                       isHighContrastMode
                         ? {
-                            background: 'var(--secondary-purple)',
-                            borderTop: '2px solid var(--primary-purple)'
+                            background: 'var(--secondary-green)',
+                            borderTop: '2px solid var(--primary-green)'
                           }
                         : {
-                            background: 'var(--primary-purple)',
+                            background: 'var(--primary-green)',
                             border: 'none'
                           }
                     }
                     topColor={
                       isHighContrastMode
-                        ? 'var(--primary-purple)'
-                        : 'var(--secondary-purple)'
+                        ? 'var(--primary-green)'
+                        : 'var(--secondary-green)'
                     }
                     bottomColor={
                       isHighContrastMode
-                        ? 'var(--primary-tint-purple)'
-                        : 'var(--secondary-tint-purple)'
+                        ? 'var(--primary-tint-green)'
+                        : 'var(--secondary-tint-green)'
                     }
                     display={'none'}
                     marginTop={isHighContrastMode ? '-2.1rem' : '-2rem'}
@@ -166,12 +165,12 @@ class Project extends Component {
                       style={
                         isHighContrastMode
                           ? {
-                              background: 'var(--secondary-purple)',
-                              borderTop: '2px solid var(--primary-purple)'
+                              background: 'var(--secondary-green)',
+                              borderTop: '2px solid var(--primary-green)'
                             }
-                          : { background: 'var(--secondary-purple)' }
+                          : { background: 'var(--secondary-green)' }
                       }
-                      background="var(--primary-purple)"
+                      background="var(--primary-green)"
                     >
                       {item.image === false ? null : (
                         <div>
@@ -204,30 +203,40 @@ class Project extends Component {
                       <P>{item.content}</P>
                     </ReadMoreCard>
                   </ReadMoreButton>
-                  {item.image === false ? null : (
-                    <ImageCard border="var(--secondary-purple)">
-                      <img
-                        src={item.image || undefined}
-                        alt={item.name}
-                        // border="5px solid var(--secondary-purple)"
-                      />
-                      <SmallP
-                        color="var(--secondary-purple)"
-                        margin="-0.5rem 0 0.5rem 0"
-                        fontWeight="bold"
-                      >
-                        {item.image_description}
-                      </SmallP>
-                    </ImageCard>
-                  )}
                 </div>
               ) : null}
             </div>
           );
         })}
+        <PostItCard
+          style={
+            isHighContrastMode
+              ? {
+                  background: 'var(--secondary-green)'
+                }
+              : {
+                  background: 'var(--primary-green)'
+                }
+          }
+          frontFace={{
+            flap: isHighContrastMode ? (
+              <ContributeSecondaryFlap />
+            ) : (
+              <ContributePrimaryFlap />
+            ),
+            category: this.props.contribute[0].category,
+            content: this.props.contribute[0].content
+          }}
+          backFace={{
+            flap: <ContributeSecondaryFlap />,
+            category: this.props.contribute[0].category,
+            content: this.props.contribute[0].title,
+            background: 'var(--secondary-green)'
+          }}
+        />
         <Form
-          formColor="var(--secondary-purple)"
-          title="Vill du engagera dig i våra projekt?"
+          formColor="var(--secondary-green)"
+          title="Hur vill du bidra?"
           name="Namn"
           phone="Telefonnummer"
           email="E-mail"
@@ -239,4 +248,4 @@ class Project extends Component {
   }
 }
 
-export default Project;
+export default Contribute;

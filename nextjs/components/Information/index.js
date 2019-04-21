@@ -20,9 +20,8 @@ import nookies from 'nookies';
 import PostItCard from '../PostItCard';
 import ImageCard from '../ImageCard';
 import Form from '../Form';
-import InfoPrimaryFlap from '../SVGs/InfoPrimaryFlap'
-import InfoSecondaryFlap from '../SVGs/InfoSecondaryFlap'
-
+import InfoPrimaryFlap from '../SVGs/InfoPrimaryFlap';
+import InfoSecondaryFlap from '../SVGs/InfoSecondaryFlap';
 
 class Information extends Component {
   constructor(props) {
@@ -64,7 +63,7 @@ class Information extends Component {
             <H1>{this.props.info[0].type}</H1>
           </div>
         </NavIndicator>
-        {/* <ImageCard border="var(--secondary-red)">
+        <ImageCard border="var(--secondary-red)">
           <img
             src={this.props.info[0].image || undefined}
             alt={this.props.info[0].name}
@@ -77,39 +76,33 @@ class Information extends Component {
           >
             {this.props.info[0].image_description}
           </SmallP>
-        </ImageCard> */}
+        </ImageCard>
         <PostItCard
-          style= {
+          style={
             isHighContrastMode
               ? {
-                background: 'var(--secondary-red)',
-              }
+                  background: 'var(--secondary-red)'
+                }
               : {
-                background: 'var(--primary-red)',
-              }
+                  background: 'var(--primary-red)'
+                }
           }
-          frontFace={
-            {
-              flap: isHighContrastMode ? <InfoSecondaryFlap/> : <InfoPrimaryFlap />,
-              category: this.props.info[0].category,
-              content: this.props.info[0].content,
-            }
-          }
-          backFace= {
-            {
-              flap: <InfoSecondaryFlap />,
-              category: this.props.info[0].category,
-              content: this.props.info[0].content,
-              background: 'var(--secondary-red)'
-            }
-          }
+          frontFace={{
+            flap: isHighContrastMode ? (
+              <InfoSecondaryFlap />
+            ) : (
+              <InfoPrimaryFlap />
+            ),
+            category: this.props.info[0].category,
+            content: this.props.info[0].content
+          }}
+          backFace={{
+            flap: <InfoSecondaryFlap />,
+            category: this.props.info[0].category,
+            content: this.props.info[0].content,
+            background: 'var(--secondary-red)'
+          }}
         />
-
-        <Card>
-          <H2 color="#000">{this.props.info[0].title}</H2>
-          <P color="#000">{this.props.info[0].excerpt}</P>
-          <Line backgroundColor="#000" />
-        </Card>
         {this.props.info.map(item => {
           return (
             <div key={item.id}>
@@ -199,18 +192,6 @@ class Information extends Component {
                       <P>{item.content}</P>
                     </ReadMoreCard>
                   </ReadMoreButton>
-                  {item.image === false ? null : (
-                    <ImageCard border="var(--secondary-red)">
-                      <img src={item.image || undefined} alt={item.name} />
-                      <SmallP
-                        color="var(--secondary-red)"
-                        margin="-0.5rem 0 0.5rem 0"
-                        fontWeight="bold"
-                      >
-                        {item.image_description}
-                      </SmallP>
-                    </ImageCard>
-                  )}
                 </div>
               ) : null}
             </div>

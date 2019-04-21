@@ -154,7 +154,7 @@ function my_rest_prepare_activities($data, $post, $request) {
 add_filter("rest_prepare_activities", 'my_rest_prepare_activities', 10, 3);
 
 // Get the advanced custom fields for Contibute in JSON
-function my_rest_prepare_contibute($data, $post, $request) {
+function my_rest_prepare_contribute($data, $post, $request) {
   $_data = $data->data;
 
   $fields = get_fields($post->ID);
@@ -165,7 +165,7 @@ function my_rest_prepare_contibute($data, $post, $request) {
 
   return $data;
 }
-add_filter("rest_prepare_contibute", 'my_rest_prepare_contibute', 10, 3);
+add_filter("rest_prepare_contribute", 'my_rest_prepare_contribute', 10, 3);
 
 // Get the advanced custom fields for Contact in JSON
 function my_rest_prepare_contact($data, $post, $request) {

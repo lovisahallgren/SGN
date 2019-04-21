@@ -121,12 +121,12 @@ class Home extends Component {
             </div>
           </HomeCard>
         </Link>
-        <Link href="/projects">
+        <Link href="/contribute">
           <HomeCard
             style={
               isHighContrastMode
-                ? { background: 'var(--secondary-purple)' }
-                : { background: 'var(--primary-purple)' }
+                ? { background: 'var(--secondary-green)' }
+                : { background: 'var(--primary-green)' }
             }
           >
             <div
@@ -137,7 +137,7 @@ class Home extends Component {
               }}
             >
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.projects[0].type}
+                {this.props.contribute[0].type}
               </SmallP>
               <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
             </div>
