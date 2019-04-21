@@ -44,9 +44,9 @@ class Home extends Component {
           }}
         >
           <H2 color="#000" margin="1rem 0 0.5rem 0">
-            {this.props.info[0].title}
+            {this.props.posts[7].title.rendered}
           </H2>
-          <P color="#000">{this.props.info[0].excerpt}</P>
+          <P color="#000">{this.props.posts[6].title.rendered}</P>
         </div>
         <Line margin="0.5rem 0 1.25rem 1.5rem" backgroundColor="#000" />
         <Link href="/activities">
@@ -77,7 +77,9 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <H2 style={{ width: '75%' }}>{this.props.activities[0].title}</H2>
+              <H2 style={{ width: '75%' }}>
+                {this.props.posts[5].title.rendered}
+              </H2>
               <ArrowRight />
             </div>
           </HomeCard>
@@ -110,12 +112,8 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <H2>
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
+              <H2 style={{ width: '80%' }}>
+                {this.props.posts[4].title.rendered}
               </H2>
               <ArrowRight />
             </div>
@@ -149,23 +147,19 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <H2>
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
+              <H2 style={{ width: '75%' }}>
+                {this.props.posts[3].title.rendered}
               </H2>
               <ArrowRight />
             </div>
           </HomeCard>
         </Link>
-        <Link href="/projects">
+        <Link href="/social">
           <HomeCard
             style={
               isHighContrastMode
-                ? { background: 'var(--secondary-purple)' }
-                : { background: 'var(--primary-purple)' }
+                ? { background: 'var(--secondary-blue)' }
+                : { background: 'var(--primary-blue)' }
             }
           >
             <div
@@ -188,23 +182,19 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <H2>
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
+              <H2 style={{ width: '76%' }}>
+                {this.props.posts[2].title.rendered}
               </H2>
               <ArrowRight />
             </div>
           </HomeCard>
         </Link>
-        <Link href="/projects">
+        <Link href="/info">
           <HomeCard
             style={
               isHighContrastMode
-                ? { background: 'var(--secondary-purple)' }
-                : { background: 'var(--primary-purple)' }
+                ? { background: 'var(--secondary-red)' }
+                : { background: 'var(--primary-red)' }
             }
           >
             <div
@@ -215,7 +205,7 @@ class Home extends Component {
               }}
             >
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.projects[0].type}
+                {this.props.info[0].type}
               </SmallP>
               <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
             </div>
@@ -227,12 +217,8 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <H2>
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
-                {this.props.posts[0].title.rendered}
+              <H2 style={{ width: '77%' }}>
+                {this.props.posts[1].title.rendered}
               </H2>
               <ArrowRight />
             </div>
@@ -253,11 +239,9 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <Link href="/activities">
-                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                  {this.props.activities[0].type}
-                </SmallP>
-              </Link>
+              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                {this.props.contact[0].type}
+              </SmallP>
               <LetterBig>K</LetterBig>
             </div>
             <div
@@ -268,10 +252,10 @@ class Home extends Component {
                 height: '50%'
               }}
             >
-              <H2>{this.props.posts[0].title.rendered}</H2>
-              <Link href="/activities">
-                <ArrowRight />
-              </Link>
+              <H2 style={{ width: '80%' }}>
+                {this.props.posts[0].title.rendered}
+              </H2>
+              <ArrowRight />
             </div>
           </HomeCard>
         </Link>

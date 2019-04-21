@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Fragment } from 'react';
 import Layout from '../Layout';
 import NavIndicator from '../NavIndicator';
 import H1 from '../H1';
@@ -8,15 +7,11 @@ import H2 from '../H2';
 import P from '../P';
 import Card from '../Card';
 import QuoteSmall from '../QuoteSmall';
-import QuoteBig from '../QuoteBig';
 import SmallP from '../SmallP';
 import Line from '../Line';
-import LetterBig from '../LetterBig';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import ReadMoreCard from '../ReadMoreCard';
 import ReadMoreButton from '../ReadMoreButton';
-import ArrowUp from '../SVGs/ArrowUp';
 import nookies from 'nookies';
 import Form from '../Form';
 import ImageCard from '../ImageCard';
@@ -115,7 +110,7 @@ class Contribute extends Component {
                     : { background: 'var(--primary-green)' }
                 }
               >
-                <SmallP>{item.project_name}</SmallP>
+                <SmallP>{item.category}</SmallP>
                 <Line />
                 {item.image === false ? null : (
                   <div>

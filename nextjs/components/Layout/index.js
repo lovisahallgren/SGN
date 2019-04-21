@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
-import Navbar from '../Navbar';
 import GlobalStyle from '../../styles';
 import Head from 'next/head';
 import nookies from 'nookies';
-import Form from '../Form';
 import CookiePolicy from '../CookiePolicy';
 class Layout extends Component {
   constructor(props) {
@@ -25,7 +23,6 @@ class Layout extends Component {
     if (nookies.get(this.state.ctx).cookiesAccepted === undefined) {
       nookies.set(this.state.ctx, 'cookiesAccepted', false);
     }
-    //if (nookies.get(this.state.ctx).cookiesAccepted)
 
     this.setState({
       isHighContrastMode:

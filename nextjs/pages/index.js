@@ -23,6 +23,12 @@ export default class extends Component {
     const contribute = await axios.get(
       `http://${process.env.HOST}/wp-json/wp/v2/contribute`
     );
+    const contact = await axios.get(
+      `http://${process.env.HOST}/wp-json/wp/v2/contact`
+    );
+    const social = await axios.get(
+      `http://${process.env.HOST}/wp-json/wp/v2/social`
+    );
 
     // Return response to posts object in props.
     return {
@@ -30,7 +36,9 @@ export default class extends Component {
       projects: projects.data,
       info: info.data,
       activities: activities.data,
-      contribute: contribute.data
+      contribute: contribute.data,
+      contact: contact.data,
+      social: social.data
     };
   }
 

@@ -94,12 +94,12 @@ class Information extends Component {
               <InfoPrimaryFlap />
             ),
             category: this.props.info[0].category,
-            content: this.props.info[0].content
+            content: this.props.info[0].title
           }}
           backFace={{
             flap: <InfoSecondaryFlap />,
             category: this.props.info[0].category,
-            content: this.props.info[0].content,
+            content: this.props.info[0].excerpt,
             background: 'var(--secondary-red)'
           }}
         />
