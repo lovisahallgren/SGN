@@ -103,7 +103,7 @@ class Layout extends Component {
           bigTextFunction={this.handleFontSize}
           bigText={this.state.isBigText}
         />
-        <div style={{ width: '100%', height: '7vh' }} />
+        <div style={{ width: '100%', height: '9vh' }} />
 
         {children}
 

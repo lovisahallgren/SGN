@@ -52,7 +52,7 @@ class Activities extends Component {
               : { background: 'var(--primary-pink)' }
           }
         >
-          <LetterBig>A</LetterBig>
+          <img src="/static/images/gif-figur-aktivitet.gif" alt="" />
           <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
               <Link href="/">

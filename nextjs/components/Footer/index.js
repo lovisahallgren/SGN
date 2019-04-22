@@ -33,7 +33,7 @@ const StyledFooter = styled.footer`
     font-weight: bold;
   }
 
-  article {
+  .mobile-footer {
     width: 100vw;
     height: auto;
     background: ${props => props.background || 'rgba(0,0,0,0.75)'};
@@ -50,7 +50,7 @@ const StyledFooter = styled.footer`
     width: 50%;
   }
 
-  main {
+  .social {
     display: flex;
     flex-direction: column;
     height: 15%;
@@ -71,6 +71,85 @@ const StyledFooter = styled.footer`
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+  }
+
+  .info {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0 0 2rem;
+  }
+
+  .donate {
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0 1rem -1.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .desktop-footer {
+    display: none;
+  }
+
+  @media screen and (min-width: 900px) {
+    ul {
+      display: none;
+    }
+    .mobile-footer {
+      display: none;
+    }
+
+    .desktop-footer {
+      width: 100vw;
+      /* height: auto; */
+      background: ${props => props.background || 'rgba(0,0,0,0.75)'};
+      display: flex;
+      position: relative;
+      left: -8rem;
+      bottom: 0;
+      color: white;
+      padding: 3rem 8rem;
+      justify-content: space-between;
+    }
+
+    .info {
+      margin: 0;
+      width: 30%;
+    }
+
+    .donate {
+      display: none;
+    }
+
+    .buttons {
+      width: 30%;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      button {
+        height: auto;
+      }
+    }
+
+    .social {
+      margin: 0;
+      flex-direction: row;
+      align-items: stretch;
+      height: auto;
+
+      div {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      svg {
+        position: relative;
+        top: 1rem;
+      }
+    }
   }
 `;
 class Footer extends Component {
@@ -135,6 +214,53 @@ class Footer extends Component {
 
     return (
       <StyledFooter>
+        <div className="desktop-footer">
+          <div className="info">
+            <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>{name}</p>
+            <p style={{ width: '70%' }}>{street}</p>
+            <p>{city}</p>
+            <p style={{ margin: '1rem 0' }}>{country}</p>
+            <p>{phone}</p>
+            <p>{email}</p>
+          </div>
+          <div className="social">
+            <div>
+              <Facebook />
+              <Youtube />
+              <Instagram />
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+              <SmallP textDecoration="underline">Facebook</SmallP>
+              <SmallP textDecoration="underline">Youtube</SmallP>
+              <SmallP textDecoration="underline">Instagram</SmallP>
+            </div>
+          </div>
+          <div className="buttons">
+            <Link href="/gdpr">
+              <SmallP textDecoration="underline">
+                Integritetspolicy / GDPR
+              </SmallP>
+            </Link>
+            <button onClick={this.handleContrastMode}>
+              {contrastText}
+              <ArrowRight margin="0 0 0.1rem 1rem" width="7%" />
+            </button>
+            <button>
+              {languageText}
+              <Flag
+                style={{
+                  height: '100%',
+                  width: '10%',
+                  position: 'relative',
+                  top: '0.3rem',
+                  marginLeft: '5rem'
+                }}
+                src={this.state.language}
+              />
+              <ArrowDown fill="#000" margin="0 0 0.1rem 1rem" />
+            </button>
+          </div>
+        </div>
         <ul>
           <NavbarItem
             style={
@@ -191,7 +317,7 @@ class Footer extends Component {
             text="Kontakt"
           />
         </ul>
-        <article>
+        <div className="mobile-footer">
           <button
             onClick={this.handleContrastMode}
             style={{ marginTop: '3rem' }}
@@ -199,7 +325,7 @@ class Footer extends Component {
             {contrastText}
             <ArrowRight margin="0 0 0.1rem 1rem" width="7%" />
           </button>
-          <main>
+          <div className="social">
             <div style={{ marginBottom: '1rem' }}>
               <Facebook />
               <Youtube />
@@ -210,7 +336,7 @@ class Footer extends Component {
               <SmallP textDecoration="underline">Youtube</SmallP>
               <SmallP textDecoration="underline">Instagram</SmallP>
             </div>
-          </main>
+          </div>
           <button>
             {languageText}
             <Flag
@@ -227,14 +353,7 @@ class Footer extends Component {
             />
             <ArrowDown fill="#000" margin="0 0 0.1rem 1rem" />
           </button>
-          <div
-            style={{
-              color: '#FFF',
-              display: 'flex',
-              flexDirection: 'column',
-              margin: '3rem 0 0 2rem'
-            }}
-          >
+          <div className="info">
             <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>{name}</p>
             <p style={{ width: '70%' }}>{street}</p>
             <p>{city}</p>
@@ -242,16 +361,7 @@ class Footer extends Component {
             <p>{phone}</p>
             <p>{email}</p>
           </div>
-          <div
-            onClick={this.handleDonating}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              margin: '4rem 0 1rem -1.5rem',
-              flexDirection: 'column',
-              alignItems: 'center'
-            }}
-          >
+          <div className="donate" onClick={this.handleDonating}>
             <P
               style={{
                 width: '50%',
@@ -290,7 +400,7 @@ class Footer extends Component {
             </Link>
             <SmallP>© 2019 SGN</SmallP>
           </div>
-        </article>
+        </div>
       </StyledFooter>
     );
   }

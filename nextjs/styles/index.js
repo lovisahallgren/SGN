@@ -16,9 +16,16 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     width: 100vw;
-    padding: 0.8889rem;
+    padding: 0 0.8889rem;
     height: auto;
     font-family: 'Noto Sans', sans-serif;
+  }
+
+  @media screen and (min-width: 900px) {
+    body {
+      width: 100vw;
+      padding: 0 8rem;
+    }
   }
 
   :root {
