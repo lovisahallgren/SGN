@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import NavbarItem from '../NavbarItem';
 import nookies from 'nookies';
 import SmallP from '../SmallP';
+import P from '../P';
 import ArrowRight from '../SVGs/ArrowRight';
 import ArrowDown from '../SVGs/ArrowDown';
 import Facebook from '../SVGs/Facebook';
@@ -10,6 +11,7 @@ import Youtube from '../SVGs/Youtube';
 import Instagram from '../SVGs/Instagram';
 import Link from 'next/link';
 import Flag from '../SVGs/Flag';
+import Donate from '../Donate';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -33,7 +35,7 @@ const StyledFooter = styled.footer`
 
   article {
     width: 100vw;
-    height: 70vh;
+    height: auto;
     background: ${props => props.background || 'rgba(0,0,0,0.75)'};
     display: flex;
     flex-direction: column;
@@ -43,7 +45,7 @@ const StyledFooter = styled.footer`
     margin: 1rem 0rem 0 -1rem;
   }
 
-  &div {
+  > div {
     font-weight: ${props => props.fontWeight || 'normal'};
     width: 50%;
   }
@@ -52,7 +54,7 @@ const StyledFooter = styled.footer`
     display: flex;
     flex-direction: column;
     height: 15%;
-    margin: 1rem;
+    margin: 2rem 1rem;
     justify-content: space-around;
   }
 
@@ -76,10 +78,12 @@ class Footer extends Component {
     super(props);
     this.state = {
       isHighContrastMode: null,
-      language: 'swedish'
+      language: 'swedish',
+      donaingIsOpen: false
     };
 
     this.handleContrastMode = this.handleContrastMode.bind(this);
+    this.handleDonating = this.handleDonating.bind(this);
   }
 
   static async getInitialProps(ctx) {
@@ -109,11 +113,18 @@ class Footer extends Component {
     document.location.reload();
   }
 
+  handleDonating() {
+    this.setState({
+      donaingIsOpen: !this.state.donaingIsOpen
+    });
+  }
+
   render() {
     const isHighContrastMode = this.state.isHighContrastMode === 'true';
     const {
       contrastText,
       languageText,
+      donateText,
       name,
       street,
       city,
@@ -181,12 +192,15 @@ class Footer extends Component {
           />
         </ul>
         <article>
-          <button onClick={this.handleContrastMode}>
+          <button
+            onClick={this.handleContrastMode}
+            style={{ marginTop: '3rem' }}
+          >
             {contrastText}
-            <ArrowRight margin="0 0 0.1rem 1rem" />
+            <ArrowRight margin="0 0 0.1rem 1rem" width="7%" />
           </button>
           <main>
-            <div>
+            <div style={{ marginBottom: '1rem' }}>
               <Facebook />
               <Youtube />
               <Instagram />
@@ -218,7 +232,7 @@ class Footer extends Component {
               color: '#FFF',
               display: 'flex',
               flexDirection: 'column',
-              marginLeft: '2rem'
+              margin: '3rem 0 0 2rem'
             }}
           >
             <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>{name}</p>
@@ -228,11 +242,54 @@ class Footer extends Component {
             <p>{phone}</p>
             <p>{email}</p>
           </div>
-          <Link href="/gdpr">
-            <SmallP textDecoration="underline" margin="0 0 0 -18%">
-              Privacy Policy / GDPR
-            </SmallP>
-          </Link>
+          <div
+            onClick={this.handleDonating}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              margin: '4rem 0 1rem -1.5rem',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+          >
+            <P
+              style={{
+                width: '50%',
+                textDecoration: 'underline',
+                marginLeft: '0.5rem'
+              }}
+              fontWeight="bold"
+            >
+              {donateText}
+            </P>
+            <ArrowDown
+              style={{
+                height: '100%',
+                position: 'relative',
+                right: '-7rem',
+                top: '-2rem'
+              }}
+              fill="#FFF"
+              margin="0 0 0.5rem 1rem"
+            />
+
+            <Donate openDonate={this.state.donaingIsOpen} />
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+              width: '100%'
+            }}
+          >
+            <Link href="/gdpr">
+              <SmallP textDecoration="underline">
+                Integritetspolicy / GDPR
+              </SmallP>
+            </Link>
+            <SmallP>© 2019 SGN</SmallP>
+          </div>
         </article>
       </StyledFooter>
     );

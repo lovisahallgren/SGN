@@ -204,22 +204,6 @@ class Project extends Component {
                       <P>{item.content}</P>
                     </ReadMoreCard>
                   </ReadMoreButton>
-                  {item.image === false ? null : (
-                    <ImageCard border="var(--secondary-purple)">
-                      <img
-                        src={item.image || undefined}
-                        alt={item.name}
-                        // border="5px solid var(--secondary-purple)"
-                      />
-                      <SmallP
-                        color="var(--secondary-purple)"
-                        margin="-0.5rem 0 0.5rem 0"
-                        fontWeight="bold"
-                      >
-                        {item.image_description}
-                      </SmallP>
-                    </ImageCard>
-                  )}
                 </div>
               ) : null}
             </div>
