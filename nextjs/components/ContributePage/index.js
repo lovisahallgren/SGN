@@ -19,7 +19,7 @@ import PostItCard from '../PostItCard';
 import ContributePrimaryFlap from '../SVGs/ContributePrimaryFlap';
 import ContributeSecondaryFlap from '../SVGs/ContributeSecondaryFlap';
 
-class Contribute extends Component {
+class ContributePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -243,4 +243,4 @@ class Contribute extends Component {
   }
 }
 
-export default Contribute;
+export default ContributePage;

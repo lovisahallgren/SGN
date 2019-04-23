@@ -23,7 +23,7 @@ import PostItCard from '../PostItCard';
 import ActivitiesPrimaryFlap from '../SVGs/ActivitiesPrimaryFlap';
 import ActivitiesSecondaryFlap from '../SVGs/ActivitiesSecondaryFlap';
 
-class Activities extends Component {
+class ActivitiesPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -246,4 +246,4 @@ class Activities extends Component {
   }
 }
 
-export default Activities;
+export default ActivitiesPage;

@@ -23,7 +23,7 @@ import Form from '../Form';
 import InfoPrimaryFlap from '../SVGs/InfoPrimaryFlap';
 import InfoSecondaryFlap from '../SVGs/InfoSecondaryFlap';
 
-class Information extends Component {
+class InformationPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -211,4 +211,4 @@ class Information extends Component {
   }
 }
 
-export default Information;
+export default InformationPage;

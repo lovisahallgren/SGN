@@ -24,7 +24,7 @@ import PostItCard from '../PostItCard';
 import ProjectPrimaryFlap from '../SVGs/ProjectPrimaryFlap';
 import ProjectSecondaryFlap from '../SVGs/ProjectSecondaryFlap';
 
-class Project extends Component {
+class ProjectPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,7 +54,7 @@ class Project extends Component {
               : { background: 'var(--primary-purple)' }
           }
         >
-          <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
+          <img src="/static/images/projekt-figur.gif" alt="" />
           <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
               <Link href="/">
@@ -223,4 +223,4 @@ class Project extends Component {
   }
 }
 
-export default Project;
+export default ProjectPage;

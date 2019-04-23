@@ -19,7 +19,7 @@ import Facebook from '../SVGs/Facebook';
 import Youtube from '../SVGs/Youtube';
 import Instagram from '../SVGs/Instagram';
 
-class Contact extends Component {
+class ContactPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -155,4 +155,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default ContactPage;
