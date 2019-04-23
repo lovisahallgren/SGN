@@ -49,15 +49,15 @@ class Contact extends Component {
               : { background: 'var(--primary-yellow)' }
           }
         >
-          <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
+          <img src="/static/images/kontakt-figurer.gif" alt="" />
           <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
               <Link href="/">
-                <a href="">Home</a>
+                <a href="">Hem</a>
               </Link>{' '}
-              > {this.props.contact[0].type}
+              > Kontakt
             </SmallP>
-            <H1>{this.props.contact[0].type}</H1>
+            <H1>Kontakt</H1>
           </div>
         </NavIndicator>
         {/* <ImageCard border="var(--secondary-green)">

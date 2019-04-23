@@ -52,11 +52,11 @@ class Information extends Component {
               : { background: 'var(--primary-red)' }
           }
         >
-          <LetterBig>I</LetterBig>
+          <img src="/static/images/info-figur-megafon.gif" alt="" />
           <div>
             <SmallP>
               <Link href="/">
-                <a href="">Home</a>
+                <a href="">Hem</a>
               </Link>{' '}
               > {this.props.info[0].type}
             </SmallP>

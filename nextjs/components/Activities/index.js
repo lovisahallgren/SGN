@@ -56,11 +56,11 @@ class Activities extends Component {
           <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
               <Link href="/">
-                <a href="">Home</a>
+                <a href="">Hem</a>
               </Link>{' '}
-              > {this.props.activities[0].type}
+              > Aktivitet
             </SmallP>
-            <H1>{this.props.activities[0].type}</H1>
+            <H1>Aktivitet</H1>
           </div>
         </NavIndicator>
         <ImageCard border="var(--secondary-pink)">

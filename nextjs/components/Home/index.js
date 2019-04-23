@@ -65,9 +65,9 @@ class Home extends Component {
               }}
             >
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.activities[0].type}
+                Aktivitet
               </SmallP>
-              <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
+              <img src="/static/images/gif-figur-aktivitet.gif" alt="" />
             </div>
             <div
               style={{
@@ -100,7 +100,7 @@ class Home extends Component {
               }}
             >
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.projects[0].type}
+                Projekt
               </SmallP>
               <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
             </div>
@@ -135,7 +135,7 @@ class Home extends Component {
               }}
             >
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.contribute[0].type}
+                Bidra
               </SmallP>
               <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
             </div>
@@ -170,7 +170,7 @@ class Home extends Component {
               }}
             >
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.projects[0].type}
+                Socialt
               </SmallP>
               <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
             </div>
@@ -189,7 +189,7 @@ class Home extends Component {
             </div>
           </HomeCard>
         </Link>
-        <Link href="/info">
+        <Link href="/information">
           <HomeCard
             style={
               isHighContrastMode
@@ -207,7 +207,7 @@ class Home extends Component {
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
                 {this.props.info[0].type}
               </SmallP>
-              <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
+              <img src="/static/images/info-figur-megafon.gif" alt="" />
             </div>
             <div
               style={{
@@ -240,9 +240,9 @@ class Home extends Component {
               }}
             >
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.contact[0].type}
+                Kontakt
               </SmallP>
-              <LetterBig>K</LetterBig>
+              <img src="/static/images/kontakt-figurer.gif" alt="" />
             </div>
             <div
               style={{

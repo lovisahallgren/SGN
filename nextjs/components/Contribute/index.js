@@ -53,11 +53,11 @@ class Contribute extends Component {
           <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
               <Link href="/">
-                <a href="">Home</a>
+                <a href="">Hem</a>
               </Link>{' '}
-              > {this.props.contribute[0].type}
+              > Bidra
             </SmallP>
-            <H1>{this.props.contribute[0].type}</H1>
+            <H1>Bidra</H1>
           </div>
         </NavIndicator>
         <ImageCard border="var(--secondary-green)">

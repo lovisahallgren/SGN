@@ -11,7 +11,7 @@ class Video extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      videoSrc: '/static/images/sgn_hero_desktop.mp4'
+      // videoSrc: '/static/images/sgn_hero_mobile.mp4'
     };
     this.checkIfWindowDidResize = this.checkIfWindowDidResize.bind(this);
   }
