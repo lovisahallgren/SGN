@@ -49,7 +49,7 @@ class ContributePage extends Component {
               : { background: 'var(--primary-green)' }
           }
         >
-          <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
+          <img src="/static/images/bidra-figur.gif" alt="" />
           <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
               <Link href="/">

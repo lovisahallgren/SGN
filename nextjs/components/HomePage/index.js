@@ -137,7 +137,7 @@ class HomePage extends Component {
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
                 Bidra
               </SmallP>
-              <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
+              <img src="/static/images/bidra-figur.gif" alt="" />
             </div>
             <div
               style={{
@@ -260,6 +260,7 @@ class HomePage extends Component {
           </HomeCard>
         </Link>
         <Form
+          formColor="var(--secondary-red)"
           title="Vill du kontakta oss?"
           name="Namn"
           phone="Telefonnummer"
