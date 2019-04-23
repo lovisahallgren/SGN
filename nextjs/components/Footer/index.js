@@ -274,8 +274,8 @@ class Footer extends Component {
           <NavbarItem
             style={
               isHighContrastMode
-                ? { background: 'var(--secondary-blue)' }
-                : { background: 'var(--primary-blue)' }
+                ? { background: 'var(--secondary-purple)' }
+                : { background: 'var(--primary-purple)' }
             }
             link="/projects"
             text="Projekt"
@@ -292,8 +292,8 @@ class Footer extends Component {
           <NavbarItem
             style={
               isHighContrastMode
-                ? { background: 'var(--secondary-purple)' }
-                : { background: 'var(--primary-purple)' }
+                ? { background: 'var(--secondary-blue)' }
+                : { background: 'var(--primary-blue)' }
             }
             link="/social"
             text="Socialt"
