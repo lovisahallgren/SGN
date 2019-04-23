@@ -22,6 +22,7 @@ import ImageCard from '../ImageCard';
 import Form from '../Form';
 import InfoPrimaryFlap from '../SVGs/InfoPrimaryFlap';
 import InfoSecondaryFlap from '../SVGs/InfoSecondaryFlap';
+import InfoPattern from '../SVGs/InfoPattern';
 
 class Information extends Component {
   constructor(props) {
@@ -92,6 +93,11 @@ class Information extends Component {
               <InfoSecondaryFlap />
             ) : (
               <InfoPrimaryFlap />
+            ),
+            backgroundImg: isHighContrastMode ? (
+              <InfoPattern />
+            ) : (
+              <InfoPattern />
             ),
             category: this.props.info[0].category,
             content: this.props.info[0].title
