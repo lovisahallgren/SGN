@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
-import Activities from '../components/Activities';
+import ActivitiesPage from '../components/ActivitiesPage';
 
 export default class extends Component {
   // Resolve promise and set initial props.
@@ -23,7 +23,7 @@ export default class extends Component {
   render() {
     return (
       <>
-        <Activities {...this.props} />
+        <ActivitiesPage {...this.props} />
       </>
     );
   }

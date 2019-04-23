@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import H1 from '../H1';
 import H2 from '../H2';
 import P from '../P';
+// import Layout from '../Layout';
 import GlobalStyle from '../../styles';
 
 const StyledGDPR = styled.div`
@@ -20,9 +21,10 @@ const StyledGDPR = styled.div`
   }
 `;
 
-const GDPR = props => {
+const GDPRpage = props => {
   return (
     <StyledGDPR>
+      {/* <Layout> */}
       <GlobalStyle />
       <H1 color="#000" fontWeight="bold" fontSize="1.5rem">
         HAVING YOUR PERSONAL DATA ACCORDING TO GDPR
@@ -304,12 +306,13 @@ const GDPR = props => {
         Phone: +46 (0)7-68 8408 84 This privacy policy takes effect on 25 May
         2018.
       </P>
+      {/* </Layout> */}
     </StyledGDPR>
   );
 };
 
-GDPR.propTypes = {
+GDPRpage.propTypes = {
   text: PropTypes.string
 };
 
-export default GDPR;
+export default GDPRpage;
