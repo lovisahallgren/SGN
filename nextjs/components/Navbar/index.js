@@ -76,6 +76,21 @@ const StyledNavbar = styled.div`
       height: 1.25rem;
     }
   }
+
+  @media screen and (min-width: 900px) {
+    display: flex;
+    opacity: 1;
+    position: static;
+    margin: 0 auto;
+    height: auto;
+    background: none;
+    padding: 0;
+
+    ul {
+      opacity: 1;
+      display: flex;
+    }
+  }
 `;
 
 class Navbar extends Component {

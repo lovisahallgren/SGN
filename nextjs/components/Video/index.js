@@ -5,6 +5,10 @@ const StyledVideo = styled.video`
   width: 100%;
   height: 100%;
   margin-bottom: -0.3rem;
+
+  @media screen and (min-width: 900px) {
+    margin-top: -9vh;
+  }
 `;
 
 class Video extends Component {

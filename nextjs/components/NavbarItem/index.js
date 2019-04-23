@@ -33,6 +33,15 @@ const StyledNavbarItem = styled.li`
   &:active {
     transform: scale(0.95);
   }
+
+  @media screen and (min-width: 900px) {
+    display: flex;
+    opacity: 1;
+    /* position: absolute; */
+    height: auto;
+    /* width: 11rem; */
+    /* top: 40vh; */
+  }
 `;
 
 const NavbarItem = props => {

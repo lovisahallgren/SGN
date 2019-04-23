@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const Image = styled.div`
   width: 7%;
   margin-top: 0rem;
+
+  @media screen and (min-width: 900px) {
+    margin: 0;
+  }
 `;
 
 class Flag extends Component {
