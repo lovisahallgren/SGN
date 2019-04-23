@@ -17,7 +17,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Video from '../Video';
 
-class Home extends Component {
+class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -272,4 +272,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default HomePage;
