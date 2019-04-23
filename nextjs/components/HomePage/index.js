@@ -207,7 +207,7 @@ class HomePage extends Component {
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
                 {this.props.info[0].type}
               </SmallP>
-              <img src="/static/images/info-figur-megafon.gif" alt="" />
+              <img src="/static/images/info-figur.gif" alt="" />
             </div>
             <div
               style={{
@@ -242,7 +242,7 @@ class HomePage extends Component {
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
                 Kontakt
               </SmallP>
-              <img src="/static/images/kontakt-figurer.gif" alt="" />
+              <img src="/static/images/kontakt-figur.gif" alt="" />
             </div>
             <div
               style={{
