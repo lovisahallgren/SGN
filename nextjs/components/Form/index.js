@@ -6,7 +6,104 @@ import ArrowRight from '../SVGs/ArrowRight';
 import P from '../P';
 
 const StyledForm = styled.form`
-  width: 100%;
+  
+
+//Desktop
+@media only screen and (min-width: 768px) {
+width: 100%;
+
+  .form-container{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+  }
+
+  .desktop-box1{
+    width:33%;
+  }
+  .desktop-box2{
+    width:66%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  form{
+    width:66%;
+    display:flex;
+    justify-content:center;
+  }
+
+
+  .form-button-div {
+    padding-left: 70%;
+    padding-top: 5%;
+  }
+  .form-button {
+    text-decoration: underline;
+    font-weight: 800;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    outline: none;
+    border: none;
+    box-shadow: none !important;
+  }
+  .form-header {
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
+
+  .user-input-wrp {
+    position: relative;
+    // width: 100%;
+    color: #333;
+    padding-bottom: 10%;
+    width:40%;
+
+  }
+  .user-input-wrp .inputText {
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    box-shadow: none !important;
+    padding-bottom: 3%;
+    color:#333;
+  }
+  .user-input-wrp .inputText:focus {
+    border-color: ${props => props.formColor || 'white'};
+    border-width: medium medium 1px;
+    color: #333;
+  }
+  .user-input-wrp .floating-label {
+    position: absolute;
+    pointer-events: none;
+    top: 25%;
+    left: 0%;
+    transition: 0.15s ease all;
+    color: #333;
+  }
+  .user-input-wrp input:focus ~ .floating-label,
+  .user-input-wrp input:not(:focus):valid ~ .floating-label {
+    top: -4%;
+    left: 0%;
+    color: ${props => props.formColor || 'white'};
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 1;
+  }
+
+}
+
+
+//Mobile
+@media only screen and (max-width: 768px) {
+width: 100%;
+
   
   position: relative;
   
@@ -102,6 +199,11 @@ const StyledForm = styled.form`
     
   }
 
+  .sent-email-div-content-image{
+    width: 35%;
+        
+  }
+
   // .sent-email-div-active{
   //   z-index: 1;
   //   display: flex;
@@ -110,11 +212,7 @@ const StyledForm = styled.form`
   //   text-align: center;
   //   align-content: center;
   // }
-
-  .sent-email-div-content-image{
-    width: 35%;
-        
-  }
+}
 
 `;
 
@@ -159,41 +257,55 @@ class Form extends React.Component {
           </div>}
           
         <div className="form-container">
-          <H2 color="#000" className="form-header">
-            {this.props.title}
-          </H2>
+          
+          <div className="desktop-box1">
+
+            <H2 color="#000" className="form-header">
+              {this.props.title}
+            </H2>
+
+          </div>
+          
 
           <form onSubmit={this.handleSubmit} >
-            <div className="user-input-wrp">
-              <br />
-              <input type="text" ref={nameInput => this.name = nameInput} className="inputText" required />
-              <span className="floating-label">{this.props.name}</span>
-            </div>
+            
+          <div className="desktop-box2">
 
-            <div className="user-input-wrp">
-              <br />
-              <input type="text" ref={phoneInput => this.phone = phoneInput} className="inputText" required />
-              <span className="floating-label">{this.props.phone}</span>
-            </div>
+              <div className="user-input-wrp">
+                <br />
+                <input type="text" ref={nameInput => this.name = nameInput} className="inputText" required />
+                <span className="floating-label">{this.props.name}</span>
+              </div>
 
-            <div className="user-input-wrp">
-              <br />
-              <input type="text" ref={emailInput => this.email = emailInput}  className="inputText" required />
-              <span className="floating-label">{this.props.email}</span>
-            </div>
+              <div className="user-input-wrp">
+                <br />
+                <input type="text" ref={phoneInput => this.phone = phoneInput} className="inputText" required />
+                <span className="floating-label">{this.props.phone}</span>
+              </div>
 
-            <div className="user-input-wrp">
-              <br />
-              <input type="textarea" ref={subjectInput => this.subject = subjectInput} className="inputText" required />
-              <span className="floating-label">{this.props.subject}</span>
-            </div>
+          
+          
+              <div className="user-input-wrp">
+                <br />
+                <input type="text" ref={emailInput => this.email = emailInput}  className="inputText" required />
+                <span className="floating-label">{this.props.email}</span>
+              </div>
 
-            <div className="form-button-div">
-              <button className="form-button" type="submit">
-                <p>{this.props.submit}</p>
-                <ArrowRight width="20%" />
-              </button>
-            </div>
+              <div className="user-input-wrp">
+                <br />
+                <input type="textarea" ref={subjectInput => this.subject = subjectInput} className="inputText" required />
+                <span className="floating-label">{this.props.subject}</span>
+              </div>
+
+              <div className="form-button-div">
+                <button className="form-button" type="submit">
+                  <p>{this.props.submit}</p>
+                  <ArrowRight width="20%" />
+                </button>
+             </div>
+
+             </div>
+            
           </form>
         </div>
 
