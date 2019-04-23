@@ -2,7 +2,7 @@ import Layout from '../components/Layout';
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
-import GDPR from '../components/GDPR';
+import GDPRpage from '../components/GDPRpage';
 
 export default class extends Component {
   // Resolve promise and set initial props.
@@ -25,7 +25,7 @@ export default class extends Component {
   render() {
     return (
       <>
-        <GDPR />
+        <GDPRpage />
       </>
     );
   }

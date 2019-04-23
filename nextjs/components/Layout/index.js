@@ -103,7 +103,7 @@ class Layout extends Component {
           bigTextFunction={this.handleFontSize}
           bigText={this.state.isBigText}
         />
-        <div style={{ width: '100%', height: '7vh' }} />
+        <div style={{ width: '100%', height: '9vh' }} />
 
         {children}
 
@@ -114,6 +114,7 @@ class Layout extends Component {
             isHighContrastMode ? 'Normalkontrastläge' : 'Högkontrastläge'
           }
           languageText="Språk"
+          donateText="Vill du donera till vår organisation?"
           name="Support Group Network"
           street="Kungsladugårdsvägen 5 Restad Gård,"
           city="462 54 Vänersborg"

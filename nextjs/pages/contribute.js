@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Contribute from '../components/Contribute';
+import ContributePage from '../components/ContributePage';
 
 export default class extends Component {
   // Resolve promise and set initial props.
@@ -19,7 +19,7 @@ export default class extends Component {
   render() {
     return (
       <>
-        <Contribute {...this.props} />
+        <ContributePage {...this.props} />
       </>
     );
   }

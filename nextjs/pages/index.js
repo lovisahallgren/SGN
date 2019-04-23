@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Head from 'next/head';
-import Home from '../components/Home';
+import HomePage from '../components/HomePage';
 import axios from 'axios';
 import React, { Component, Fragment } from 'react';
 
@@ -45,7 +45,7 @@ export default class extends Component {
   render() {
     return (
       <>
-        <Home {...this.props} />
+        <HomePage {...this.props} />
       </>
     );
   }

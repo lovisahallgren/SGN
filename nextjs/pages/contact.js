@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Contact from '../components/Contact';
+import ContactPage from '../components/ContactPage';
 
 export default class extends Component {
   // Resolve promise and set initial props.
@@ -19,7 +19,7 @@ export default class extends Component {
   render() {
     return (
       <>
-        <Contact {...this.props} />
+        <ContactPage {...this.props} />
       </>
     );
   }

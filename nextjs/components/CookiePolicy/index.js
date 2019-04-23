@@ -23,8 +23,8 @@ const StyledCookiePolicy = styled.div`
   margin: 1rem 0rem 0 -1rem;
 
   button {
-    width: 50%;
-    height: 15%;
+    width: 100%;
+    height: 30%;
     color: #fff;
     font-size: 1rem;
     border: none;
@@ -44,6 +44,36 @@ const StyledCookiePolicy = styled.div`
     width: 70%;
     margin-bottom: 2rem;
   }
+
+  @media screen and (min-width: 900px) {
+    height: 20vh;
+    width: 80%;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+
+    img {
+      width: 20%;
+    }
+
+    div {
+      height: auto;
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    ${H2} {
+      align-self: flex-start;
+    }
+
+    button {
+      padding: 1rem;
+      width: 60%;
+    }
+  }
 `;
 
 const CookiePolicy = props => {
@@ -57,10 +87,12 @@ const CookiePolicy = props => {
           When you use our website, data are collected using cookies.
         </P>
       </div>
-      <button onClick={props.onAccept}>Jag förstår</button>
-      <Link href="/gdpr">
-        <P color="#000">Mer information</P>
-      </Link>
+      <div>
+        <button onClick={props.onAccept}>Jag förstår</button>
+        <Link href="/gdpr">
+          <P color="#000">Mer information</P>
+        </Link>
+      </div>
     </StyledCookiePolicy>
   );
 };
