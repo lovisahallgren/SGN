@@ -102,7 +102,7 @@ class Home extends Component {
               <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
                 Projekt
               </SmallP>
-              <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
+              <img src="/static/images/projekt-figur.gif" alt="" />
             </div>
             <div
               style={{
