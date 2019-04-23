@@ -41,20 +41,20 @@ const StyledCookiePolicy = styled.div`
   }
 
   img {
-    width: 70%;
-    margin-bottom: 2rem;
+    width: 20%;
+    margin-bottom: 1rem;
   }
 
   @media screen and (min-width: 900px) {
     height: 20vh;
-    width: 80%;
+    width: 100%;
     margin: auto;
     flex-direction: row;
     justify-content: space-around;
     text-align: left;
 
     img {
-      width: 20%;
+      width: 10%;
     }
 
     div {
@@ -80,7 +80,7 @@ const CookiePolicy = props => {
   // console.log(props);
   return (
     <StyledCookiePolicy>
-      <img src="/static/images/sgn_logo_bw_small.svg" alt="" />
+      <img src="/static/images/cookies-figur.gif" alt="" />
       <div>
         <H2 color="#000">Din data, ditt val.</H2>
         <P color="#000">
