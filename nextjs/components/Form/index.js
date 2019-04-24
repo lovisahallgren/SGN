@@ -143,7 +143,14 @@ width: 100%;
 
     padding: 16px 16px 20px 16px;
     margin: 16px 0;
+
+    animation-name: fadeIn;
+    animation-duration: 2s
     
+  }
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
   }
 
   .sent-email-div-content-image{
@@ -257,7 +264,15 @@ width: 100%;
 
     padding: 16px 16px 20px 16px;
     margin: 16px 0;
+
+    animation-name: fadeIn;
+    animation-duration: 3s
     
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
   }
 
   .sent-email-div-content-image{
