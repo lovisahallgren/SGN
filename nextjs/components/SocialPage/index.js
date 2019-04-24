@@ -65,10 +65,10 @@ class SocialPage extends Component {
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-blue)'
+                  background: 'var(--secondary-blue) url("../../static/images/BackgroundSocialSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-blue)'
+                  background: 'var(--primary-blue) url("../../static/images/BackgroundSocialPrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -110,8 +110,8 @@ class SocialPage extends Component {
         <Card
           style={
             isHighContrastMode
-              ? { background: 'var(--secondary-blue)' }
-              : { background: 'var(--primary-blue)' }
+              ? { background: 'var(--secondary-blue) url("../../static/images/BackgroundSocialSecondary.svg") no-repeat 40% 40%' }
+              : { background: 'var(--primary-blue) url("../../static/images/BackgroundSocialPrimary.svg") no-repeat 40% 40%' }
           }
         >
           <div
@@ -140,8 +140,8 @@ class SocialPage extends Component {
         <Card
           style={
             isHighContrastMode
-              ? { background: 'var(--secondary-blue)' }
-              : { background: 'var(--primary-blue)' }
+              ? { background: 'var(--secondary-blue) url("../../static/images/BackgroundSocialSecondary.svg") no-repeat 40% 40%' }
+              : { background: 'var(--primary-blue) url("../../static/images/BackgroundSocialPrimary.svg") no-repeat 40% 40%' }
           }
         >
           <div

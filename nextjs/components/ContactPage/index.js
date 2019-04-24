@@ -77,10 +77,10 @@ class ContactPage extends Component {
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-yellow)'
+                  background: 'var(--secondary-yellow) url("../../static/images/BackgroundContactSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-yellow)'
+                  background: 'var(--primary-yellow) url("../../static/images/BackgroundContactPrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -102,8 +102,8 @@ class ContactPage extends Component {
         <Card
           style={
             isHighContrastMode
-              ? { background: 'var(--secondary-yellow)' }
-              : { background: 'var(--primary-yellow)' }
+              ? { background: 'var(--secondary-yellow) url("../../static/images/BackgroundContactSecondary.svg") no-repeat 40% 40%' }
+              : { background: 'var(--primary-yellow) url("../../static/images/BackgroundContactPrimary.svg") no-repeat 40% 40%' }
           }
         >
           <SmallP style={{ textTransform: 'none' }}>

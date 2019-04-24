@@ -34,6 +34,10 @@ a {
   backface-visibility: hidden;
 }
 
+.front-face {
+   background-size: 100% 100%;
+}
+
 .front-face .h3-container,
 .back-face .h3-container {
   display: flex;

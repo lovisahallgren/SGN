@@ -83,10 +83,10 @@ class ProjectPage extends Component {
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-purple)'
+                  background: 'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-purple)'
+                  background: 'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -112,8 +112,8 @@ class ProjectPage extends Component {
               <Card
                 style={
                   isHighContrastMode
-                    ? { background: 'var(--secondary-purple)' }
-                    : { background: 'var(--primary-purple)' }
+                    ? { background: 'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%' }
+                    : { background: 'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%' }
                 }
               >
                 <SmallP>{item.project_name}</SmallP>
