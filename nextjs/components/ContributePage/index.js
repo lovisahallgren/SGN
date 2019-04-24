@@ -77,10 +77,12 @@ class ContributePage extends Component {
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-green) url("../../static/images/BackgroundContributeSecondary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--secondary-green) url("../../static/images/BackgroundContributeSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-green) url("../../static/images/BackgroundContritubePrimary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--primary-green) url("../../static/images/BackgroundContritubePrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -106,8 +108,14 @@ class ContributePage extends Component {
               <Card
                 style={
                   isHighContrastMode
-                    ? { background: 'var(--secondary-green) url("../../static/images/BackgroundContributeSecondary.svg") no-repeat 40% 40%' }
-                    : { background: 'var(--primary-green) url("../../static/images/BackgroundContritubePrimary.svg") no-repeat 40% 40%' }
+                    ? {
+                        background:
+                          'var(--secondary-green) url("../../static/images/BackgroundContributeSecondary.svg") no-repeat 40% 40%'
+                      }
+                    : {
+                        background:
+                          'var(--primary-green) url("../../static/images/BackgroundContritubePrimary.svg") no-repeat 40% 40%'
+                      }
                 }
               >
                 <SmallP>{item.category}</SmallP>
@@ -117,7 +125,12 @@ class ContributePage extends Component {
                     <img
                       src={item.image}
                       alt={item.name}
-                      style={{ width: '100%', margin: '0 0 1rem 0' }}
+                      style={{
+                        width: '100%',
+                        margin: '0 0 1rem 0',
+                        objectFit: 'cover',
+                        objectPosition: '50% 50%'
+                      }}
                     />
                   </div>
                 )}
@@ -172,7 +185,11 @@ class ContributePage extends Component {
                           <img
                             src={item.image || undefined}
                             alt={item.name}
-                            style={{ width: '100%' }}
+                            style={{
+                              width: '100%',
+                              objectFit: 'cover',
+                              objectPosition: '50% 50%'
+                            }}
                           />
                           <SmallP margin="0.5rem 0 0.5rem 0" fontWeight="bold">
                             {item.image_description}
@@ -207,11 +224,13 @@ class ContributePage extends Component {
           style={
             isHighContrastMode
               ? {
-                background: 'var(--secondary-green) url("../../static/images/BackgroundContributeSecondary.svg") no-repeat 40% 40%'
-              }
-            : {
-                background: 'var(--primary-green) url("../../static/images/BackgroundContritubePrimary.svg") no-repeat 40% 40%'
-              }
+                  background:
+                    'var(--secondary-green) url("../../static/images/BackgroundContributeSecondary.svg") no-repeat 40% 40%'
+                }
+              : {
+                  background:
+                    'var(--primary-green) url("../../static/images/BackgroundContritubePrimary.svg") no-repeat 40% 40%'
+                }
           }
           frontFace={{
             flap: isHighContrastMode ? (

@@ -65,8 +65,8 @@ class InformationPage extends Component {
         </NavIndicator>
         <ImageCard border="var(--secondary-red)">
           <img
-            src={this.props.info[0].image || undefined}
-            alt={this.props.info[0].name}
+            src={this.props.info[1].image || undefined}
+            alt={this.props.info[1].name}
             // border="5px solid var(--secondary-red)"
           />
           <SmallP
@@ -74,17 +74,19 @@ class InformationPage extends Component {
             margin="-0.5rem 0 0.5rem 0"
             fontWeight="bold"
           >
-            {this.props.info[0].image_description}
+            {this.props.info[1].image_description}
           </SmallP>
         </ImageCard>
         <PostItCard
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-red) url("../../static/images/BackgroundInfoSecondary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--secondary-red) url("../../static/images/BackgroundInfoSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-red) url("../../static/images/BackgroundInfoPrimary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--primary-red) url("../../static/images/BackgroundInfoPrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -93,13 +95,13 @@ class InformationPage extends Component {
             ) : (
               <InfoPrimaryFlap />
             ),
-            category: this.props.info[0].category,
-            content: this.props.info[0].title
+            category: this.props.info[1].category,
+            content: this.props.info[1].title
           }}
           backFace={{
             flap: <InfoSecondaryFlap />,
-            category: this.props.info[0].category,
-            content: this.props.info[0].excerpt,
+            category: this.props.info[1].category,
+            content: this.props.info[1].excerpt,
             background: 'var(--secondary-red)'
           }}
         />
@@ -109,12 +111,35 @@ class InformationPage extends Component {
               <Card
                 style={
                   isHighContrastMode
-                    ? { background: 'var(--secondary-red) url("../../static/images/BackgroundInfoSecondary.svg") no-repeat 40% 40%' }
-                    : { background: 'var(--primary-red) url("../../static/images/BackgroundInfoPrimary.svg") no-repeat 40% 40%' }
+                    ? {
+                        background:
+                          'var(--secondary-red) url("../../static/images/BackgroundInfoSecondary.svg") no-repeat 40% 40%'
+                      }
+                    : {
+                        background:
+                          'var(--primary-red) url("../../static/images/BackgroundInfoPrimary.svg") no-repeat 40% 40%'
+                      }
                 }
               >
                 <SmallP>{item.category}</SmallP>
                 <Line />
+                {item.logo === false ? null : (
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      marginBottom: '2rem'
+                    }}
+                  >
+                    <img
+                      src={item.logo}
+                      alt={item.name}
+                      style={{
+                        width: '100%'
+                      }}
+                    />
+                  </div>
+                )}
                 <H2>{item.title}</H2>
                 <P>{item.excerpt}</P>
                 <Line />
@@ -166,7 +191,11 @@ class InformationPage extends Component {
                           <img
                             src={item.image || undefined}
                             alt={item.name}
-                            style={{ width: '100%' }}
+                            style={{
+                              width: '100%',
+                              objectFit: 'cover',
+                              objectPosition: '50% 50%'
+                            }}
                           />
                           <SmallP margin="0.5rem 0 0.5rem 0" fontWeight="bold">
                             {item.image_description}

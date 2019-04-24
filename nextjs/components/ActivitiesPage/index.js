@@ -79,10 +79,12 @@ class ActivitiesPage extends Component {
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-pink) url("../../static/images/BackgroundActivitiesSecondary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--secondary-pink) url("../../static/images/BackgroundActivitiesSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-pink) url("../../static/images/BackgroundActivitiesPrimary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--primary-pink) url("../../static/images/BackgroundActivitiesPrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -91,13 +93,13 @@ class ActivitiesPage extends Component {
             ) : (
               <ActivitiesPrimaryFlap />
             ),
-            category: this.props.activities[0].category,
-            content: this.props.activities[0].excerpt
+            category: this.props.postit[5].category,
+            content: this.props.postit[5].front
           }}
           backFace={{
             flap: <ActivitiesSecondaryFlap />,
-            category: this.props.activities[0].category,
-            content: this.props.activities[0].excerpt,
+            category: this.props.postit[5].category,
+            content: this.props.postit[5].back,
             background: 'var(--secondary-pink)'
           }}
         />
@@ -107,8 +109,14 @@ class ActivitiesPage extends Component {
               <Card
                 style={
                   isHighContrastMode
-                    ? { background: 'var(--secondary-pink) url("../../static/images/BackgroundActivitiesSecondary.svg") no-repeat 40% 40%' }
-                    : { background: 'var(--primary-pink) url("../../static/images/BackgroundActivitiesPrimary.svg") no-repeat 40% 40%' }
+                    ? {
+                        background:
+                          'var(--secondary-pink) url("../../static/images/BackgroundActivitiesSecondary.svg") no-repeat 40% 40%'
+                      }
+                    : {
+                        background:
+                          'var(--primary-pink) url("../../static/images/BackgroundActivitiesPrimary.svg") no-repeat 40% 40%'
+                      }
                 }
               >
                 <SmallP>{item.category}</SmallP>
@@ -118,7 +126,12 @@ class ActivitiesPage extends Component {
                   <img
                     src={item.image || undefined}
                     alt={item.name}
-                    style={{ width: '100%', margin: '1rem 0 2rem 0' }}
+                    style={{
+                      width: '100%',
+                      margin: '1rem 0 2rem 0',
+                      objectFit: 'cover',
+                      objectPosition: '50% 50%'
+                    }}
                   />
                 )}
                 <H2>{item.title}</H2>
@@ -167,18 +180,24 @@ class ActivitiesPage extends Component {
                       }
                       background="var(--primary-pink)"
                     >
-                      {item.image === false ? null : (
+                      {item.image_2 === false ? null : (
                         <div>
                           <img
-                            src={item.image || undefined}
+                            src={item.image_2 || undefined}
                             alt={item.name}
-                            style={{ width: '100%' }}
+                            style={{
+                              width: '100%',
+                              objectFit: 'cover',
+                              objectPosition: '50% 50%'
+                            }}
                           />
                           <SmallP margin="0.5rem 0 0.5rem 0" fontWeight="bold">
                             {item.image_description}
                           </SmallP>
                         </div>
                       )}
+                      <Line />
+                      <P>{item.content}</P>
                       {item.quote !== '' ? (
                         <div>
                           <Line />
@@ -195,7 +214,8 @@ class ActivitiesPage extends Component {
                         </div>
                       ) : null}
                       <Line />
-                      <P>{item.content}</P>
+                      <P>{item.paragraph_2}</P>
+                      <Line />
                     </ReadMoreCard>
                   </ReadMoreButton>
                 </div>
@@ -207,11 +227,13 @@ class ActivitiesPage extends Component {
           style={
             isHighContrastMode
               ? {
-                background: 'var(--secondary-pink) url("../../static/images/BackgroundActivitiesSecondary.svg") no-repeat 40% 40%'
-              }
-            : {
-                background: 'var(--primary-pink) url("../../static/images/BackgroundActivitiesPrimary.svg") no-repeat 40% 40%'
-              }
+                  background:
+                    'var(--secondary-pink) url("../../static/images/BackgroundActivitiesSecondary.svg") no-repeat 40% 40%'
+                }
+              : {
+                  background:
+                    'var(--primary-pink) url("../../static/images/BackgroundActivitiesPrimary.svg") no-repeat 40% 40%'
+                }
           }
           frontFace={{
             flap: isHighContrastMode ? (

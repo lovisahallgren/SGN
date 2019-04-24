@@ -25,11 +25,16 @@ export default class extends Component {
       `http://${process.env.HOST}/wp-json/wp/v2/info`
     );
 
+    const postit = await axios.get(
+      `http://${process.env.HOST}/wp-json/wp/v2/postItCard`
+    );
+
     // Return response to posts object in props.
     return {
       posts: posts.data,
       projects: projects.data,
-      info: info.data
+      info: info.data,
+      postit: postit.data
     };
   }
 

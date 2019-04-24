@@ -22,6 +22,7 @@ const StyledCTAButton = styled.button`
   svg {
     fill: #fff;
     width: 13%;
+    margin: 0 0 -0.1rem 1rem;
   }
 `;
 

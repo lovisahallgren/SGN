@@ -67,8 +67,8 @@ class ProjectPage extends Component {
         </NavIndicator>
         <ImageCard border="var(--secondary-purple)">
           <img
-            src={this.props.projects[0].image || undefined}
-            alt={this.props.projects[0].name}
+            src={this.props.projects[2].image || undefined}
+            alt={this.props.projects[2].name}
             // border="5px solid var(--secondary-purple)"
           />
           <SmallP
@@ -97,13 +97,13 @@ class ProjectPage extends Component {
             ) : (
               <ProjectPrimaryFlap />
             ),
-            category: this.props.info[0].category,
-            content: this.props.info[0].content
+            category: this.props.postit[4].category,
+            content: this.props.postit[4].front
           }}
           backFace={{
             flap: <ProjectSecondaryFlap />,
-            category: this.props.info[0].category,
-            content: this.props.info[0].content,
+            category: this.props.postit[4].category,
+            content: this.props.postit[4].back,
             background: 'var(--secondary-purple)'
           }}
         />
@@ -194,7 +194,11 @@ class ProjectPage extends Component {
                           <img
                             src={item.image || undefined}
                             alt={item.name}
-                            style={{ width: '100%' }}
+                            style={{
+                              width: '100%',
+                              objectFit: 'cover',
+                              objectPosition: '50% 50%'
+                            }}
                           />
                           <SmallP margin="0.5rem 0 0.5rem 0" fontWeight="bold">
                             {item.image_description}
