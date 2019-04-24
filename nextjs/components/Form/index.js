@@ -137,7 +137,7 @@ width: 100%;
     // width: 74rem;
     overflow: hidden;
     // display: none;
-    background: ${props => props.background || 'gray'};
+    background: ${props => props.background || 'white'};
     color: black;
 
     padding: 16px 16px 20px 16px;
@@ -251,7 +251,7 @@ width: 100%;
     min-height: 33rem;
     overflow: hidden;
     // display: none;
-    background: ${props => props.background || 'gray'};
+    background: ${props => props.background || 'white'};
     color: black;
 
     padding: 16px 16px 20px 16px;
@@ -310,7 +310,7 @@ class Form extends React.Component {
       
          {this.state.isEmailSent && <div className="sent-email-div">
             <div className="sent-email-div-content" >
-              <img className="sent-email-div-content-image" src="static/images/sgn_figure_wave_pants.gif"></img>
+              <img className="sent-email-div-content-image" src="static/images/contact-form-figur-black.gif"></img>
               <H2 color="#000">Tack för ditt mail!</H2>
               <P color="#000">Vi återkommer med ett <br></br> svar så fort vi kan.</P>
             </div>
