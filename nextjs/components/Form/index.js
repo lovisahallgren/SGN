@@ -323,7 +323,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <StyledForm {...this.props} id="form">
+      <StyledForm {...this.props} id="form" onSubmit={this.handleSubmit}>
         {this.state.isEmailSent && (
           <div className="sent-email-div">
             <div className="sent-email-div-content">
@@ -347,60 +347,58 @@ class Form extends React.Component {
               </H2>
             </div>
 
-            <form onSubmit={this.handleSubmit}>
-              <div className="desktop-box2">
-                <div className="user-input-wrp">
-                  <br />
-                  <input
-                    type="text"
-                    ref={nameInput => (this.name = nameInput)}
-                    className="inputText"
-                    required
-                  />
-                  <span className="floating-label">{this.props.name}</span>
-                </div>
-
-                <div className="user-input-wrp">
-                  <br />
-                  <input
-                    type="text"
-                    ref={phoneInput => (this.phone = phoneInput)}
-                    className="inputText"
-                    required
-                  />
-                  <span className="floating-label">{this.props.phone}</span>
-                </div>
-
-                <div className="user-input-wrp">
-                  <br />
-                  <input
-                    type="text"
-                    ref={emailInput => (this.email = emailInput)}
-                    className="inputText"
-                    required
-                  />
-                  <span className="floating-label">{this.props.email}</span>
-                </div>
-
-                <div className="user-input-wrp">
-                  <br />
-                  <input
-                    type="textarea"
-                    ref={subjectInput => (this.subject = subjectInput)}
-                    className="inputText"
-                    required
-                  />
-                  <span className="floating-label">{this.props.subject}</span>
-                </div>
-
-                <div className="form-button-div">
-                  <button className="form-button" type="submit">
-                    <p>{this.props.submit}</p>
-                    <ArrowRight width="20%" />
-                  </button>
-                </div>
+            <div className="desktop-box2">
+              <div className="user-input-wrp">
+                <br />
+                <input
+                  type="text"
+                  ref={nameInput => (this.name = nameInput)}
+                  className="inputText"
+                  required
+                />
+                <span className="floating-label">{this.props.name}</span>
               </div>
-            </form>
+
+              <div className="user-input-wrp">
+                <br />
+                <input
+                  type="text"
+                  ref={phoneInput => (this.phone = phoneInput)}
+                  className="inputText"
+                  required
+                />
+                <span className="floating-label">{this.props.phone}</span>
+              </div>
+
+              <div className="user-input-wrp">
+                <br />
+                <input
+                  type="text"
+                  ref={emailInput => (this.email = emailInput)}
+                  className="inputText"
+                  required
+                />
+                <span className="floating-label">{this.props.email}</span>
+              </div>
+
+              <div className="user-input-wrp">
+                <br />
+                <input
+                  type="textarea"
+                  ref={subjectInput => (this.subject = subjectInput)}
+                  className="inputText"
+                  required
+                />
+                <span className="floating-label">{this.props.subject}</span>
+              </div>
+
+              <div className="form-button-div">
+                <button className="form-button" type="submit">
+                  <p>{this.props.submit}</p>
+                  <ArrowRight width="20%" />
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </StyledForm>
