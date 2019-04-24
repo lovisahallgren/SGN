@@ -102,7 +102,8 @@ class ProjectPage extends Component {
             flap: <ProjectSecondaryFlap />,
             category: this.props.info[0].category,
             content: this.props.info[0].content,
-            background: 'var(--secondary-purple)'
+            background: 'var(--secondary-purple)',
+            buttonColor: 'var(--primary-purple)'
           }}
         />
 

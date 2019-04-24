@@ -96,7 +96,8 @@ class ContactPage extends Component {
             flap: <ContactSecondaryFlap />,
             category: this.props.contact[0].category,
             content: this.props.contact[0].excerpt,
-            background: 'var(--secondary-yellow)'
+            background: 'var(--secondary-yellow)',
+            buttonColor: 'var(--primary-yellow)'
           }}
         />
         <Card

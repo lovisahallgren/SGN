@@ -96,7 +96,8 @@ class ContributePage extends Component {
             flap: <ContributeSecondaryFlap />,
             category: this.props.contribute[0].category,
             content: this.props.contribute[0].title,
-            background: 'var(--secondary-green)'
+            background: 'var(--secondary-green)',
+            buttonColor: 'var(--primary-green)'
           }}
         />
 

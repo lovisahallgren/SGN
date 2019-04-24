@@ -96,7 +96,7 @@ class SocialPage extends Component {
                     display: 'flex',
                     justifyContent: 'space-around',
                     textDecoration: 'underline',
-                    marginTop: '0.5rem'
+                    marginTop: '0.5rem',
                   }}
                 >
                   <SmallP>Facebook</SmallP> <SmallP>Youtube</SmallP>{' '}
@@ -104,7 +104,8 @@ class SocialPage extends Component {
                 </div>
               </div>
             ),
-            background: 'var(--secondary-blue)'
+            background: 'var(--secondary-blue)',
+            buttonColor: 'var(--primary-blue)'
           }}
         />
         <Card

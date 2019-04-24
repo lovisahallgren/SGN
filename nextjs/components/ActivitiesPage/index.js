@@ -62,8 +62,8 @@ class ActivitiesPage extends Component {
         </NavIndicator>
         <ImageCard border="var(--secondary-pink)">
           <img
-            src={this.props.activities[3].image || undefined}
-            alt={this.props.activities[3].name}
+            src={this.props.activities[0].image || undefined}
+            alt={this.props.activities[0].name}
             // border="5px solid var(--secondary-pink)"
           />
           <SmallP
@@ -71,7 +71,7 @@ class ActivitiesPage extends Component {
             margin="-0.5rem 0 0.5rem 0"
             fontWeight="bold"
           >
-            {this.props.activities[3].image_description}
+            {this.props.activities[0].image_description}
           </SmallP>
         </ImageCard>
 
@@ -98,7 +98,8 @@ class ActivitiesPage extends Component {
             flap: <ActivitiesSecondaryFlap />,
             category: this.props.activities[0].category,
             content: this.props.activities[0].excerpt,
-            background: 'var(--secondary-pink)'
+            background: 'var(--secondary-pink)',
+            buttonColor: 'var(--primary-pink)'
           }}
         />
         {this.props.activities.map(item => {
@@ -219,16 +220,18 @@ class ActivitiesPage extends Component {
             ) : (
               <ActivitiesPrimaryFlap />
             ),
-            category: this.props.activities[2].category,
-            content: this.props.activities[3].content
+            category: this.props.activities[0].category,
+            content: this.props.activities[0].content
           }}
           backFace={{
             flap: <ActivitiesSecondaryFlap />,
             category: this.props.activities[0].category,
             content: this.props.activities[0].excerpt,
-            background: 'var(--secondary-pink)'
+            background: 'var(--secondary-pink)',
+            buttonColor: 'var(--primary-pink)'
           }}
         />
+
         <Form
           formColor="var(--secondary-pink)"
           title="Skulle du vilja delta eller starta en aktivitet?"

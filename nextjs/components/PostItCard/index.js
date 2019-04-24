@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Line from '../Line';
 import H2 from '../H2';
-import nookies from 'nookies';
+import CTAButton from '../CTAButton';
+import ArrowRight from '../SVGs/ArrowRight';
 
 const StyledPostItCard = styled.div`
 
@@ -90,12 +91,7 @@ class PostItCard extends Component {
     };
   };
 
-  componentDidMount() {
-    this.setState({
-      isHighContrastMode:
-        nookies.get(this.state.ctx).contrast === 'true' ? 'true' : 'false'
-    });
-  }
+
 
   handleClick(e) {
     e.preventDefault();
@@ -109,9 +105,9 @@ class PostItCard extends Component {
 
     return (
 
-      <StyledPostItCard onClick={this.handleClick}>
+      <StyledPostItCard>
 
-        <div id="post-it-card" >
+        <div id="post-it-card" onClick={this.handleClick}>
           <div style={this.props.style} className="front-face">
 
             <div className="h3-container">
@@ -140,6 +136,11 @@ class PostItCard extends Component {
             <H2 style={{padding: "1rem"}}>{this.props.backFace.content}</H2>
 
             <Line style={{margin: "0 1rem"}}/>
+
+              <CTAButton buttonText="Engagera dig" background={this.props.backFace.buttonColor}>
+                {this.props.buttonText}
+                <ArrowRight />
+              </CTAButton>
           </div>
         </div>
       </StyledPostItCard>
