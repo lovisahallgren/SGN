@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Line from '../Line';
 import H2 from '../H2';
-import FrontFace from './FrontFace';
-import BackFace from './BackFace';
 import nookies from 'nookies';
 import SmallP from '../SmallP';
 

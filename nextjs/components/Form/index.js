@@ -65,10 +65,8 @@ const StyledForm = styled.form`
       width: 10%;
     }
 
-    .form-header {
-      padding-bottom: 10%;
-      padding-top: 10%;
-    }
+    padding-right: 5%;
+    // padding-right: 2rem;
 
     .user-input-wrp {
       position: relative;
@@ -133,6 +131,17 @@ const StyledForm = styled.form`
 
       padding: 16px 16px 20px 16px;
       margin: 16px 0;
+
+      animation-name: fadeIn;
+      animation-duration: 2s;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     .sent-email-div-content-image {
@@ -160,6 +169,22 @@ const StyledForm = styled.form`
       margin: 16px 0;
     }
 
+    position: relative;
+
+    .form-container {
+      width: 100%;
+      max-height: 50rem;
+      min-height: 21rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      background: ${props => props.background || 'white'};
+      color: black;
+      padding: 16px 16px 20px 16px;
+      margin: 16px 0;
+    }
+
     .form-button-div {
       padding-left: 70%;
       padding-top: 5%;
@@ -170,10 +195,6 @@ const StyledForm = styled.form`
       font-size: 1rem;
       display: flex;
       flex-direction: row;
-    }
-
-    .arrow-button {
-      width: 20%;
     }
 
     .form-header {
@@ -242,18 +263,43 @@ const StyledForm = styled.form`
       margin: 16px 0;
     }
 
+    //Form completion message animations and divs bellow
+
+    .sent-email-div {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-content: center;
+
+      // position: absolute;
+      max-height: 50rem;
+      min-height: 33rem;
+      overflow: hidden;
+      // display: none;
+      background: ${props => props.background || 'white'};
+      color: black;
+
+      padding: 16px 16px 20px 16px;
+      margin: 16px 0;
+
+      animation-name: fadeIn;
+      animation-duration: 3s;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
     .sent-email-div-content-image {
       width: 35%;
     }
-
-    // .sent-email-div-active{
-    //   z-index: 1;
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: center;
-    //   text-align: center;
-    //   align-content: center;
-    // }
   }
 `;
 
