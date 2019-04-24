@@ -115,8 +115,10 @@ class Header extends Component {
   }
 
   render() {
+    console.log(this.props);
+
     const showmenuStyle = {
-      height: '32vh',
+      height: this.props.bigText ? '35vh' : '32vh',
       transition: 'height 0.25s ease'
     };
 
@@ -124,6 +126,10 @@ class Header extends Component {
       height: '10vh',
       transition: 'height 0.25s ease',
       zIndex: '999'
+    };
+
+    const style = {
+      height: '35vh'
     };
 
     return (

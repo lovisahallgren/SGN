@@ -66,7 +66,7 @@ const StyledNavbar = styled.div`
     display: flex;
     opacity: 1;
     transition: opacity 1.5s ease;
-    padding-top: 1rem;
+    padding-top: 0.6rem;
 
     button {
       display: block;

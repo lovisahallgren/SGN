@@ -83,10 +83,12 @@ class ProjectPage extends Component {
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -112,18 +114,32 @@ class ProjectPage extends Component {
               <Card
                 style={
                   isHighContrastMode
-                    ? { background: 'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%' }
-                    : { background: 'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%' }
+                    ? {
+                        background:
+                          'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%'
+                      }
+                    : {
+                        background:
+                          'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%'
+                      }
                 }
               >
                 <SmallP>{item.project_name}</SmallP>
                 <Line />
-                {item.image === false ? null : (
-                  <div>
+                {item.logo === false ? null : (
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      marginBottom: '2rem'
+                    }}
+                  >
                     <img
                       src={item.logo}
                       alt={item.name}
-                      style={{ width: '50%', margin: '0 0 1rem 0' }}
+                      style={{
+                        width: '100%'
+                      }}
                     />
                   </div>
                 )}

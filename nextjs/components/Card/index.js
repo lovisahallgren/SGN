@@ -4,8 +4,6 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
   width: 100%;
-  /* max-height: 50rem;
-  min-height: 21rem; */
   overflow: hidden;
   display: flex;
   flex-direction: column;
