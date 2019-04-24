@@ -22,12 +22,18 @@ width: 100%;
 
   .desktop-box1{
     width:33%;
+    padding-top: 2%;
   }
   .desktop-box2{
-    width:66%;
+    width:100%;
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    // justify-content: space-around;
+    justify-content: flex-end;
+
+    // padding-left:10%;
+    // padding-right:4%;
+    padding-top: 4%;
   }
 
   form{
@@ -38,10 +44,13 @@ width: 100%;
 
 
   .form-button-div {
-    padding-left: 70%;
-    padding-top: 5%;
+    padding-left: 65%;
+    // padding-top: 5%;
+    padding-bottom: 5%;
+    // margin-bottom: 10%;
   }
   .form-button {
+    background-color: white;
     text-decoration: underline;
     font-weight: 800;
     font-size: 1rem;
@@ -50,7 +59,19 @@ width: 100%;
     outline: none;
     border: none;
     box-shadow: none !important;
+
+    justify-content: flex-end;
+
+    padding-right: 13%;
+
+    
+    
   }
+
+  .arrow-button{
+    width: 10%;
+  }
+
   .form-header {
     padding-bottom: 10%;
     padding-top: 10%;
@@ -60,8 +81,11 @@ width: 100%;
     position: relative;
     // width: 100%;
     color: #333;
-    padding-bottom: 10%;
-    width:40%;
+    padding-bottom: 5%;
+    width:50%;
+
+    padding-right: 5%;
+
 
   }
   .user-input-wrp .inputText {
@@ -97,7 +121,38 @@ width: 100%;
     opacity: 1;
   }
 
+  //Form completion message animations and divs bellow
+
+  .sent-email-div{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+
+    // position: absolute;
+    max-height: 5rem;
+    min-height: 14rem;
+    // width: 74rem;
+    overflow: hidden;
+    // display: none;
+    background: ${props => props.background || 'gray'};
+    color: black;
+
+    padding: 16px 16px 20px 16px;
+    margin: 16px 0;
+    
+  }
+
+  .sent-email-div-content-image{
+    width: 8%;
+        
+  }
+
 }
+
+
 
 
 //Mobile
@@ -132,6 +187,11 @@ width: 100%;
     display: flex;
     flex-direction: row;
   }
+
+  .arrow-button{
+    width: 20%;
+  }
+
   .form-header {
     padding-bottom: 10%;
     padding-top: 10%;
@@ -186,7 +246,7 @@ width: 100%;
     text-align: center;
     align-content: center;
 
-    position: absolute;
+    // position: absolute;
     max-height: 50rem;
     min-height: 33rem;
     overflow: hidden;
@@ -256,7 +316,8 @@ class Form extends React.Component {
             </div>
           </div>}
           
-        <div className="form-container">
+          {!this.state.isEmailSent && 
+          <div className="form-container">
           
           <div className="desktop-box1">
 
@@ -284,7 +345,6 @@ class Form extends React.Component {
               </div>
 
           
-          
               <div className="user-input-wrp">
                 <br />
                 <input type="text" ref={emailInput => this.email = emailInput}  className="inputText" required />
@@ -300,14 +360,14 @@ class Form extends React.Component {
               <div className="form-button-div">
                 <button className="form-button" type="submit">
                   <p>{this.props.submit}</p>
-                  <ArrowRight width="20%" />
+                  <ArrowRight className="arrow-button" />
                 </button>
              </div>
 
              </div>
             
           </form>
-        </div>
+        </div>}
 
        
 

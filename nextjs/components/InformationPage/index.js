@@ -81,10 +81,10 @@ class InformationPage extends Component {
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-red)'
+                  background: 'var(--secondary-red) url("../../static/images/BackgroundInfoSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-red)'
+                  background: 'var(--primary-red) url("../../static/images/BackgroundInfoPrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -109,8 +109,8 @@ class InformationPage extends Component {
               <Card
                 style={
                   isHighContrastMode
-                    ? { background: 'var(--secondary-red)' }
-                    : { background: 'var(--primary-red)' }
+                    ? { background: 'var(--secondary-red) url("../../static/images/BackgroundInfoSecondary.svg") no-repeat 40% 40%' }
+                    : { background: 'var(--primary-red) url("../../static/images/BackgroundInfoPrimary.svg") no-repeat 40% 40%' }
                 }
               >
                 <SmallP>{item.category}</SmallP>

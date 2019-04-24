@@ -79,10 +79,10 @@ class ActivitiesPage extends Component {
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-pink)'
+                  background: 'var(--secondary-pink) url("../../static/images/BackgroundActivitiesSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-pink)'
+                  background: 'var(--primary-pink) url("../../static/images/BackgroundActivitiesPrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -107,8 +107,8 @@ class ActivitiesPage extends Component {
               <Card
                 style={
                   isHighContrastMode
-                    ? { background: 'var(--secondary-pink)' }
-                    : { background: 'var(--primary-pink)' }
+                    ? { background: 'var(--secondary-pink) url("../../static/images/BackgroundActivitiesSecondary.svg") no-repeat 40% 40%' }
+                    : { background: 'var(--primary-pink) url("../../static/images/BackgroundActivitiesPrimary.svg") no-repeat 40% 40%' }
                 }
               >
                 <SmallP>{item.category}</SmallP>
@@ -207,11 +207,11 @@ class ActivitiesPage extends Component {
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-pink)'
-                }
-              : {
-                  background: 'var(--primary-pink)'
-                }
+                background: 'var(--secondary-pink) url("../../static/images/BackgroundActivitiesSecondary.svg") no-repeat 40% 40%'
+              }
+            : {
+                background: 'var(--primary-pink) url("../../static/images/BackgroundActivitiesPrimary.svg") no-repeat 40% 40%'
+              }
           }
           frontFace={{
             flap: isHighContrastMode ? (
