@@ -106,7 +106,38 @@ width: 100%;
     opacity: 1;
   }
 
+  //Form completion message animations and divs bellow
+
+  .sent-email-div{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+
+    // position: absolute;
+    max-height: 5rem;
+    min-height: 14rem;
+    // width: 74rem;
+    overflow: hidden;
+    // display: none;
+    background: ${props => props.background || 'gray'};
+    color: black;
+
+    padding: 16px 16px 20px 16px;
+    margin: 16px 0;
+    
+  }
+
+  .sent-email-div-content-image{
+    width: 8%;
+        
+  }
+
 }
+
+
 
 
 //Mobile
@@ -195,7 +226,7 @@ width: 100%;
     text-align: center;
     align-content: center;
 
-    position: absolute;
+    // position: absolute;
     max-height: 50rem;
     min-height: 33rem;
     overflow: hidden;
@@ -265,7 +296,8 @@ class Form extends React.Component {
             </div>
           </div>}
           
-        <div className="form-container">
+          {!this.state.isEmailSent && 
+          <div className="form-container">
           
           <div className="desktop-box1">
 
@@ -316,7 +348,7 @@ class Form extends React.Component {
              </div>
             
           </form>
-        </div>
+        </div>}
 
        
 
