@@ -22,7 +22,7 @@ const StyledHeader = styled.div`
     display: flex;
     justify-content: space-between;
     z-index: 99;
-    height: 8vh;
+    height: 10vh;
   }
 
   > a {
@@ -116,7 +116,7 @@ class Header extends Component {
 
   render() {
     const showmenuStyle = {
-      height: '30vh',
+      height: '32vh',
       transition: 'height 0.25s ease'
     };
 

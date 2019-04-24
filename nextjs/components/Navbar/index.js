@@ -70,7 +70,7 @@ const StyledNavbar = styled.div`
 
     button {
       display: block;
-      height: auto;
+      height: 1.25rem;
     }
     .border {
       height: 1.25rem;
