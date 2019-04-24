@@ -28,7 +28,9 @@ width: 100%;
     width:100%;
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    // justify-content: space-around;
+    justify-content: flex-end;
+
     // padding-left:10%;
     // padding-right:4%;
     padding-top: 4%;
@@ -42,8 +44,9 @@ width: 100%;
 
 
   .form-button-div {
-    padding-left: 70%;
-    padding-top: 5%;
+    padding-left: 65%;
+    // padding-top: 5%;
+    padding-bottom: 5%;
     // margin-bottom: 10%;
   }
   .form-button {
@@ -56,8 +59,17 @@ width: 100%;
     outline: none;
     border: none;
     box-shadow: none !important;
+
+    justify-content: flex-end;
+
+    padding-right: 13%;
+
     
     
+  }
+
+  .arrow-button{
+    width: 10%;
   }
 
   .form-header {
@@ -70,7 +82,10 @@ width: 100%;
     // width: 100%;
     color: #333;
     padding-bottom: 5%;
-    width:40%;
+    width:50%;
+
+    padding-right: 5%;
+
 
   }
   .user-input-wrp .inputText {
@@ -172,6 +187,11 @@ width: 100%;
     display: flex;
     flex-direction: row;
   }
+
+  .arrow-button{
+    width: 20%;
+  }
+
   .form-header {
     padding-bottom: 10%;
     padding-top: 10%;
@@ -325,7 +345,6 @@ class Form extends React.Component {
               </div>
 
           
-          
               <div className="user-input-wrp">
                 <br />
                 <input type="text" ref={emailInput => this.email = emailInput}  className="inputText" required />
@@ -341,7 +360,7 @@ class Form extends React.Component {
               <div className="form-button-div">
                 <button className="form-button" type="submit">
                   <p>{this.props.submit}</p>
-                  <ArrowRight width="20%" />
+                  <ArrowRight className="arrow-button" />
                 </button>
              </div>
 
