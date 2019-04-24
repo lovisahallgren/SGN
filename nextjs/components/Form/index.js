@@ -182,7 +182,10 @@ width: 100%;
     color: black;
     padding: 16px 16px 20px 16px;
     margin: 16px 0;
+
+   
   }
+
 
   .form-button-div {
     padding-left: 70%;
@@ -271,8 +274,8 @@ width: 100%;
   }
 
   @keyframes fadeIn {
-    from {opacity: 0} 
-    to {opacity: 1}
+    from {opacity: 0;} 
+    to {opacity: 1;}
   }
 
   .sent-email-div-content-image{
