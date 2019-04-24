@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Line from '../Line';
 import H2 from '../H2';
-<<<<<<< HEAD
 import CTAButton from '../CTAButton';
 import ArrowRight from '../SVGs/ArrowRight';
-=======
-import nookies from 'nookies';
 import SmallP from '../SmallP';
->>>>>>> 48d393e163abf812c678cf7eece2329e7600e314
+
 
 const StyledPostItCard = styled.div`
   margin: 1rem auto;
@@ -136,16 +133,13 @@ class PostItCard extends Component {
 
             <H2 style={{ padding: '1rem' }}>{this.props.backFace.content}</H2>
 
-<<<<<<< HEAD
             <Line style={{margin: "0 1rem"}}/>
 
               <CTAButton buttonText="Engagera dig" background={this.props.backFace.buttonColor}>
                 {this.props.buttonText}
                 <ArrowRight />
               </CTAButton>
-=======
             <Line style={{ margin: '0 1rem' }} />
->>>>>>> 48d393e163abf812c678cf7eece2329e7600e314
           </div>
         </div>
       </StyledPostItCard>

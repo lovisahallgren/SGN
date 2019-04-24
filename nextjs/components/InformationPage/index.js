@@ -102,7 +102,8 @@ class InformationPage extends Component {
             flap: <InfoSecondaryFlap />,
             category: this.props.info[1].category,
             content: this.props.info[1].excerpt,
-            background: 'var(--secondary-red)'
+            background: 'var(--secondary-red)',
+            buttonColor: 'var(--primary-red)'
           }}
         />
         {this.props.info.map(item => {
