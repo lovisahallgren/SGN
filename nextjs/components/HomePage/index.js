@@ -71,8 +71,8 @@ class HomePage extends Component {
             <HomeCard
               style={
                 isHighContrastMode
-                  ? { background: 'var(--secondary-pink)' }
-                  : { background: 'var(--primary-pink)' }
+                  ? { background: 'var(--secondary-pink) url("../../static/images/BackgroundActivitiesSecondary.svg") no-repeat 40% 40%' }
+                  : { background: 'var(--primary-pink) url("../../static/images/BackgroundActivitiesPrimary.svg") no-repeat 40% 40%' }
               }
             >
               <div
@@ -106,8 +106,8 @@ class HomePage extends Component {
             <HomeCard
               style={
                 isHighContrastMode
-                  ? { background: 'var(--secondary-purple)' }
-                  : { background: 'var(--primary-purple)' }
+                  ? { background: 'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%' }
+                  : { background: 'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%' }
               }
             >
               <div
@@ -141,8 +141,8 @@ class HomePage extends Component {
             <HomeCard
               style={
                 isHighContrastMode
-                  ? { background: 'var(--secondary-green)' }
-                  : { background: 'var(--primary-green)' }
+                  ? { background: 'var(--secondary-green) url("../../static/images/BackgroundContributeSecondary.svg") no-repeat 40% 40%' }
+                  : { background: 'var(--primary-green) url("../../static/images/BackgroundContritubePrimary.svg") no-repeat 40% 40%' }
               }
             >
               <div
@@ -176,8 +176,8 @@ class HomePage extends Component {
             <HomeCard
               style={
                 isHighContrastMode
-                  ? { background: 'var(--secondary-blue)' }
-                  : { background: 'var(--primary-blue)' }
+                  ? { background: 'var(--secondary-blue) url("../../static/images/BackgroundSocialSecondary.svg") no-repeat 40% 40%' }
+                  : { background: 'var(--primary-blue) url("../../static/images/BackgroundSocialPrimary.svg") no-repeat 40% 40%' }
               }
             >
               <div
@@ -211,8 +211,8 @@ class HomePage extends Component {
             <HomeCard
               style={
                 isHighContrastMode
-                  ? { background: 'var(--secondary-red)' }
-                  : { background: 'var(--primary-red)' }
+                  ? { background: 'var(--secondary-red) url("../../static/images/BackgroundInfoSecondary.svg") no-repeat 40% 40%' }
+                  : { background: 'var(--primary-red) url("../../static/images/BackgroundInfoPrimary.svg") no-repeat 40% 40%' }
               }
             >
               <div
@@ -246,8 +246,8 @@ class HomePage extends Component {
             <HomeCard
               style={
                 isHighContrastMode
-                  ? { background: 'var(--secondary-yellow)' }
-                  : { background: 'var(--primary-yellow)' }
+                  ? { background: 'var(--secondary-yellow) url("../../static/images/BackgroundContactSecondary.svg") no-repeat 40% 40%' }
+                  : { background: 'var(--primary-yellow) url("../../static/images/BackgroundContactPrimary.svg") no-repeat 40% 40%' }
               }
             >
               <div

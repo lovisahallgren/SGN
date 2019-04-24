@@ -80,7 +80,7 @@ class ContributePage extends Component {
                   background: 'var(--secondary-green) url("../../static/images/BackgroundContributeSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-green) url("../../static/images/BackgroundContributePrimary.svg") no-repeat 40% 40%'
+                  background: 'var(--primary-green) url("../../static/images/BackgroundContritubePrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -107,7 +107,7 @@ class ContributePage extends Component {
                 style={
                   isHighContrastMode
                     ? { background: 'var(--secondary-green) url("../../static/images/BackgroundContributeSecondary.svg") no-repeat 40% 40%' }
-                    : { background: 'var(--primary-green) url("../../static/images/BackgroundContributePrimary.svg") no-repeat 40% 40%' }
+                    : { background: 'var(--primary-green) url("../../static/images/BackgroundContritubePrimary.svg") no-repeat 40% 40%' }
                 }
               >
                 <SmallP>{item.category}</SmallP>
@@ -210,7 +210,7 @@ class ContributePage extends Component {
                 background: 'var(--secondary-green) url("../../static/images/BackgroundContributeSecondary.svg") no-repeat 40% 40%'
               }
             : {
-                background: 'var(--primary-green) url("../../static/images/BackgroundContributePrimary.svg") no-repeat 40% 40%'
+                background: 'var(--primary-green) url("../../static/images/BackgroundContritubePrimary.svg") no-repeat 40% 40%'
               }
           }
           frontFace={{
