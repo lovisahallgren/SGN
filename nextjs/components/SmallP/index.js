@@ -10,7 +10,7 @@ const SmallP = styled.p`
   text-align: ${props => props.textAlign || 'left'};
   margin: ${props => props.margin || '0 0 0 0'};
   text-decoration: ${props => props.textDecoration || 'none'};
-  text-transform: ${props => props.textTransform || 'capitalize'};
+  /* text-transform: ${props => props.textTransform || 'capitalize'}; */
 `;
 
 SmallP.propTypes = {};

@@ -9,10 +9,14 @@ export default class extends Component {
     const contact = await axios.get(
       `http://${process.env.HOST}/wp-json/wp/v2/contact`
     );
+    // const postit = await axios.get(
+    //   `http://${process.env.HOST}/wp-json/wp/v2/postItCards`
+    // );
 
     // Return response to posts object in props.
     return {
       contact: contact.data
+      // postit: postit.data
     };
   }
 

@@ -5,6 +5,7 @@ import nookies from 'nookies';
 import SmallP from '../SmallP';
 import P from '../P';
 import ArrowRight from '../SVGs/ArrowRight';
+import ArrowUp from '../SVGs/ArrowUp';
 import ArrowDown from '../SVGs/ArrowDown';
 import Facebook from '../SVGs/Facebook';
 import Youtube from '../SVGs/Youtube';
@@ -34,7 +35,7 @@ const StyledFooter = styled.footer`
   }
 
   .mobile-footer {
-    width: 100vw;
+    width: 101vw;
     height: auto;
     background: ${props => props.background || 'rgba(0,0,0,0.75)'};
     display: flex;
@@ -369,16 +370,29 @@ class Footer extends Component {
             >
               {donateText}
             </P>
-            <ArrowDown
-              style={{
-                height: '100%',
-                position: 'relative',
-                right: '-7rem',
-                top: '-2rem'
-              }}
-              fill="#FFF"
-              margin="0 0 0.5rem 1rem"
-            />
+
+            {this.state.donaingIsOpen ? (
+              <ArrowUp
+                style={{
+                  height: '100%',
+                  position: 'relative',
+                  right: '-7rem',
+                  top: '-2rem'
+                }}
+                margin="0 0 0.5rem 1rem"
+              />
+            ) : (
+              <ArrowDown
+                style={{
+                  height: '100%',
+                  position: 'relative',
+                  right: '-7rem',
+                  top: '-2rem'
+                }}
+                fill="#FFF"
+                margin="0 0 0.5rem 1rem"
+              />
+            )}
 
             <Donate openDonate={this.state.donaingIsOpen} />
           </div>

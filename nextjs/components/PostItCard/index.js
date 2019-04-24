@@ -2,149 +2,153 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Line from '../Line';
 import H2 from '../H2';
+<<<<<<< HEAD
 import CTAButton from '../CTAButton';
 import ArrowRight from '../SVGs/ArrowRight';
+=======
+import nookies from 'nookies';
+import SmallP from '../SmallP';
+>>>>>>> 48d393e163abf812c678cf7eece2329e7600e314
 
 const StyledPostItCard = styled.div`
+  margin: 1rem auto;
+  background: none !important;
 
-margin: 1rem auto;
-background: none !important;
+  h3,
+  a {
+    color: #fff;
+  }
 
-h3,
-a {
-  color: #fff;
-}
+  #post-it-card {
+    height: 17.5rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.8s;
+  }
 
-#post-it-card {
-  height: 17.5rem;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: .8s;
-}
+  .front-face,
+  .back-face {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+    backface-visibility: hidden;
+  }
 
-.front-face,
-.back-face {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  pointer-events: none;
-  backface-visibility: hidden;
-}
+  .front-face {
+    background-size: 100% 100%;
+  }
 
-.front-face {
-   background-size: 100% 100%;
-}
+  .front-face .h3-container,
+  .back-face .h3-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3.6rem 0rem 1rem;
+  }
 
-.front-face .h3-container,
-.back-face .h3-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 4.5rem 0rem 1rem;
-}
+  .back-face::before,
+  .front-face::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 2.75125rem 2.6875rem 0;
+    border-style: solid;
+    border-color: #fff #fff;
+    display: block;
+    width: 0;
+  }
 
-.back-face::before,
-.front-face::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-width: 0 2.75125rem 2.6875rem 0;
-  border-style: solid;
-  border-color: #fff #fff;
-  display: block;
-  width: 0;
-}
+  .back-face {
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+  }
 
-.back-face {
-  transform: rotateY(-180deg);
-  backface-visibility: hidden;
-}
+  .content-container {
+    padding: 1rem;
+  }
 
+  #post-it-card.flip {
+    transform: rotateY(180deg);
+  }
 
-.content-container {
-  padding: 1rem;
-}
+  ${H2} {
+    height: 9.875rem;
+  }
 
-#post-it-card.flip {
-  transform: rotateY(180deg);
-}
-
-${H2} {
-
-  height: 9.875rem;
-}
-
-.flap {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
+  .flap {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 `;
 
 class PostItCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
-  };
+    this.state = {};
+  }
 
 
 
   handleClick(e) {
     e.preventDefault();
-    const postItCard= document.getElementById("post-it-card");
-    postItCard.classList.toggle("flip");
-
+    const postItCard = document.getElementById('post-it-card');
+    postItCard.classList.toggle('flip');
   }
 
   render() {
     const { children } = this.props;
 
     return (
-
-      <StyledPostItCard>
-
-        <div id="post-it-card" onClick={this.handleClick}>
+      <StyledPostItCard onClick={this.handleClick}>
+        <div id="post-it-card">
           <div style={this.props.style} className="front-face">
-
             <div className="h3-container">
-              <h3>{this.props.frontFace.category}</h3>
-              <h3><a href="#">Vänd</a></h3>
+              <SmallP>{this.props.frontFace.category}</SmallP>
+              <SmallP>
+                <a href="#">Vänd</a>
+              </SmallP>
               <div className="flap">{this.props.frontFace.flap}</div>
             </div>
-            <Line style={{marginLeft: "1rem"}}/>
+            <Line style={{ marginLeft: '1rem' }} />
 
+            <H2 style={{ padding: '1rem' }}>{this.props.frontFace.content}</H2>
 
-            <H2 style={{padding: "1rem"}}>{this.props.frontFace.content}</H2>
-
-            <Line style={{margin: "0 1rem"}}/>
-
+            <Line style={{ margin: '0 1rem' }} />
           </div>
 
-          <div style={{background: this.props.backFace.background}} className="back-face">
+          <div
+            style={{ background: this.props.backFace.background }}
+            className="back-face"
+          >
             <div className="h3-container">
-              <h3>{this.props.backFace.category}</h3>
-              <h3><a href="#">Vänd</a></h3>
-                <div className="flap">{this.props.backFace.flap}</div>
+              <SmallP>{this.props.backFace.category}</SmallP>
+              <SmallP>
+                <a href="#">Vänd</a>
+              </SmallP>
+              <div className="flap">{this.props.backFace.flap}</div>
             </div>
 
-            <Line style={{marginLeft: "1rem"}}/>
+            <Line style={{ marginLeft: '1rem' }} />
 
-            <H2 style={{padding: "1rem"}}>{this.props.backFace.content}</H2>
+            <H2 style={{ padding: '1rem' }}>{this.props.backFace.content}</H2>
 
+<<<<<<< HEAD
             <Line style={{margin: "0 1rem"}}/>
 
               <CTAButton buttonText="Engagera dig" background={this.props.backFace.buttonColor}>
                 {this.props.buttonText}
                 <ArrowRight />
               </CTAButton>
+=======
+            <Line style={{ margin: '0 1rem' }} />
+>>>>>>> 48d393e163abf812c678cf7eece2329e7600e314
           </div>
         </div>
       </StyledPostItCard>
-
     );
   }
 }

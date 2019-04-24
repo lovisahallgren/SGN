@@ -97,6 +97,17 @@ function my_activities_cpt() {
     register_post_type( 'activities', $args );
 }
 
+// Add PostItCards to Rest API
+add_action( 'init', 'my_postItCard_cpt' );
+function my_postItCard_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'PostItCard'
+    );
+    register_post_type( 'postItCard', $args );
+}
+
 // Get the advanced custom fields for Branches in JSON
 function my_rest_prepare_branch($data, $post, $request) {
   $_data = $data->data;
@@ -180,6 +191,20 @@ function my_rest_prepare_contact($data, $post, $request) {
   return $data;
 }
 add_filter("rest_prepare_contact", 'my_rest_prepare_contact', 10, 3);
+
+// Get the advanced custom fields for PostItCards in JSON
+function my_rest_prepare_postitcard($data, $post, $request) {
+  $_data = $data->data;
+
+  $fields = get_fields($post->ID);
+  foreach ($fields as $key => $value){
+    $_data[$key] = get_field($key, $post->ID);
+  }
+  $data->data = $_data;
+
+  return $data;
+}
+add_filter("rest_prepare_postitcard", 'my_rest_prepare_postitcard', 10, 3);
 
 // Register plugin helpers.
 require template_path('includes/plugins/plate.php');

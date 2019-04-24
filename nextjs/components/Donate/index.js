@@ -38,8 +38,7 @@ const StyledDonate = styled.div`
     justify-content: flex-start;
     opacity: 1;
     transition: opacity 1.5s ease;
-    padding-top: 1rem;
-    height: 35vh;
+    height: 40vh;
     transition: height 0.5s ease;
     align-items: flex-start;
   }
@@ -117,7 +116,7 @@ class Donate extends Component {
             <SmallP color="#000">Bankgiro:</SmallP> 5138-5854
             <SmallP color="#000">Organisationsnr:</SmallP> 802503-7097
             <SmallP color="#000">Organization name:</SmallP> Support Group
-            Network (SGN)
+            Network
           </div>
           <div
             className={this.props.openDonate ? 'visible' : null}

@@ -60,27 +60,16 @@ class ContactPage extends Component {
             <H1>Kontakt</H1>
           </div>
         </NavIndicator>
-        {/* <ImageCard border="var(--secondary-green)">
-          <img
-            src={this.props.contact[0].image || undefined}
-            alt={this.props.contact[0].name}
-          />
-          <SmallP
-            color="var(--secondary-green)"
-            margin="-0.5rem 0 0.5rem 0"
-            fontWeight="bold"
-          >
-            {this.props.contact[0].image_description}
-          </SmallP>
-        </ImageCard> */}
         <PostItCard
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-yellow) url("../../static/images/BackgroundContactSecondary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--secondary-yellow) url("../../static/images/BackgroundContactSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-yellow) url("../../static/images/BackgroundContactPrimary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--primary-yellow) url("../../static/images/BackgroundContactPrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -103,8 +92,14 @@ class ContactPage extends Component {
         <Card
           style={
             isHighContrastMode
-              ? { background: 'var(--secondary-yellow) url("../../static/images/BackgroundContactSecondary.svg") no-repeat 40% 40%' }
-              : { background: 'var(--primary-yellow) url("../../static/images/BackgroundContactPrimary.svg") no-repeat 40% 40%' }
+              ? {
+                  background:
+                    'var(--secondary-yellow) url("../../static/images/BackgroundContactSecondary.svg") no-repeat 40% 40%'
+                }
+              : {
+                  background:
+                    'var(--primary-yellow) url("../../static/images/BackgroundContactPrimary.svg") no-repeat 40% 40%'
+                }
           }
         >
           <SmallP style={{ textTransform: 'none' }}>

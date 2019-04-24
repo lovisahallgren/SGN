@@ -11,12 +11,16 @@ export default class extends Component {
     const activities = await axios.get(
       `http://${process.env.HOST}/wp-json/wp/v2/activities`
     );
+    const postit = await axios.get(
+      `http://${process.env.HOST}/wp-json/wp/v2/postItCard`
+    );
 
     // Return response to posts object in props.
     return {
       // posts: posts.data,
       // projects: projects.data,
-      activities: activities.data
+      activities: activities.data,
+      postit: postit.data
     };
   }
 

@@ -67,8 +67,8 @@ class ProjectPage extends Component {
         </NavIndicator>
         <ImageCard border="var(--secondary-purple)">
           <img
-            src={this.props.projects[0].image || undefined}
-            alt={this.props.projects[0].name}
+            src={this.props.projects[2].image || undefined}
+            alt={this.props.projects[2].name}
             // border="5px solid var(--secondary-purple)"
           />
           <SmallP
@@ -83,10 +83,12 @@ class ProjectPage extends Component {
           style={
             isHighContrastMode
               ? {
-                  background: 'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%'
                 }
               : {
-                  background: 'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%'
+                  background:
+                    'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%'
                 }
           }
           frontFace={{
@@ -95,15 +97,21 @@ class ProjectPage extends Component {
             ) : (
               <ProjectPrimaryFlap />
             ),
-            category: this.props.info[0].category,
-            content: this.props.info[0].content
+            category: this.props.postit[4].category,
+            content: this.props.postit[4].front
           }}
           backFace={{
             flap: <ProjectSecondaryFlap />,
+<<<<<<< HEAD
             category: this.props.info[0].category,
             content: this.props.info[0].content,
             background: 'var(--secondary-purple)',
             buttonColor: 'var(--primary-purple)'
+=======
+            category: this.props.postit[4].category,
+            content: this.props.postit[4].back,
+            background: 'var(--secondary-purple)'
+>>>>>>> 48d393e163abf812c678cf7eece2329e7600e314
           }}
         />
 
@@ -113,18 +121,32 @@ class ProjectPage extends Component {
               <Card
                 style={
                   isHighContrastMode
-                    ? { background: 'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%' }
-                    : { background: 'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%' }
+                    ? {
+                        background:
+                          'var(--secondary-purple) url("../../static/images/BackgroundProjectSecondary.svg") no-repeat 40% 40%'
+                      }
+                    : {
+                        background:
+                          'var(--primary-purple) url("../../static/images/BackgroundProjectPrimary.svg") no-repeat 40% 40%'
+                      }
                 }
               >
                 <SmallP>{item.project_name}</SmallP>
                 <Line />
-                {item.image === false ? null : (
-                  <div>
+                {item.logo === false ? null : (
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      marginBottom: '2rem'
+                    }}
+                  >
                     <img
                       src={item.logo}
                       alt={item.name}
-                      style={{ width: '50%', margin: '0 0 1rem 0' }}
+                      style={{
+                        width: '100%'
+                      }}
                     />
                   </div>
                 )}
@@ -179,7 +201,11 @@ class ProjectPage extends Component {
                           <img
                             src={item.image || undefined}
                             alt={item.name}
-                            style={{ width: '100%' }}
+                            style={{
+                              width: '100%',
+                              objectFit: 'cover',
+                              objectPosition: '50% 50%'
+                            }}
                           />
                           <SmallP margin="0.5rem 0 0.5rem 0" fontWeight="bold">
                             {item.image_description}
