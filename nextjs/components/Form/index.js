@@ -22,12 +22,16 @@ width: 100%;
 
   .desktop-box1{
     width:33%;
+    padding-top: 2%;
   }
   .desktop-box2{
-    width:66%;
+    width:100%;
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    // padding-left:10%;
+    // padding-right:4%;
+    padding-top: 4%;
   }
 
   form{
@@ -40,8 +44,10 @@ width: 100%;
   .form-button-div {
     padding-left: 70%;
     padding-top: 5%;
+    // margin-bottom: 10%;
   }
   .form-button {
+    background-color: white;
     text-decoration: underline;
     font-weight: 800;
     font-size: 1rem;
@@ -50,7 +56,10 @@ width: 100%;
     outline: none;
     border: none;
     box-shadow: none !important;
+    
+    
   }
+
   .form-header {
     padding-bottom: 10%;
     padding-top: 10%;
@@ -60,7 +69,7 @@ width: 100%;
     position: relative;
     // width: 100%;
     color: #333;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
     width:40%;
 
   }
