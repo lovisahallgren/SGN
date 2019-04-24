@@ -62,7 +62,7 @@ class ActivitiesPage extends Component {
         </NavIndicator>
         <ImageCard border="var(--secondary-pink)">
           <img
-            src={this.props.activities[3].image || undefined}
+            src={this.props.activities[3].image_2 || undefined}
             alt={this.props.activities[3].name}
             // border="5px solid var(--secondary-pink)"
           />

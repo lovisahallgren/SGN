@@ -61,10 +61,6 @@ const StyledForm = styled.form`
       padding-right: 13%;
     }
 
-    .arrow-button {
-      width: 10%;
-    }
-
     padding-right: 5%;
     // padding-right: 2rem;
 
@@ -400,7 +396,7 @@ class Form extends React.Component {
                 <div className="form-button-div">
                   <button className="form-button" type="submit">
                     <p>{this.props.submit}</p>
-                    <ArrowRight className="arrow-button" />
+                    <ArrowRight width="20%" />
                   </button>
                 </div>
               </div>
