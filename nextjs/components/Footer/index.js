@@ -102,12 +102,9 @@ const StyledFooter = styled.footer`
 
     .desktop-footer {
       width: 100vw;
-      /* height: auto; */
+      margin-left: -8rem;
       background: ${props => props.background || 'rgba(0,0,0,0.75)'};
       display: flex;
-      position: relative;
-      left: -8rem;
-      bottom: 0;
       color: white;
       padding: 3rem 8rem;
       justify-content: space-between;

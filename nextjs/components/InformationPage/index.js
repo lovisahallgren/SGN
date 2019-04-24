@@ -53,7 +53,7 @@ class InformationPage extends Component {
               : { background: 'var(--primary-red)' }
           }
         >
-          <img src="/static/images/info-figur-megafon.gif" alt="" />
+          <img src="/static/images/info-figur.gif" alt="" />
           <div>
             <SmallP>
               <Link href="/">

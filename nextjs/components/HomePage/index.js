@@ -17,6 +17,21 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Video from '../Video';
 
+const StyledPage = styled.section`
+  .only-desktop-nav {
+    display: none;
+  }
+
+  @media screen and (min-width: 900px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+
+    .only-desktop-nav {
+      display: flex;
+    }
+  }
+`;
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -39,8 +54,9 @@ class HomePage extends Component {
       <Layout>
         <Video />
         <div
+          className="textDivider"
           style={{
-            padding: ' 0 1.5rem'
+            padding: '0.5rem 1.5rem'
           }}
         >
           <H2 color="#000" margin="1rem 0 0.5rem 0">
@@ -49,216 +65,219 @@ class HomePage extends Component {
           <P color="#000">{this.props.posts[6].title.rendered}</P>
         </div>
         <Line margin="0.5rem 0 1.25rem 1.5rem" backgroundColor="#000" />
-        <Link href="/activities">
-          <HomeCard
-            style={
-              isHighContrastMode
-                ? { background: 'var(--secondary-pink)' }
-                : { background: 'var(--primary-pink)' }
-            }
-          >
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                height: '50%'
-              }}
+        <Navbar className="only-desktop-nav" />
+        <StyledPage>
+          <Link href="/activities">
+            <HomeCard
+              style={
+                isHighContrastMode
+                  ? { background: 'var(--secondary-pink)' }
+                  : { background: 'var(--primary-pink)' }
+              }
             >
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                Aktivitet
-              </SmallP>
-              <img src="/static/images/gif-figur-aktivitet.gif" alt="" />
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-                height: '50%'
-              }}
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  height: '50%'
+                }}
+              >
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  Aktivitet
+                </SmallP>
+                <img src="/static/images/gif-figur-aktivitet.gif" alt="" />
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                  height: '50%'
+                }}
+              >
+                <H2 style={{ width: '75%' }}>
+                  {this.props.posts[5].title.rendered}
+                </H2>
+                <ArrowRight />
+              </div>
+            </HomeCard>
+          </Link>
+          <Link href="/projects">
+            <HomeCard
+              style={
+                isHighContrastMode
+                  ? { background: 'var(--secondary-purple)' }
+                  : { background: 'var(--primary-purple)' }
+              }
             >
-              <H2 style={{ width: '75%' }}>
-                {this.props.posts[5].title.rendered}
-              </H2>
-              <ArrowRight />
-            </div>
-          </HomeCard>
-        </Link>
-        <Link href="/projects">
-          <HomeCard
-            style={
-              isHighContrastMode
-                ? { background: 'var(--secondary-purple)' }
-                : { background: 'var(--primary-purple)' }
-            }
-          >
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                height: '50%'
-              }}
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  height: '50%'
+                }}
+              >
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  Projekt
+                </SmallP>
+                <img src="/static/images/projekt-figur.gif" alt="" />
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                  height: '50%'
+                }}
+              >
+                <H2 style={{ width: '80%' }}>
+                  {this.props.posts[4].title.rendered}
+                </H2>
+                <ArrowRight />
+              </div>
+            </HomeCard>
+          </Link>
+          <Link href="/contribute">
+            <HomeCard
+              style={
+                isHighContrastMode
+                  ? { background: 'var(--secondary-green)' }
+                  : { background: 'var(--primary-green)' }
+              }
             >
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                Projekt
-              </SmallP>
-              <img src="/static/images/projekt-figur.gif" alt="" />
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-                height: '50%'
-              }}
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  height: '50%'
+                }}
+              >
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  Bidra
+                </SmallP>
+                <img src="/static/images/bidra-figur.gif" alt="" />
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                  height: '50%'
+                }}
+              >
+                <H2 style={{ width: '75%' }}>
+                  {this.props.posts[3].title.rendered}
+                </H2>
+                <ArrowRight />
+              </div>
+            </HomeCard>
+          </Link>
+          <Link href="/social">
+            <HomeCard
+              style={
+                isHighContrastMode
+                  ? { background: 'var(--secondary-blue)' }
+                  : { background: 'var(--primary-blue)' }
+              }
             >
-              <H2 style={{ width: '80%' }}>
-                {this.props.posts[4].title.rendered}
-              </H2>
-              <ArrowRight />
-            </div>
-          </HomeCard>
-        </Link>
-        <Link href="/contribute">
-          <HomeCard
-            style={
-              isHighContrastMode
-                ? { background: 'var(--secondary-green)' }
-                : { background: 'var(--primary-green)' }
-            }
-          >
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                height: '50%'
-              }}
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  height: '50%'
+                }}
+              >
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  Socialt
+                </SmallP>
+                <img src="/static/images/social-figur.gif" alt="" />
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                  height: '50%'
+                }}
+              >
+                <H2 style={{ width: '76%' }}>
+                  {this.props.posts[2].title.rendered}
+                </H2>
+                <ArrowRight />
+              </div>
+            </HomeCard>
+          </Link>
+          <Link href="/information">
+            <HomeCard
+              style={
+                isHighContrastMode
+                  ? { background: 'var(--secondary-red)' }
+                  : { background: 'var(--primary-red)' }
+              }
             >
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                Bidra
-              </SmallP>
-              <img src="/static/images/bidra-figur.gif" alt="" />
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-                height: '50%'
-              }}
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  height: '50%'
+                }}
+              >
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  {this.props.info[0].type}
+                </SmallP>
+                <img src="/static/images/info-figur.gif" alt="" />
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                  height: '50%'
+                }}
+              >
+                <H2 style={{ width: '77%' }}>
+                  {this.props.posts[1].title.rendered}
+                </H2>
+                <ArrowRight />
+              </div>
+            </HomeCard>
+          </Link>
+          <Link href="/contact">
+            <HomeCard
+              style={
+                isHighContrastMode
+                  ? { background: 'var(--secondary-yellow)' }
+                  : { background: 'var(--primary-yellow)' }
+              }
             >
-              <H2 style={{ width: '75%' }}>
-                {this.props.posts[3].title.rendered}
-              </H2>
-              <ArrowRight />
-            </div>
-          </HomeCard>
-        </Link>
-        <Link href="/social">
-          <HomeCard
-            style={
-              isHighContrastMode
-                ? { background: 'var(--secondary-blue)' }
-                : { background: 'var(--primary-blue)' }
-            }
-          >
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                height: '50%'
-              }}
-            >
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                Socialt
-              </SmallP>
-              <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-                height: '50%'
-              }}
-            >
-              <H2 style={{ width: '76%' }}>
-                {this.props.posts[2].title.rendered}
-              </H2>
-              <ArrowRight />
-            </div>
-          </HomeCard>
-        </Link>
-        <Link href="/information">
-          <HomeCard
-            style={
-              isHighContrastMode
-                ? { background: 'var(--secondary-red)' }
-                : { background: 'var(--primary-red)' }
-            }
-          >
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                height: '50%'
-              }}
-            >
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                {this.props.info[0].type}
-              </SmallP>
-              <img src="/static/images/info-figur-megafon.gif" alt="" />
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-                height: '50%'
-              }}
-            >
-              <H2 style={{ width: '77%' }}>
-                {this.props.posts[1].title.rendered}
-              </H2>
-              <ArrowRight />
-            </div>
-          </HomeCard>
-        </Link>
-        <Link href="/contact">
-          <HomeCard
-            style={
-              isHighContrastMode
-                ? { background: 'var(--secondary-yellow)' }
-                : { background: 'var(--primary-yellow)' }
-            }
-          >
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                height: '50%'
-              }}
-            >
-              <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
-                Kontakt
-              </SmallP>
-              <img src="/static/images/kontakt-figurer.gif" alt="" />
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-                height: '50%'
-              }}
-            >
-              <H2 style={{ width: '80%' }}>
-                {this.props.posts[0].title.rendered}
-              </H2>
-              <ArrowRight />
-            </div>
-          </HomeCard>
-        </Link>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  height: '50%'
+                }}
+              >
+                <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
+                  Kontakt
+                </SmallP>
+                <img src="/static/images/kontakt-figur.gif" alt="" />
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                  height: '50%'
+                }}
+              >
+                <H2 style={{ width: '80%' }}>
+                  {this.props.posts[0].title.rendered}
+                </H2>
+                <ArrowRight />
+              </div>
+            </HomeCard>
+          </Link>
+        </StyledPage>
         <Form
           formColor="var(--secondary-red)"
           title="Vill du kontakta oss?"

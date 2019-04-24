@@ -49,7 +49,7 @@ class ContactPage extends Component {
               : { background: 'var(--primary-yellow)' }
           }
         >
-          <img src="/static/images/kontakt-figurer.gif" alt="" />
+          <img src="/static/images/kontakt-figur.gif" alt="" />
           <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
               <Link href="/">

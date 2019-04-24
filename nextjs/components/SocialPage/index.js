@@ -50,7 +50,7 @@ class SocialPage extends Component {
               : { background: 'var(--primary-blue)' }
           }
         >
-          <img src="/static/images/sgn_figure_wave_pants.gif" alt="" />
+          <img src="/static/images/social-figur.gif" alt="" />
           <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
               <Link href="/">
@@ -84,7 +84,26 @@ class SocialPage extends Component {
           backFace={{
             flap: <ProjectSecondaryFlap />,
             category: 'Besök oss gärna på',
-            content: <div><div style={{display: "flex", justifyContent: "space-around"}}><Facebook /> <Youtube /> <Instagram /></div><div style={{display: "flex", justifyContent: "space-around", textDecoration: "underline", marginTop: "0.5rem"}}><SmallP>Facebook</SmallP> <SmallP>Youtube</SmallP> <SmallP>Instagram</SmallP> </div></div>,
+            content: (
+              <div>
+                <div
+                  style={{ display: 'flex', justifyContent: 'space-around' }}
+                >
+                  <Facebook /> <Youtube /> <Instagram />
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    textDecoration: 'underline',
+                    marginTop: '0.5rem'
+                  }}
+                >
+                  <SmallP>Facebook</SmallP> <SmallP>Youtube</SmallP>{' '}
+                  <SmallP>Instagram</SmallP>{' '}
+                </div>
+              </div>
+            ),
             background: 'var(--secondary-blue)'
           }}
         />
@@ -126,11 +145,11 @@ class SocialPage extends Component {
           }
         >
           <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between'
-              }}
-            >
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between'
+            }}
+          >
             <SmallP>Facebook</SmallP>
             <Facebook margin="0" />
           </div>

@@ -12,17 +12,14 @@ import Card from '../Card';
 import QuoteSmall from '../QuoteSmall';
 import SmallP from '../SmallP';
 import Line from '../Line';
-import LetterBig from '../LetterBig';
 import ReadMoreCard from '../ReadMoreCard';
 import ReadMoreButton from '../ReadMoreButton';
-import ArrowUp from '../SVGs/ArrowUp';
 import Form from '../Form';
 import ImageCard from '../ImageCard';
 import nookies from 'nookies';
 import PostItCard from '../PostItCard';
 import ActivitiesPrimaryFlap from '../SVGs/ActivitiesPrimaryFlap';
 import ActivitiesSecondaryFlap from '../SVGs/ActivitiesSecondaryFlap';
-
 class ActivitiesPage extends Component {
   constructor(props) {
     super(props);

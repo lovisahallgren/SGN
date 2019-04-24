@@ -4,6 +4,11 @@ import styled from 'styled-components';
 const Image = styled.div`
 	/* width: 7%; */
   margin-top: 0rem;
+
+  img {
+    width: 50%;
+    height: 100%;
+  }
 `
 
 const Logo = () => {

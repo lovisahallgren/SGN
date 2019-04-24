@@ -8,25 +8,58 @@ import Layout from '../Layout';
 import Hamburger from '../Hamburger';
 import Flag from '../SVGs/Flag';
 import Logo from '../SVGs/Logo';
+import P from '../P';
 import nookies from 'nookies';
 
 const StyledHeader = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem 1rem;
-  background: white;
-  display: flex;
-  justify-content: space-between;
-  z-index: 99;
-  height: 8vh;
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 1rem;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    z-index: 99;
+    height: 8vh;
+  }
 
   > a {
     text-decoration: none;
     color: black;
     font-weight: bold;
     width: 40%;
+  }
+
+  .desktop-header {
+    display: none;
+  }
+
+  @media screen and (min-width: 900px) {
+    .mobile-header {
+      display: none;
+    }
+
+    .desktop-header {
+      width: 100%;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        width: 70%;
+      }
+    }
+
+    .navbar {
+      /* width: 3%; */
+      /* height: 100%; */
+      margin-right: -4rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+    }
   }
 `;
 
@@ -95,29 +128,51 @@ class Header extends Component {
 
     return (
       <StyledHeader>
-        <Link href="/">
-          <a href="/">
-            <Logo />
-          </a>
-        </Link>
-        <Flag
-          style={{ margin: '0.5rem 3rem 0 0' }}
-          openLanguage={this.handleLanguage}
-          src={this.state.language}
-        />
-        <Hamburger openMenu={this.handleClick} />
-        <LanguageNavbar
-          contrast={this.props.contrast}
-          style={this.state.languageIsOpen ? showlanguageStyle : null}
-          openLanguage={this.state.languageIsOpen}
-        />
-        <Navbar
-          contrast={this.props.contrast}
-          isBigTextFunction={this.props.bigTextFunction}
-          isBigText={this.props.bigText}
-          style={this.state.menuIsOpen ? showmenuStyle : null}
-          openMenu={this.state.menuIsOpen}
-        />
+        <div className="mobile-header">
+          <Link href="/">
+            <a href="/">
+              <Logo />
+            </a>
+          </Link>
+          <Flag
+            style={{ margin: '0.5rem 3rem 0 0' }}
+            openLanguage={this.handleLanguage}
+            src={this.state.language}
+          />
+          <Hamburger openMenu={this.handleClick} />
+          <LanguageNavbar
+            contrast={this.props.contrast}
+            style={this.state.languageIsOpen ? showlanguageStyle : null}
+            openLanguage={this.state.languageIsOpen}
+          />
+          <Navbar
+            contrast={this.props.contrast}
+            isBigTextFunction={this.props.bigTextFunction}
+            isBigText={this.props.bigText}
+            style={this.state.menuIsOpen ? showmenuStyle : null}
+            openMenu={this.state.menuIsOpen}
+          />
+        </div>
+        <div className="desktop-header">
+          <Link href="/">
+            <a href="/">
+              <Logo />
+            </a>
+          </Link>
+          <div className="navbar">
+            <P fontWeight="bold" color="#000">
+              Stor text
+            </P>
+            <P fontWeight="bold" color="#000">
+              Högkontrastläge
+            </P>
+            <Flag
+              style={{ margin: '0.5rem 3rem 0 0' }}
+              openLanguage={this.handleLanguage}
+              src={this.state.language}
+            />
+          </div>
+        </div>
       </StyledHeader>
     );
   }
