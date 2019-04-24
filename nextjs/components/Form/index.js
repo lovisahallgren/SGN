@@ -85,6 +85,7 @@ width: 100%;
     width:50%;
 
     padding-right: 5%;
+    // padding-right: 2rem;
 
 
   }
