@@ -102,16 +102,10 @@ class ProjectPage extends Component {
           }}
           backFace={{
             flap: <ProjectSecondaryFlap />,
-<<<<<<< HEAD
-            category: this.props.info[0].category,
-            content: this.props.info[0].content,
-            background: 'var(--secondary-purple)',
-            buttonColor: 'var(--primary-purple)'
-=======
             category: this.props.postit[4].category,
             content: this.props.postit[4].back,
-            background: 'var(--secondary-purple)'
->>>>>>> 48d393e163abf812c678cf7eece2329e7600e314
+            background: 'var(--secondary-purple)',
+            buttonColor: 'var(--primary-purple)'
           }}
         />
 

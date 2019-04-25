@@ -49,7 +49,7 @@ class ActivitiesPage extends Component {
               : { background: 'var(--primary-pink)' }
           }
         >
-          <img src="/static/images/gif-figur-aktivitet.gif" alt="" />
+          <img src="/static/images/aktivitet-figur.gif" alt="" />
           <div style={{ alignItems: 'flex-end' }}>
             <SmallP>
               <Link href="/">
@@ -99,8 +99,9 @@ class ActivitiesPage extends Component {
           backFace={{
             flap: <ActivitiesSecondaryFlap />,
             category: this.props.postit[5].category,
-            content: this.props.postit[5].back,
-            background: 'var(--secondary-pink)'
+            content: this.props.postit[3].back,
+            background: 'var(--secondary-pink)',
+            buttonColor: 'var(--primary-pink)'
           }}
         />
         {this.props.activities.map(item => {

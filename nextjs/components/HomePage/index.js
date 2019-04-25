@@ -110,7 +110,7 @@ class HomePage extends Component {
                 <SmallP margin="0.3rem 0 0 0" textDecoration="underline">
                   Aktivitet
                 </SmallP>
-                <img src="/static/images/gif-figur-aktivitet.gif" alt="" />
+                <img src="/static/images/aktivitet-figur.gif" alt="" />
               </div>
               <div
                 style={{

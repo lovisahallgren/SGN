@@ -6,7 +6,6 @@ import CTAButton from '../CTAButton';
 import ArrowRight from '../SVGs/ArrowRight';
 import SmallP from '../SmallP';
 
-
 const StyledPostItCard = styled.div`
   margin: 1rem auto;
   background: none !important;
@@ -72,7 +71,7 @@ const StyledPostItCard = styled.div`
   }
 
   ${H2} {
-    height: 9.875rem;
+    /* height: 9.875rem; */
   }
 
   .flap {
@@ -87,8 +86,6 @@ class PostItCard extends Component {
     super(props);
     this.state = {};
   }
-
-
 
   handleClick(e) {
     e.preventDefault();
@@ -112,7 +109,9 @@ class PostItCard extends Component {
             </div>
             <Line style={{ marginLeft: '1rem' }} />
 
-            <H2 style={{ padding: '1rem' }}>{this.props.frontFace.content}</H2>
+            <H2 style={{ padding: '0 1rem 1rem 1rem', marginTop: '-1rem' }}>
+              {this.props.frontFace.content}
+            </H2>
 
             <Line style={{ margin: '0 1rem' }} />
           </div>
@@ -131,15 +130,20 @@ class PostItCard extends Component {
 
             <Line style={{ marginLeft: '1rem' }} />
 
-            <H2 style={{ padding: '1rem' }}>{this.props.backFace.content}</H2>
+            <H2 style={{ padding: '0 1rem 1rem 1rem', marginTop: '-1rem' }}>
+              {this.props.backFace.content}
+            </H2>
 
-            <Line style={{margin: "0 1rem"}}/>
-
-              <CTAButton buttonText="Engagera dig" background={this.props.backFace.buttonColor}>
-                {this.props.buttonText}
-                <ArrowRight />
-              </CTAButton>
             <Line style={{ margin: '0 1rem' }} />
+
+            <CTAButton
+              buttonText="Engagera dig"
+              background={this.props.backFace.buttonColor}
+            >
+              {this.props.buttonText}
+              <ArrowRight />
+            </CTAButton>
+            {/* <Line style={{ margin: '0 1rem' }} /> */}
           </div>
         </div>
       </StyledPostItCard>
