@@ -13,13 +13,14 @@ const StyledDonate = styled.div`
   /* left: -1rem; */
   /* position: relative; */
   /* width: 104.3%; */
-  padding: 0 2rem 0 3rem;
+  padding: 0 2rem 0 3.5rem;
   background: white;
   /* height: 0vh; */
   transition: height 0.25s ease;
   background: #fff;
   transition: height 0.5s ease;
   margin-top: 2rem;
+  width: 107%;
 
   img {
     width: 60%;
