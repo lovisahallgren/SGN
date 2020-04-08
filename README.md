@@ -9,7 +9,7 @@ This runs from a WordPress REST API exclusive to Support Group Network.
 Frontend built in Next.js.
 
 ## Install
-- Clone this in GitHub Desktop, or `$ git clone https://github.com/lovisahallgren/SGN.git in bash.
+- Clone this in GitHub Desktop, or `$ git clone https://github.com/lovisahallgren/SGN.git` in bash.
 - Run `$ npm install`
 - Run `$ npm run dev`
 
