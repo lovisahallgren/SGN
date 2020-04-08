@@ -14,10 +14,10 @@ Run `$ npm install`
 Run `$ npm run dev`
 
 ## Creators
-[Lovisa Hallgren](https://github.com/lovisahallgren)
-[Vincent Lidebo Kjellman](https://github.com/VincentLideboKjellman)
-[Mikael Ravantti](https://github.com/MRavantti)
+- [Lovisa Hallgren](https://github.com/lovisahallgren)
+- [Vincent Lidebo Kjellman](https://github.com/VincentLideboKjellman)
+- [Mikael Ravantti](https://github.com/MRavantti)
 
 ## Designers
-Hanna White
-Erik Ellersten
+- Hanna White
+- Erik Ellersten
